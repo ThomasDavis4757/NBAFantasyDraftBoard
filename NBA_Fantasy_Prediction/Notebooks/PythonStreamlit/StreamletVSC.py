@@ -8,6 +8,13 @@ from streamlit_autorefresh import st_autorefresh
 from datetime import datetime
 import pandas as pd
 from streamlit_sortables import sort_items
+import streamlit_sortables
+import requests
+import os
+from datetime import timedelta
+
+#print(streamlit_sortables.__version__)
+
 
 
 # Setup layout
@@ -40,20 +47,19 @@ st.markdown("""
         padding: 1rem;
         color: white;
     }
-    .sortable-item {
-        background-color: #f0f0f0 !important;  /* light background */
-        color: black !important;              /* readable text */
-        border: 1px solid #ccc !important;
-        padding: 10px !important;
-        border-radius: 6px !important;
-        margin-bottom: 6px !important;
-        font-weight: 500;
-    }
-
+    
     /* Optional: hover effect for better UX */
     .sortable-item:hover {
         background-color: #e0e0e0 !important;
         cursor: grab;
+    }
+    li.sortable-item {
+    background-color: #F5F5DC !important;
+    color: black !important;
+    font-weight: bold !important;
+    font-size: 20px !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -86,6 +92,8 @@ def launch_driver():
 
 # === TABS ===
 tab1, tab2, tab3, tab4 = st.tabs(["Real Draftboard", "Mock Draftboard", "PlayerRankings", "ModelChanging"])
+
+
 
 with tab1:
     st.subheader("🏀 Live Draft Board (Sleeper)")
@@ -237,26 +245,249 @@ with tab1:
 # Placeholder tabs
 with tab2:
     st.subheader("Mock Draftboard (Coming Soon)")
+    
 
 with tab3:
     st.subheader("Player Rankings (Coming Soon)")
     st.title("🧩 Drag and Drop List Example")
 
-    raw_items = ["LeBron James", "Stephen Curry", "Nikola Jokic", "Kevin Durant"]
+    col_sidebartab3, col_maintab3 = st.columns([2, 5])
 
-    # Wrap items in styled HTML
-    styled_items = [
-        f"<div style='background-color:#f0f0f0; color:black; padding:10px; border-radius:6px; margin-bottom:6px; font-weight:500;'>{player}</div>"
-        for player in raw_items
-    ]
 
-    sorted_items = sort_items(styled_items, direction="vertical", key="sortable-players", use_text=False)
+    with col_sidebartab3:
+        st.markdown("### 🛠️ Controls")
 
-    # Extract plain text again if needed
-    sorted_plain = [item.split('>')[-1].split('<')[0] for item in sorted_items]
 
-    st.write("Sorted order:")
-    st.write(sorted_plain)
+
+        NewRankingName = st.text_input("Name of new ranking:")
+        
+        if st.button("Save as new ranking"):
+            print('ranking is saved filler')
+
+        st.markdown("---")
+
+        st.write("Current Ranking Name")
+        
+        if st.button("Save current ranking"):
+            print('ranking is saved filler')
+
+        st.markdown("---")
+
+        option = st.selectbox(
+        'Select Ranking',
+        ('Ranking1', 'Ranking2', 'Ranking3')
+    )
+
+        if st.button("Get Updated Player Teams and Positions"):
+
+            current_time = pd.Timestamp.now()
+
+            try:
+                with open("../../data/sleeperapidata/timestamp.txt", "r") as f:
+                    ts_str = f.read()
+                    last_update_time = pd.Timestamp(ts_str)
+            except Exception:
+                # If file doesn't exist or can't parse, set last_update_time far in the past
+                last_update_time = current_time - timedelta(days=2)
+
+            duration = current_time - last_update_time
+
+            if duration > pd.Timedelta(days=1):
+                response = requests.get('https://api.sleeper.app/v1/players/nba')
+                base_data = response.json()
+
+                player_dataframe = pd.DataFrame(base_data).T
+                player_dataframe = player_dataframe[['full_name', 'fantasy_positions', 'team']]
+                player_dataframe.to_csv('../../data/sleeperapidata/updatedsleeperapidata1.csv', index=False)
+                st.success("Successfully got updated player information from sleeper!")
+
+                with open("../../data/sleeperapidata/timestamp.txt", "w") as f:
+                    f.write(current_time.isoformat())
+                
+                st.success("Player data updated successfully!")
+            else:
+                wait_time = pd.Timedelta(days=1) - duration
+                st.warning(f"Can't send Sleeper API request: please wait {wait_time} more.")
+
+
+
+    rankingmodel = pd.read_csv('../../data/rankings/firstmodelranking.csv')
+    uploaded_data = pd.read_csv('../../data/sleeperapidata/updatedsleeperapidata1.csv')
+    multi_weights = pd.read_csv('../../data/currentweight/currentpointvalues.csv')
+
+
+    st.write(multi_weights)
+
+    merged_data = rankingmodel.merge(
+        uploaded_data[['full_name','fantasy_positions','team']],
+        how='left',
+        left_on='Player',
+        right_on='full_name'
+    )
+
+    merged_data['FirstHalfDisplay'] = (
+        merged_data['full_name'].astype(str) + " | " +
+        merged_data['fantasy_positions'].astype(str) + " | " +
+        merged_data['team'].astype(str)
+    )
+
+    merged_data['SecondHalfDisplay'] = merged_data['S_FantasyPoints'] - (
+    (merged_data['S_AvgPoints'] * 0.5) +
+    (merged_data['S_AvgAssists'] * 1) +
+    (merged_data['S_AvgRebounds'] * 1) +
+    (merged_data['S_AvgTurnovers'] * -1) +
+    (merged_data['S_AvgSteals'] * 2) +
+    (merged_data['S_AvgBlocks'] * 2) +
+    (merged_data['S_Avg3P'] * 0.5)
+    )
+
+    merged_data['SecondHalfDisplay'] = merged_data['SecondHalfDisplay'] + (
+        (merged_data['S_AvgPoints'] * multi_weights['Points'].iloc[0]) +
+        (merged_data['S_AvgAssists'] * multi_weights['Assists'].iloc[0]) +
+        (merged_data['S_AvgRebounds'] * multi_weights['Rebounds'].iloc[0]) +
+        (merged_data['S_AvgTurnovers'] * multi_weights['Turnovers'].iloc[0]) +
+        (merged_data['S_AvgSteals'] * multi_weights['Steals'].iloc[0]) +
+        (merged_data['S_AvgBlocks'] * multi_weights['Blocks'].iloc[0]) +
+        (merged_data['S_Avg3P'] * multi_weights['ThreePointers'].iloc[0])
+    )
+
+    merged_data['SecondHalfDisplay'] = (
+        (merged_data['SecondHalfDisplay'] * (1 - (multi_weights['GamesMadeWeight'].iloc[0] / 100))) +
+        (merged_data['SecondHalfDisplay'] * (multi_weights['GamesMadeWeight'].iloc[0] / 100) * (merged_data['S_GamesPlayed'] / merged_data['TotalGamesSeason']))
+    )
+
+    merged_data['FullDisplay'] = merged_data['FirstHalfDisplay'] + "  |  " + merged_data['SecondHalfDisplay'].round(2).astype(str)
+
+
+
+    player_list = merged_data["FullDisplay"].dropna().tolist()
+    with col_maintab3:
+
+
+        custom_style = """
+        .sortable-component {
+            border: 3px solid #6495ED;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        .sortable-container {
+            background-color: #F0F0F0;
+            counter-reset: item;
+        }
+        .sortable-container-header {
+            background-color: #FFBFDF;
+            padding-left: 1rem;
+        }
+        .sortable-container-body {
+            background-color: #F0F0F0;
+        }
+        .sortable-item, .sortable-item:hover {
+            background-color: #6495ED;
+            color: #FFFFFF;
+            font-weight: bold;
+            padding: 8px;
+            border-radius: 6px;
+        }
+        .sortable-item::before {
+            content: counter(item) ". ";
+            counter-increment: item;
+        }
+        """
+
+        sorted_items = sort_items(player_list, multi_containers=False, custom_style=custom_style, direction="vertical")
+
+        st.write("🔢 Sorted Items:")
+        for i, player in enumerate(sorted_items, start=1):
+            st.write(f"{i}. {player}")
 
 with tab4:
+    
+    weights_folder = "../../data/latestweights"
+    available_weights = [f for f in os.listdir(weights_folder) if f.endswith(".csv")]
+
+
+    defaults = {
+        "Points": st.session_state.get("Points", 0.5),
+        "Assists": st.session_state.get("Assists", 1.0),
+        "Rebounds": st.session_state.get("Rebounds", 1.0),
+        "Steals": st.session_state.get("Steals", 2.0),
+        "Blocks": st.session_state.get("Blocks", 2.0),
+        "Turnovers": st.session_state.get("Turnovers", -1.0),
+        "ThreePointers": st.session_state.get("ThreePointers", 0.5),
+        "GamesMadeWeight": st.session_state.get("GamesMadeWeight", 0.3),
+    }
+    
+
+    points_val = st.number_input("Points Value", value=defaults["Points"], min_value=-10.0, max_value=10.0, step=0.25)
+    assists_val = st.number_input("Assists Value", value=defaults["Assists"], min_value=-10.0, max_value=10.0, step=0.25)
+    rebounds_val = st.number_input("Rebound Value", value=defaults["Rebounds"], min_value=-10.0, max_value=10.0, step=0.25)
+    steals_val = st.number_input("Steal Value", value=defaults["Steals"], min_value=-10.0, max_value=10.0, step=0.25)
+    blocks_val = st.number_input("Block Value", value=defaults["Blocks"], min_value=-10.0, max_value=10.0, step=0.25)
+    turnovers_val = st.number_input("Turnover Value", value=defaults["Turnovers"], min_value=-10.0, max_value=10.0, step=0.25)
+    three_point_val = st.number_input("3 Point Value", value=defaults["ThreePointers"], min_value=-10.0, max_value=10.0, step=0.25)
+
+    weight = st.slider("Games Made Weight", min_value=0, max_value=100, value=int(defaults["GamesMadeWeight"]), format="%d%%")
+    st.caption(f"Weight: {'No Game Weight' if weight == 0 else 'All Games Weight' if weight == 100 else str(weight) + '%'}")
+
+    preset = st.selectbox("🔁 Load Existing Weights", options=["None"] + available_weights)
+
+
+    if preset != "None" and st.button("📥 Load Preset"):
+        preset_df = pd.read_csv(os.path.join(weights_folder, preset))
+        preset_df.to_csv('../../data/currentweight/currentpointvalues.csv')
+        st.success(f"Preset is now app wide values.") 
+        if not preset_df.empty:
+            for key in defaults:
+                st.session_state[key] = preset_df.iloc[0][key]
+            st.rerun() 
+            
+
+
+    if st.button("Confirm Current Preset"):
+        weights = {
+        "Points": points_val,
+        "Assists": assists_val,
+        "Rebounds": rebounds_val,
+        "Steals": steals_val,
+        "Blocks": blocks_val,
+        "Turnovers": turnovers_val,
+        "ThreePointers": three_point_val,
+        "GamesMadeWeight": weight
+        }
+
+        weights_df = pd.DataFrame([weights])
+        weights_df.to_csv('../../data/currentweight/currentpointvalues.csv')
+        st.success(f"Weight Configuration has been confirmed across the app.")
+
     st.subheader("Model Changing (Coming Soon)")
+
+
+
+
+
+
+    weights = {
+        "Points": points_val,
+        "Assists": assists_val,
+        "Rebounds": rebounds_val,
+        "Steals": steals_val,
+        "Blocks": blocks_val,
+        "Turnovers": turnovers_val,
+        "ThreePointers": three_point_val,
+        "GamesMadeWeight": weight
+    }
+    weights_df = pd.DataFrame([weights])
+
+
+    st.write("### Current Settings")
+    st.dataframe(weights_df)
+
+
+    weight_name = st.text_input('Name the weight')
+    if st.button("💾 Save Weights to CSV"):
+        save_path = os.path.join(weights_folder, f"weight_{weight_name}.csv")
+        weights_df.to_csv(save_path, index=False)
+        st.success(f"Weights saved to `{save_path}`")
+
+    
+    
