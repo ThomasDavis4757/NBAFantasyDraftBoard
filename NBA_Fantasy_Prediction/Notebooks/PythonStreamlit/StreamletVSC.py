@@ -12,6 +12,7 @@ import streamlit_sortables
 import requests
 import os
 from datetime import timedelta
+from rapidfuzz import process, fuzz
 
 #print(streamlit_sortables.__version__)
 
@@ -254,69 +255,29 @@ with tab3:
     col_sidebartab3, col_maintab3 = st.columns([2, 5])
 
 
-    with col_sidebartab3:
-        st.markdown("### 🛠️ Controls")
+    folder_path = '../../data/current_ranking'
+    csv_files = [f for f in os.listdir(folder_path) if f.endswith('.csv')]
+    if csv_files:
+        csv_path = os.path.join(folder_path, csv_files[0])
+        rankingmodel = pd.read_csv(csv_path)
+        current_ranking_name = os.path.splitext(csv_files[0])[0]
+        #print(f"Loaded: {csv_files[0]}")
+    else:
+        print("No CSV files found.")
 
-
-
-        NewRankingName = st.text_input("Name of new ranking:")
-        
-        if st.button("Save as new ranking"):
-            print('ranking is saved filler')
-
-        st.markdown("---")
-
-        st.write("Current Ranking Name")
-        
-        if st.button("Save current ranking"):
-            print('ranking is saved filler')
-
-        st.markdown("---")
-
-        option = st.selectbox(
-        'Select Ranking',
-        ('Ranking1', 'Ranking2', 'Ranking3')
-    )
-
-        if st.button("Get Updated Player Teams and Positions"):
-
-            current_time = pd.Timestamp.now()
-
-            try:
-                with open("../../data/sleeperapidata/timestamp.txt", "r") as f:
-                    ts_str = f.read()
-                    last_update_time = pd.Timestamp(ts_str)
-            except Exception:
-                # If file doesn't exist or can't parse, set last_update_time far in the past
-                last_update_time = current_time - timedelta(days=2)
-
-            duration = current_time - last_update_time
-
-            if duration > pd.Timedelta(days=1):
-                response = requests.get('https://api.sleeper.app/v1/players/nba')
-                base_data = response.json()
-
-                player_dataframe = pd.DataFrame(base_data).T
-                player_dataframe = player_dataframe[['full_name', 'fantasy_positions', 'team']]
-                player_dataframe.to_csv('../../data/sleeperapidata/updatedsleeperapidata1.csv', index=False)
-                st.success("Successfully got updated player information from sleeper!")
-
-                with open("../../data/sleeperapidata/timestamp.txt", "w") as f:
-                    f.write(current_time.isoformat())
-                
-                st.success("Player data updated successfully!")
-            else:
-                wait_time = pd.Timedelta(days=1) - duration
-                st.warning(f"Can't send Sleeper API request: please wait {wait_time} more.")
-
-
-
-    rankingmodel = pd.read_csv('../../data/rankings/firstmodelranking.csv')
     uploaded_data = pd.read_csv('../../data/sleeperapidata/updatedsleeperapidata1.csv')
     multi_weights = pd.read_csv('../../data/currentweight/currentpointvalues.csv')
 
+    reference_names = uploaded_data['full_name'].dropna().unique().tolist()
 
-    st.write(multi_weights)
+    def get_best_match(name, reference_list, threshold=25):
+        match = process.extractOne(name, reference_list, scorer=fuzz.token_sort_ratio)
+        if match and match[1] >= threshold:
+            return match[0]
+        return None 
+
+    rankingmodel['Player'] = rankingmodel['Player'].apply(lambda name: get_best_match(name, reference_names))
+
 
     merged_data = rankingmodel.merge(
         uploaded_data[['full_name','fantasy_positions','team']],
@@ -324,6 +285,8 @@ with tab3:
         left_on='Player',
         right_on='full_name'
     )
+
+
 
     merged_data['FirstHalfDisplay'] = (
         merged_data['full_name'].astype(str) + " | " +
@@ -358,9 +321,13 @@ with tab3:
 
     merged_data['FullDisplay'] = merged_data['FirstHalfDisplay'] + "  |  " + merged_data['SecondHalfDisplay'].round(2).astype(str)
 
-
-
     player_list = merged_data["FullDisplay"].dropna().tolist()
+        
+
+    rankings_folder = "../../data/rankings"
+    available_rankings = [f for f in os.listdir(rankings_folder) if f.endswith(".csv")]
+
+
     with col_maintab3:
 
 
@@ -395,10 +362,118 @@ with tab3:
         """
 
         sorted_items = sort_items(player_list, multi_containers=False, custom_style=custom_style, direction="vertical")
-
+        st.session_state["player_list"] = sorted_items
         st.write("🔢 Sorted Items:")
         for i, player in enumerate(sorted_items, start=1):
             st.write(f"{i}. {player}")
+
+
+
+    with col_sidebartab3:
+        st.markdown("### 🛠️ Controls")
+
+
+
+        NewRankingName = st.text_input("Name of new ranking:")
+        
+        if st.button("Save as new ranking"):
+            sorted_names = [entry.split(" | ")[0] for entry in sorted_items]
+            sorted_df = pd.DataFrame(sorted_names, columns=['Player'])
+            
+
+            saveable_data = sorted_df.merge(
+                rankingmodel,
+                how='left',
+                left_on='Player',
+                right_on='Player'
+            )
+
+            
+
+            saveable_data = saveable_data[['Player','PlayerID','Predicted','S_GamesPlayed','TotalGamesSeason','S_FantasyPoints','S_AvgPoints','S_AvgAssists','S_AvgRebounds','S_AvgSteals','S_AvgBlocks','S_AvgTurnovers','S_Avg3P']]
+            if len(NewRankingName) == 0:
+                st.error('Please give a name for your ranking.')
+            else:
+                saveable_data.to_csv(f'../../data/rankings/{NewRankingName}.csv')
+                folder_path = '../../data/current_ranking'
+                for filename in os.listdir(folder_path):
+                    file_path = os.path.join(folder_path, filename)
+                    if os.path.isfile(file_path):
+                        os.remove(file_path)
+                saveable_data.to_csv(f'../../data/current_ranking/{NewRankingName}.csv')               
+                st.success(f"Successfully saved ranking to ../../data/rankings/{NewRankingName} ")
+                        
+
+        st.markdown("---")
+
+        st.markdown(f"#### Name of active ranking: {current_ranking_name}")
+        
+        if st.button("Save current ranking"):
+            st.write("Temporary Text")
+            sorted_names = [entry.split(" | ")[0] for entry in sorted_items]
+            sorted_df = pd.DataFrame(sorted_names, columns=['Player'])
+
+            saveable_data = sorted_df.merge(
+                rankingmodel,
+                how='left',
+                left_on='Player',
+                right_on='Player'
+            )
+
+            saveable_data = saveable_data[['Player','PlayerID','Predicted','S_GamesPlayed','TotalGamesSeason','S_FantasyPoints','S_AvgPoints','S_AvgAssists','S_AvgRebounds','S_AvgSteals','S_AvgBlocks','S_AvgTurnovers','S_Avg3P']]
+            saveable_data.to_csv(f'../../data/rankings/{current_ranking_name}.csv')
+            st.success(f"Successfully saved ranking to ../../data/rankings/{current_ranking_name} ")
+
+        st.markdown("---")
+
+        ranking_preset = st.selectbox("🔁 Load Existing Rankings", options=["None"] + available_rankings)
+
+        if ranking_preset != "None" and st.button("📥 Load Ranking Preset"):
+            preset_ranking_df = pd.read_csv(os.path.join(rankings_folder, ranking_preset))
+            folder_path = '../../data/current_ranking'
+            for filename in os.listdir(folder_path):
+                file_path = os.path.join(folder_path, filename)
+                if os.path.isfile(file_path):
+                    os.remove(file_path)
+            preset_ranking_df.to_csv(f'../../data/current_ranking/{ranking_preset}')
+            st.success(f"Ranking is current ranking.") 
+            st.rerun()
+
+
+        st.markdown("---")
+
+        if st.button("Get Updated Player Teams and Positions"):
+
+            current_time = pd.Timestamp.now()
+
+            try:
+                with open("../../data/sleeperapidata/timestamp.txt", "r") as f:
+                    ts_str = f.read()
+                    last_update_time = pd.Timestamp(ts_str)
+            except Exception:
+                # If file doesn't exist or can't parse, set last_update_time far in the past
+                last_update_time = current_time - timedelta(days=2)
+
+            duration = current_time - last_update_time
+
+            if duration > pd.Timedelta(days=1):
+                response = requests.get('https://api.sleeper.app/v1/players/nba')
+                base_data = response.json()
+
+                player_dataframe = pd.DataFrame(base_data).T
+                player_dataframe = player_dataframe[['full_name', 'fantasy_positions', 'team']]
+                player_dataframe = player_dataframe.drop_duplicates(subset='full_name', keep='first')
+                player_dataframe.to_csv('../../data/sleeperapidata/updatedsleeperapidata1.csv', index=False)
+                st.success("Successfully got updated player information from sleeper!")
+
+                with open("../../data/sleeperapidata/timestamp.txt", "w") as f:
+                    f.write(current_time.isoformat())
+                
+                st.success("Player data updated successfully!")
+            else:
+                wait_time = pd.Timedelta(days=1) - duration
+                st.warning(f"Can't send Sleeper API request: please wait {wait_time} more.")
+
 
 with tab4:
     
