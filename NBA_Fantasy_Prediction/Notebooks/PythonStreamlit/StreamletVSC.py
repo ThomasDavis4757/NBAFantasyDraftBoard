@@ -13,6 +13,7 @@ import requests
 import os
 from datetime import timedelta
 from rapidfuzz import process, fuzz
+import ast
 
 #print(streamlit_sortables.__version__)
 
@@ -78,6 +79,10 @@ if 'auto_scrape' not in st.session_state:
     st.session_state.auto_scrape = False
 if 'last_scraped_data' not in st.session_state:
     st.session_state.last_scraped_data = []
+if 'last_scraped_positions' not in st.session_state:
+    st.session_state.last_scraped_positions = []
+if 'last_scraped_positions' not in st.session_state:
+    st.session_state.last_scraped_draft_locations = []
 if 'last_scrape_time' not in st.session_state:
     st.session_state.last_scrape_time = None
 
@@ -102,18 +107,90 @@ with tab1:
     # Create two columns: a thin "sidebar" and a wide main section
     col_sidebar, col_main = st.columns([1, 4])
 
+
+
+
+    uploaded_data = pd.read_csv('../../data/sleeperapidata/updatedsleeperapidata1.csv')
+    multi_weights = pd.read_csv('../../data/currentweight/currentpointvalues.csv')
+
+    reference_names = uploaded_data['full_name'].dropna().unique().tolist()
+    folder_path = '../../data/current_ranking'
+    csv_files = [f for f in os.listdir(folder_path) if f.endswith('.csv')]
+    if csv_files:
+        csv_path = os.path.join(folder_path, csv_files[0])
+        rankingmodel = pd.read_csv(csv_path)
+        def get_best_match(name, reference_list, threshold=25):
+            match = process.extractOne(name, reference_list, scorer=fuzz.token_sort_ratio)
+            if match and match[1] >= threshold:
+                return match[0]
+            return None 
+        rankingmodel['Player'] = rankingmodel['Player'].apply(lambda name: get_best_match(name, reference_names))
+        current_ranking_name = os.path.splitext(csv_files[0])[0]
+        #print(f"Loaded: {csv_files[0]}")
+    else:
+        print("No CSV files found.")
+        
+        
+
+
+
+    rankingmodel['GamesPlayedRatio'] = rankingmodel['S_GamesPlayed'].astype(str) + " / " + rankingmodel['TotalGamesSeason'].astype(str)
+
+
+    merged_data = rankingmodel.merge(
+        uploaded_data[['full_name','fantasy_positions','team']],
+        how='left',
+        left_on='Player',
+        right_on='full_name'
+    )
+
+    merged_data['PrevFantasyPoints'] = merged_data['S_FantasyPoints'] - (
+        (merged_data['S_AvgPoints'] * 0.5) +
+        (merged_data['S_AvgAssists'] * 1) +
+        (merged_data['S_AvgRebounds'] * 1) +
+        (merged_data['S_AvgTurnovers'] * -1) +
+        (merged_data['S_AvgSteals'] * 2) +
+        (merged_data['S_AvgBlocks'] * 2) +
+        (merged_data['S_Avg3P'] * 0.5)
+        )
+
+    merged_data['PrevFantasyPoints'] = merged_data['PrevFantasyPoints'] + (
+        (merged_data['S_AvgPoints'] * multi_weights['Points'].iloc[0]) +
+        (merged_data['S_AvgAssists'] * multi_weights['Assists'].iloc[0]) +
+        (merged_data['S_AvgRebounds'] * multi_weights['Rebounds'].iloc[0]) +
+        (merged_data['S_AvgTurnovers'] * multi_weights['Turnovers'].iloc[0]) +
+        (merged_data['S_AvgSteals'] * multi_weights['Steals'].iloc[0]) +
+        (merged_data['S_AvgBlocks'] * multi_weights['Blocks'].iloc[0]) +
+        (merged_data['S_Avg3P'] * multi_weights['ThreePointers'].iloc[0])
+    )
+
+    merged_data['PrevFantasyPoints'] = (
+        (merged_data['PrevFantasyPoints'] * (1 - (multi_weights['GamesMadeWeight'].iloc[0] / 100))) +
+        (merged_data['PrevFantasyPoints'] * (multi_weights['GamesMadeWeight'].iloc[0] / 100) * (merged_data['S_GamesPlayed'] / merged_data['TotalGamesSeason']))
+    )
+
+    displayed_df = merged_data[['Player','fantasy_positions','team','GamesPlayedRatio','PrevFantasyPoints','Predicted']]
+
+
+
+    def get_draft_picks_list(draft_participants, rounds, picking_pos):
+        list_of_positions = []
+        for i in range(int(rounds)):
+            if (i+1) % 2 != 0:
+                list_of_positions.append(str(i+1) + "." + str(picking_pos))
+            else:
+                list_of_positions.append(str(i+1) + "." + str(draft_participants - (picking_pos - 1)))
+        return list_of_positions
+
+
+
+    num_drafting_participants = 0
+    num_drafting_rounds = 0
+
     with col_sidebar:
         st.markdown("### 🛠️ Controls")
 
-
-
         draft_link = st.text_input("Enter Draft link:")
-        #TURN THIS INTO JUST PUTTING IN ID INSTEAD OF FULL LINK! 
-        league_link = st.text_input("Enter League Link")
-
-        draft_participants = st.number_input("Number of Draft Participants", min_value=1, max_value=32, value=8, step=1)
-        rounds = st.number_input("Number of Rounds", min_value=1, max_value=18, value=15, step=1)
-        draft_picking_position = st.number_input("Draft Picking Position", min_value=1, max_value= draft_participants, value=1, step=1)
 
         start_browser = st.toggle("Launch Browser", value=st.session_state.driver_active)
         if start_browser and not st.session_state.driver_active:
@@ -127,13 +204,50 @@ with tab1:
             st.session_state.driver_active = False
             st.warning("Browser closed.")
 
+        if start_browser and num_drafting_participants == 0:
+            num_drafting_participants = len(st.session_state.driver.find_elements(By.CSS_SELECTOR, '.team-column'))
+
+        if start_browser and num_drafting_rounds == 0:
+            num_drafting_rounds = len(st.session_state.driver.find_elements(By.CSS_SELECTOR, '.cell-container')) / num_drafting_participants
+
+
+        if num_drafting_participants == 0:
+            pass
+        else:
+            draft_picking_position = st.number_input("Draft Picking Position", min_value=1, max_value=int(num_drafting_participants), value=1, step=1)
+            draft_picks = get_draft_picks_list(num_drafting_participants, num_drafting_rounds, draft_picking_position)
+
+
+
         if st.button("Scrape Now"):
             if st.session_state.driver_active and st.session_state.driver:
                 try:
                     st.session_state.driver.refresh()
+
+                    drafted_cells = st.session_state.driver.find_elements(
+                        By.XPATH, "//div[contains(@class, 'cell') and contains(@class, 'drafted')]"
+                    )
+                    st.write(len(drafted_cells))
+                    draft_locations = []
+
+                    for cell in drafted_cells:
+                        try:
+                            draft_locations.append(cell.find_element(By.CSS_SELECTOR, ".pick").text)
+                        except Exception as e:
+                            st.warning(f"Failed to parse a drafted cell: {e}")
+
+
+                    st.session_state.last_scraped_draft_locations = draft_locations
+
                     players = st.session_state.driver.find_elements(By.CSS_SELECTOR, '.player-name')
+                    scraped_positions = st.session_state.driver.find_elements(By.CSS_SELECTOR, '.position')
+
                     names = [player.text for player in players]
+                    scraped_positions_list = [scrapos.text for scrapos in scraped_positions]
+
                     st.session_state.last_scraped_data = names
+                    st.session_state.last_scraped_positions = scraped_positions_list
+
                     st.session_state.last_scrape_time = datetime.now().strftime('%H:%M:%S')
                     st.success("Scraped successfully.")
                 except Exception as e:
@@ -143,18 +257,63 @@ with tab1:
 
         st.session_state.auto_scrape = st.checkbox("Auto-scrape every 10s", value=st.session_state.auto_scrape)
 
+        st.write(num_drafting_participants)
+        st.write(num_drafting_rounds)
+
         if st.session_state.auto_scrape:
             st_autorefresh(interval=REFRESH_INTERVAL_SEC * 1000, key="auto-refresh")
             if st.session_state.driver_active and st.session_state.driver:
                 try:
+                    st.session_state.driver.refresh()
+
+                    drafted_cells = st.session_state.driver.find_elements(
+                        By.XPATH, "//div[contains(@class, 'cell') and contains(@class, 'drafted')]"
+                    )
+
+                    draft_locations = []
+
+                    for cell in drafted_cells:
+                        try:
+                            draft_locations.append(cell.find_element(By.CSS_SELECTOR, ".pick").text)
+                        except Exception as e:
+                            st.warning(f"Failed to parse a drafted cell: {e}")
+
+                    st.session_state.last_scraped_draft_locations = draft_locations
+
                     players = st.session_state.driver.find_elements(By.CSS_SELECTOR, '.player-name')
+                    scraped_positions = st.session_state.driver.find_elements(By.CSS_SELECTOR, '.position')
+
                     names = [player.text for player in players]
+                    scraped_positions_list = [scrapos.text for scrapos in scraped_positions]
+
                     st.session_state.last_scraped_data = names
+                    st.session_state.last_scraped_positions = scraped_positions_list
+
                     st.session_state.last_scrape_time = datetime.now().strftime('%H:%M:%S')
                 except Exception as e:
                     st.error(f"Auto-scrape failed: {e}")
 
+
     with col_main:
+
+        def format_name(full_name):
+            parts = full_name.split()
+            if len(parts) >= 2:
+                return f"{parts[0][0].upper()}. {parts[-1]}"
+            else:
+                return full_name  # fallback if name is malformed
+            
+
+        def highlight_row(row):
+            formatted_name = format_name(row["Player"])
+            player_team_key = f"{formatted_name} - {row['team']}"
+            
+            if player_team_key in highlighted_names:
+                return ['background-color: lightgreen; font-weight: bold'] * len(row)
+            return [''] * len(row)
+        
+        indicies = [i for i, val in enumerate(st.session_state.last_scraped_draft_locations) if val in draft_picks]
+        st.write(indicies)
 
         position_dict = {
             "PG": ["Stephen Curry", "Jrue Holiday"],
@@ -181,54 +340,86 @@ with tab1:
 
         st.markdown("---")
 
+        highlighted_names = [
+            f"{name} - {position.split(' - ')[1]}"
+            for name, position in zip(st.session_state.last_scraped_data, st.session_state.last_scraped_positions)
+        ]
+
 
         col_all_players, col_position_players = st.columns([3,2])
+        #The column that will hold the total player ranking, and be filled out.
         with col_all_players:
             st.subheader("Full Player List")
-            data = pd.DataFrame({
-            "Player": ["LeBron James", "Stephen Curry", "Nikola Jokic", "Jimmy Butler"],
-            "Team": ["LAL", "GSW", "DEN", "MIA"],
-            "Points": [27, 29, 26, 21]
-            })
-
+            displayed_df.index = displayed_df.index + 1
             
-            highlighted_names = ["Stephen Curry", "Jimmy Butler"]
-
-            def highlight_players(val):
-                if val in highlighted_names:
-                    return 'background-color: lightgreen; font-weight: bold'
-                return ''
-
-            styled_df = data.style.applymap(highlight_players, subset=["Player"])
+            styled_df = displayed_df.style.apply(highlight_row, axis=1)
 
             st.dataframe(styled_df, use_container_width=True)
 
 
         with col_position_players: 
             st.subheader("Position Specific Player List")
-            options = st.multiselect(
+
+
+            
+            positions = st.multiselect(
                 "Select Positions",
                 ["PG", "SG", "SF", "PF",'C'],
                 default=["C"],
             )
-            data1 = pd.DataFrame({
-            "Player": ["LeBron Poop", "Stephen Curry", "Nikola Poopik", "Jimmy Butler"],
-            "Team": ["LAL", "GSW", "DEN", "MIA"],
-            "Points": [27, 29, 26, 21]
-            })
-
             
-            highlighted_names = ["Stephen Curry", "Jimmy Butler"]
+            positions_equation = st.selectbox(
+                "Select Positions",
+                ["AND","OR","NOT"],
+                index = 1,
+            )
 
-            def highlight_players(val):
-                if val in highlighted_names:
-                    return 'background-color: lightgreen; font-weight: bold'
-                return ''
 
-            styled_df = data.style.applymap(highlight_players, subset=["Player"])
+
+            def mark_as_good(player_positions, positions_equation, positions):
+                if positions_equation == 'OR':
+                    for i in player_positions:
+                        if i in positions:
+                            return True
+                        else:
+                            continue
+                    return False
+                        
+                elif positions_equation == 'AND':
+                    num_positions = len(positions)
+                    matching_positions = 0
+                    for i in player_positions:
+                        if i in positions:
+                            matching_positions += 1
+                    if num_positions == matching_positions:
+                        return True
+                    else:
+                        return False
+                    
+                elif positions_equation == 'NOT':
+                    for i in player_positions:
+                        if i in positions:
+                            return False
+                        else:
+                            continue
+                    return True
+                
+                
+            specific_display = displayed_df.copy()
+            specific_display.index = specific_display.index + 1
+            specific_display['MeetPositionalRequirement'] = specific_display['fantasy_positions'].apply(ast.literal_eval).apply(lambda player_positions: mark_as_good(player_positions, positions_equation, positions)) 
+            specific_display = specific_display[specific_display['MeetPositionalRequirement'] == True]
+            specific_display = specific_display.drop('MeetPositionalRequirement', axis=1)
+
+
+            styled_df = specific_display.style.apply(highlight_row, axis=1)
 
             st.dataframe(styled_df, use_container_width=True)
 
+        st.write("🔍 Scraped Players:", st.session_state.last_scraped_data)
+        st.write("🔍 Scraped Positions:", st.session_state.last_scraped_positions)
+        st.write("Scraped Draft Numbers:", st.session_state.last_scraped_draft_locations)
+        st.write("Highlighted Entries", highlighted_names)
 
 
 
@@ -257,6 +448,7 @@ with tab3:
 
     folder_path = '../../data/current_ranking'
     csv_files = [f for f in os.listdir(folder_path) if f.endswith('.csv')]
+
     if csv_files:
         csv_path = os.path.join(folder_path, csv_files[0])
         rankingmodel = pd.read_csv(csv_path)
@@ -422,6 +614,11 @@ with tab3:
 
             saveable_data = saveable_data[['Player','PlayerID','Predicted','S_GamesPlayed','TotalGamesSeason','S_FantasyPoints','S_AvgPoints','S_AvgAssists','S_AvgRebounds','S_AvgSteals','S_AvgBlocks','S_AvgTurnovers','S_Avg3P']]
             saveable_data.to_csv(f'../../data/rankings/{current_ranking_name}.csv')
+            for filename in os.listdir(folder_path):
+                file_path = os.path.join(folder_path, filename)
+                if os.path.isfile(file_path):
+                    os.remove(file_path)
+            saveable_data.to_csv(f'../../data/current_ranking/{current_ranking_name}.csv')  
             st.success(f"Successfully saved ranking to ../../data/rankings/{current_ranking_name} ")
 
         st.markdown("---")
