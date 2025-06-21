@@ -79,7 +79,9 @@ def get_draft_picks_list(draft_participants, rounds, picking_pos, not_owned_dps,
         
     filtered = [item for item in list_of_positions if item not in cleaned_not_owned]
     final_list = filtered + [item for item in cleaned_newly_owned if item not in filtered] 
-    return final_list
+    final_list = [item for item in final_list if item.strip()]
+    final_list_sorted = sorted(final_list, key=lambda x: (int(x.split('.')[0]), int(x.split('.')[1])))
+    return final_list_sorted
 
 ########################################################################################################################################################
 
@@ -101,6 +103,27 @@ def highlight_row(row):
     elif player_team_key in not_team_highlighted_names:
         return ['background-color: indianred; font-weight: bold'] * len(row)
     
+    return [''] * len(row)
+
+########################################################################################################################################################
+
+def highlight_row_mock(row):
+    formatted_name = format_name(row["Player"])
+    player_team_key = f"{formatted_name} - {row['team']}"
+
+    # Green: players on your team
+    team_df = st.session_state.team_players_with_positions_mock
+    team_keys = set(f"{format_name(r['Player'])} - {r['team']}" for _, r in team_df.iterrows())
+
+    # Red: players already picked by others
+    picked_df = st.session_state.picked_players_mock
+    picked_keys = set(f"{format_name(r['Player'])} - {r['team']}" for _, r in picked_df.iterrows())
+
+    if player_team_key in team_keys:
+        return ['background-color: lightgreen; font-weight: bold'] * len(row)
+    elif player_team_key in picked_keys:
+        return ['background-color: indianred; font-weight: bold'] * len(row)
+
     return [''] * len(row)
 
 ########################################################################################################################################################
@@ -188,6 +211,35 @@ st.markdown("""
     font-size: 20px !important;
     padding: 12px !important;
     border-radius: 8px !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+st.markdown("""
+    <style>
+    /* Existing styles... */
+
+    /* Multiselect override */
+    .stMultiSelect > div {
+        background-color: white !important;
+        color: black !important;
+    }
+
+    .stMultiSelect div[data-baseweb="select"] span {
+        color: black !important;
+    }
+
+    div[data-baseweb="popover"] {
+        background-color: white !important;
+        color: black !important;
+    }
+
+    div[data-baseweb="option"] {
+        background-color: white !important;
+        color: black !important;
+    }
+
+    div[data-baseweb="option"]:hover {
+        background-color: #f0f0f0 !important;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -622,6 +674,7 @@ with tab1:
 with tab2:
     st.subheader("Mock Draftboard (Coming Soon)")
 
+
     # Create two columns: a thin "sidebar" and a wide main section
     col_sidebar, col_main = st.columns([1, 4])
 
@@ -681,8 +734,21 @@ with tab2:
         (merged_data['PrevFantasyPoints'] * (multi_weights['GamesMadeWeight'].iloc[0] / 100) * (merged_data['S_GamesPlayed'] / merged_data['TotalGamesSeason']))
     )
 
-    displayed_df = merged_data[['Player','fantasy_positions','team','GamesPlayedRatio','PrevFantasyPoints','Predicted']]
+    displayed_df_2 = merged_data[['Player','fantasy_positions','team','GamesPlayedRatio','PrevFantasyPoints','Predicted']]
 
+    if 'current_pick' not in st.session_state:
+        st.session_state.current_pick = '1.1'
+    if 'draft_picks' not in st.session_state:
+        st.session_state.draft_picks = []
+    if 'picked_players_mock' not in st.session_state:
+        st.session_state.picked_players_mock = pd.DataFrame()
+    if 'team_players_with_positions_mock' not in st.session_state:
+        st.session_state.team_players_with_positions_mock = pd.DataFrame()
+    if 'draft_board' not in st.session_state:
+        st.session_state.draft_board = displayed_df_2.copy()
+        st.session_state.draft_board['Rank'] = st.session_state.draft_board.index + 1
+    if 'players_turn' not in st.session_state:
+        st.session_state.players_turn = False
 
 
 
@@ -729,13 +795,22 @@ with tab2:
 
 
 
+        if st.button("Update Draft Settings:"): 
+            st.session_state.draft_picks = get_draft_picks_list(num_draft_participants_mock, num_drafting_rounds_mock, draft_picking_position_mock, lost_picks_mock, added_picks_mock)
+            st.session_state.current_pick = "1.1"
+            st.session_state.picked_players_mock = pd.DataFrame()
+            st.session_state.team_players_with_positions_mock = pd.DataFrame()
             
-        draft_picks = get_draft_picks_list(num_draft_participants_mock, num_drafting_rounds_mock, draft_picking_position_mock, lost_picks_mock, added_picks_mock)
+            st.session_state.draft_board = displayed_df_2.copy()
+            st.session_state.draft_board['Rank'] = st.session_state.draft_board.index + 1
+            st.session_state.players_turn = False
+            st.success("Updated Draft settings for current mock draft")
           
 
 
     with col_main:
 
+        col_start_draft, col_player_sel_dropdown, col_confirm_pick = st.columns([2,3.5,2])
 
         def get_random_pick(available_players_df):
             random_weight = np.random.normal(loc=1.0, scale=0.1) 
@@ -755,212 +830,151 @@ with tab2:
             rest_of_dataframe = available_players_df[available_players_df['Rank'] != rank_taken_out]
 
             return [taken_player,rest_of_dataframe]
-            
+        
+        with col_start_draft:
+            if st.button("Start/Continue Draft Picking"):
+                if len(st.session_state.draft_picks) != 0:
+                    if not st.session_state.players_turn:
+                        try:
+                            all_draft_picks = list_of_all_draft_picks(num_drafting_rounds_mock, num_draft_participants_mock)
+                            draft_picks = st.session_state.draft_picks
+                            
+                            rest_of_draft_picks = all_draft_picks[all_draft_picks.index(st.session_state.current_pick):]
 
-        if st.button("Start Draft!"):
-            draft_board = displayed_df.copy()
-            draft_board['Rank'] = draft_board.index + 1
-            test_list = []
-            all_draft_picks = list_of_all_draft_picks(num_drafting_rounds_mock,num_draft_participants_mock)
+                            players_next_draft_pick = draft_picks[0]
+                            draft_picks = draft_picks[1:]
 
-            for i in all_draft_picks:
-                time.sleep(4)
-                if i in draft_picks:
-                    test_list.append(i)
-                    #I gotta create logic to have the user pick a player, then for it to go into a filter. 
+                            picks_to_simulate = rest_of_draft_picks[:rest_of_draft_picks.index(players_next_draft_pick)]
+
+                            for pick in picks_to_simulate:
+                                time.sleep(0.25)
+                                player_taken, st.session_state.draft_board = get_random_pick(st.session_state.draft_board)
+                                st.session_state.picked_players_mock = pd.concat([st.session_state.picked_players_mock, player_taken], ignore_index=True)
+                                st.session_state.current_pick = pick  
+
+                            st.session_state.current_pick = players_next_draft_pick
+                            st.session_state.draft_picks = draft_picks
+                            st.success(f"Draft simulated up to your next pick ({st.session_state.current_pick})!")
+                            st.session_state.players_turn = True
+                        except Exception as e:
+                            st.warning(f"Error during simulation: {e}")
+                    else:
+                        st.warning(f"It is pick {st.session_state.current_pick}, and it is your turn to draft.")
                 else:
-                    player_picked, draft_board = get_random_pick(draft_board)
-                    #I gotta append the player_picked to object to put into the filter
-            
+                    st.success("You are finished with the draft!")
+                    st.session_state.players_turn = False
+
+        with col_player_sel_dropdown:   
+            players = st.session_state.draft_board['Player'].unique()
+            selected_player = st.selectbox("Choose a player:", players)
+
+
+        with col_confirm_pick:
+            if st.button("Lock In Player:"):
+                if st.session_state.players_turn:
+                    confirmed_selected_player = selected_player
+                    dataframe_player_row = st.session_state.draft_board[st.session_state.draft_board['Player'] == confirmed_selected_player].index[0]
+                    selected_row_df = st.session_state.draft_board.loc[[dataframe_player_row]]
+                    st.session_state.draft_board = st.session_state.draft_board.drop(dataframe_player_row)
+                    st.session_state.team_players_with_positions_mock = pd.concat([st.session_state.team_players_with_positions_mock,selected_row_df], ignore_index = True)
+                    st.session_state.players_turn = False
+
+                    all_picks = list_of_all_draft_picks(num_drafting_rounds_mock, num_draft_participants_mock)
+                    current_pick_index = all_picks.index(st.session_state.current_pick)
+                    if current_pick_index + 1 < len(all_picks):
+                        st.session_state.current_pick = all_picks[current_pick_index + 1]
+                else:
+                    st.warning(f"It is not your turn - please click 'Continue Draft Picking' to continue simulating.")
+
+        if test_front_page:
+            st.write(f'These are the players draft picks: {st.session_state.draft_picks}')
+            st.dataframe(st.session_state.picked_players_mock)
+            st.dataframe(st.session_state.team_players_with_positions_mock)
+
+        st.markdown("---")
+        
+        try:
+            pgs = players_for_position("PG",st.session_state.team_players_with_positions_mock)
+            sgs = players_for_position("SG",st.session_state.team_players_with_positions_mock)
+            sfs = players_for_position("SF",st.session_state.team_players_with_positions_mock)
+            pfs = players_for_position("PF",st.session_state.team_players_with_positions_mock)
+            cs = players_for_position("C",st.session_state.team_players_with_positions_mock)
+        except:
+            pgs = []
+            sgs = []
+            sfs = []
+            pfs = []
+            cs = []
+
+
+
+        position_dict = {
+            "PG": pgs,
+            "SG": sgs,
+            "SF": sfs,
+            "PF": pfs,
+            "C": cs
+        }
+
+
+        max_len = max(len(players) for players in position_dict.values())
+
+
+        for pos in position_dict:
+            players = position_dict[pos]
+            position_dict[pos] = players + [""] * (max_len - len(players))
+
+
+        grid_df = pd.DataFrame(position_dict)
+
+        st.dataframe(grid_df)
 
         
 
+        st.markdown("---")
 
+        col_all_players, col_position_players = st.columns([3,2])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        # team_highlighted_names = [
-        #      f"{name} - {position.split(' - ')[1]}"
-        #      for name, position in zip(st.session_state.last_scraped_data, st.session_state.last_scraped_positions)
-        # ]
-
-        # not_team_highlighted_names = [
-        #     f"{name} - {position.split(' - ')[1]}"
-        #     for name, position in zip(st.session_state.last_scraped_data, st.session_state.last_scraped_positions)
-        # ]
-
-        # team_highlighted_names_no_pos = [
-        #     name for name in st.session_state.last_scraped_data
-        # ]
-
-        # not_team_highlighted_names_no_pos = [
-        #     name for name in st.session_state.last_scraped_data
-        # ]
-
-        # team_indicies = [i for i, val in enumerate(st.session_state.last_scraped_draft_locations) if val in draft_picks]
-        # non_team_indicies = [i for i, val in enumerate(st.session_state.last_scraped_draft_locations) if val not in draft_picks]
-
-        # team_highlighted_names = [team_highlighted_names[i] for i in team_indicies]
-        # not_team_highlighted_names = [not_team_highlighted_names[i] for i in non_team_indicies]
-
-        # team_highlighted_names_no_pos = [team_highlighted_names_no_pos[i] for i in team_indicies]
-        # not_team_highlighted_names_no_pos = [not_team_highlighted_names_no_pos[i] for i in non_team_indicies]
-
-        # # Apply the filtering
-        # team_rows_df = displayed_df[displayed_df.apply(is_in_team_highlighted, axis=1)]
-        # team_players_with_positions = team_rows_df[['Player','fantasy_positions']]
-        # #st.write(team_rows_df)
-
-
-        # if test_front_page:
-        #     st.write(team_indicies)
-        #     st.write(non_team_indicies)
-
-
-        # #Previous code for getting team players - not as efficient and had errors. 
-        # # team_players_dataframe = pd.DataFrame(team_highlighted_names_no_pos, columns=['Name'])
-
-        # # uploaded_data_pre_merge = uploaded_data.copy()
-        # # if test_front_page:
-        # #     st.write(uploaded_data_pre_merge)
-
-  
-
-        # # uploaded_data_pre_merge['Abrv Name'] = uploaded_data_pre_merge['full_name'].apply(
-        # #     lambda x: safe_format_name(x)
-        # # )
-
-
-
-        # # team_players_with_positions = team_players_dataframe.merge(
-        # #     uploaded_data_pre_merge[['Abrv Name','full_name','fantasy_positions']],
-        # #     how='left',
-        # #     left_on='Name',
-        # #     right_on='Abrv Name'
-        # # )
-        # # if test_front_page:
-        # #     st.write(team_players_with_positions)
-
-
-        # pgs = players_for_position("PG",team_players_with_positions)
-        # sgs = players_for_position("SG",team_players_with_positions)
-        # sfs = players_for_position("SF",team_players_with_positions)
-        # pfs = players_for_position("PF",team_players_with_positions)
-        # cs = players_for_position("C",team_players_with_positions)
-
-
-
-        # position_dict = {
-        #     "PG": pgs,
-        #     "SG": sgs,
-        #     "SF": sfs,
-        #     "PF": pfs,
-        #     "C": cs
-        # }
-
-
-        # max_len = max(len(players) for players in position_dict.values())
-
-
-        # for pos in position_dict:
-        #     players = position_dict[pos]
-        #     position_dict[pos] = players + [""] * (max_len - len(players))
-
-
-        # grid_df = pd.DataFrame(position_dict)
-
-        # st.dataframe(grid_df)
-
-        
-
-        # st.markdown("---")
-
-        # col_all_players, col_position_players = st.columns([3,2])
-
-        # with col_all_players:
-        #     st.subheader("Full Player List")
-        #     displayed_df.index = displayed_df.index + 1
+        with col_all_players:
+            st.subheader("Full Player List")
+            displayed_df.index = displayed_df.index + 1
             
-        #     styled_df = displayed_df.style.apply(highlight_row, axis=1)
+            styled_df = displayed_df.style.apply(highlight_row_mock, axis=1)
 
-        #     st.dataframe(styled_df, use_container_width=True)
+            st.dataframe(styled_df, use_container_width=True)
 
 
-        # with col_position_players: 
-        #     st.subheader("Position Specific Player List")
+        with col_position_players: 
+            st.subheader("Position Specific Player List")
 
 
             
-        #     positions = st.multiselect(
-        #         "Select Positions",
-        #         ["PG", "SG", "SF", "PF",'C'],
-        #         default=["C"],
-        #     )
+            positions = st.multiselect(
+                "Select Positions ",
+                ["PG", "SG", "SF", "PF",'C'],
+                default=["C"],
+            )
             
-        #     positions_equation = st.selectbox(
-        #         "Select Positions",
-        #         ["AND","OR","NOT"],
-        #         index = 1,
-        #     )
+            positions_equation = st.selectbox(
+                "Select Positions ",
+                ["AND","OR","NOT"],
+                index = 1,
+            )
 
                             
-        #     specific_display = displayed_df.copy()
-        #     specific_display.index = specific_display.index + 1
-        #     specific_display['MeetPositionalRequirement'] = specific_display['fantasy_positions'].apply(ast.literal_eval).apply(lambda player_positions: mark_as_good(player_positions, positions_equation, positions)) 
-        #     specific_display = specific_display[specific_display['MeetPositionalRequirement'] == True]
-        #     specific_display = specific_display.drop('MeetPositionalRequirement', axis=1)
+            specific_display = displayed_df.copy()
+            specific_display.index = specific_display.index + 1
+            specific_display['MeetPositionalRequirement'] = specific_display['fantasy_positions'].apply(ast.literal_eval).apply(lambda player_positions: mark_as_good(player_positions, positions_equation, positions)) 
+            specific_display = specific_display[specific_display['MeetPositionalRequirement'] == True]
+            specific_display = specific_display.drop('MeetPositionalRequirement', axis=1)
 
 
-        #     styled_df_pos = specific_display.style.apply(highlight_row, axis=1)
+            styled_df_pos = specific_display.style.apply(highlight_row_mock, axis=1)
 
-        #     st.dataframe(styled_df_pos, use_container_width=True)
-        # if test_front_page:
-        #     st.write("🔍 Scraped Players:", st.session_state.last_scraped_data)
-        #     st.write("🔍 Scraped Positions:", st.session_state.last_scraped_positions)
-        #     st.write("Scraped Draft Numbers:", st.session_state.last_scraped_draft_locations)
-        # #st.write("Highlighted Entries", highlighted_names)
+            st.dataframe(styled_df_pos, use_container_width=True)
 
 
 
-        # if st.session_state.last_scraped_data:
-        #     if test_front_page:
-        #         st.caption(f"Last updated: {st.session_state.last_scrape_time}")
-        #         st.dataframe(
-        #             {"Pick #": list(range(1, len(st.session_state.last_scraped_data)+1)),
-        #             "Player": st.session_state.last_scraped_data},
-        #             use_container_width=True
-        #         )
-        # else:
-        #     st.info("No data scraped yet.")
     
 
 with tab3:
