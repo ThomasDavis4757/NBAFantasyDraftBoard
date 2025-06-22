@@ -243,6 +243,17 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
+st.markdown("""
+    <style>
+    .card {
+        background-color: #F5F5DC;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        margin-bottom: 1rem;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 # --- URL and Constants ---
 
@@ -863,6 +874,17 @@ with tab2:
                 else:
                     st.success("You are finished with the draft!")
                     st.session_state.players_turn = False
+            if st.button("Reset Mock Draft"):
+                st.session_state.draft_picks = get_draft_picks_list(num_draft_participants_mock, num_drafting_rounds_mock, draft_picking_position_mock, lost_picks_mock, added_picks_mock)
+                st.session_state.current_pick = "1.1"
+                st.session_state.picked_players_mock = pd.DataFrame()
+                st.session_state.team_players_with_positions_mock = pd.DataFrame()
+                
+                st.session_state.draft_board = displayed_df_2.copy()
+                st.session_state.draft_board['Rank'] = st.session_state.draft_board.index + 1
+                st.session_state.players_turn = False
+                st.success("Reset draft board.")
+
 
         with col_player_sel_dropdown:   
             players = st.session_state.draft_board['Player'].unique()
@@ -937,7 +959,7 @@ with tab2:
 
         with col_all_players:
             st.subheader("Full Player List")
-            displayed_df.index = displayed_df.index + 1
+            #displayed_df.index = displayed_df.index
             
             styled_df = displayed_df.style.apply(highlight_row_mock, axis=1)
 
@@ -963,7 +985,7 @@ with tab2:
 
                             
             specific_display = displayed_df.copy()
-            specific_display.index = specific_display.index + 1
+            #specific_display.index = specific_display.index
             specific_display['MeetPositionalRequirement'] = specific_display['fantasy_positions'].apply(ast.literal_eval).apply(lambda player_positions: mark_as_good(player_positions, positions_equation, positions)) 
             specific_display = specific_display[specific_display['MeetPositionalRequirement'] == True]
             specific_display = specific_display.drop('MeetPositionalRequirement', axis=1)
@@ -1057,45 +1079,134 @@ with tab3:
     rankings_folder = "../../data/rankings"
     available_rankings = [f for f in os.listdir(rankings_folder) if f.endswith(".csv")]
 
+    if 'current_model' not in st.session_state:
+        st.session_state.current_model = pd.DataFrame()
+    if 'show_player_comp' not in st.session_state:
+        st.session_state.show_player_comp = False
+    if 'player1' not in st.session_state:
+        st.session_state.player1 = ""
+    if 'player2' not in st.session_state:
+        st.session_state.player2 = ""
+    if 'player3' not in st.session_state:
+        st.session_state.player3 = ""
+    if 'player4' not in st.session_state:
+        st.session_state.player4 = ""
+
+
+    all_player_data = pd.read_csv("../../data/seasonfullstatsreal/playerbasedatatotal.csv")
+    only2025 = all_player_data[all_player_data['Season'] == 2025]
+    player_names_2025 = only2025['Player'].unique().tolist()
+    
+
 
     with col_maintab3:
+        st.session_state.show_player_comp = st.toggle("Player Comparison", value = False)
+        if st.session_state.show_player_comp:
+            selected_year = st.number_input('Years', min_value = 2003, max_value = 2025, value = 2025)
+            selected_data = all_player_data[all_player_data['Season'] == selected_year]
+
+            col1, col2, col3, col4 = st.columns([1,1,1,1], border = True)
+            with col1:
+                
+                st.session_state.player1 = st.selectbox("Player 1", player_names_2025, index=player_names_2025.index(st.session_state.player1) if st.session_state.player1 in player_names_2025 else 0)
+                player1 = st.session_state.player1
+                playerid1 = only2025[only2025['Player'] == player1].iloc[0]['PlayerID']
+                st.image(f"https://www.basketball-reference.com/req/202106291/images/headshots/{playerid1}.jpg")
+                p1Row = selected_data[selected_data['Player'] == player1].iloc[0]
+                stats_df1 = pd.DataFrame({
+                    "Stat": ["Age", "Team", "Years of Experience","PercGamesMade", "Fantasy Points", "Points", "Assists", "Rebounds", "Steals", "Blocks", "Turnovers", "3PM"],
+                    "Value": [int(p1Row["Age"]), p1Row["Team"], p1Row["YearsExperience"], round(p1Row['S_GamesPlayed'] / p1Row['TotalGamesSeason'],2) * 100,  round(p1Row["S_FantasyPoints"], 2), round(p1Row["S_AvgPoints"], 2), round(p1Row["S_AvgAssists"], 2), round(p1Row["S_AvgRebounds"], 2), round(p1Row["S_AvgSteals"], 2), round(p1Row["S_AvgBlocks"], 2), round(p1Row["S_AvgTurnovers"], 2), round(p1Row["S_Avg3P"], 2)]
+                })
+                st.markdown(stats_df1.to_html(index=False), unsafe_allow_html=True)            
+            with col2:
+
+                st.session_state.player2 = st.selectbox("Player 2", player_names_2025, index=player_names_2025.index(st.session_state.player2) if st.session_state.player2 in player_names_2025 else 0)
+                player2 = st.session_state.player2               
+                playerid2 = only2025[only2025['Player'] == player2].iloc[0]['PlayerID']
+                st.image(f"https://www.basketball-reference.com/req/202106291/images/headshots/{playerid2}.jpg")
+                p2Row = selected_data[selected_data['Player'] == player2].iloc[0]
+                stats_df2 = pd.DataFrame({
+                    "Stat": ["Age", "Team", "Years of Experience","PercGamesMade", "Fantasy Points", "Points", "Assists", "Rebounds", "Steals", "Blocks", "Turnovers", "3PM"],
+                    "Value": [int(p2Row["Age"]), p2Row["Team"], p2Row["YearsExperience"], round(p2Row['S_GamesPlayed'] / p2Row['TotalGamesSeason'],2) * 100, round(p2Row["S_FantasyPoints"], 2), round(p2Row["S_AvgPoints"], 2), round(p2Row["S_AvgAssists"], 2), round(p2Row["S_AvgRebounds"], 2), round(p2Row["S_AvgSteals"], 2), round(p2Row["S_AvgBlocks"], 2), round(p2Row["S_AvgTurnovers"], 2), round(p2Row["S_Avg3P"], 2)]
+                })
+                st.markdown(stats_df2.to_html(index=False), unsafe_allow_html=True)
+            with col3:
+                st.session_state.player3 = st.selectbox("Player 3", player_names_2025, index=player_names_2025.index(st.session_state.player3) if st.session_state.player3 in player_names_2025 else 0)
+                player3 = st.session_state.player3
+                playerid3 = only2025[only2025['Player'] == player3].iloc[0]['PlayerID']
+                st.image(f"https://www.basketball-reference.com/req/202106291/images/headshots/{playerid3}.jpg")   
+                p3Row = selected_data[selected_data['Player'] == player3].iloc[0]
+                stats_df3 = pd.DataFrame({
+                    "Stat": ["Age", "Team", "Years of Experience","PercGamesMade", "Fantasy Points", "Points", "Assists", "Rebounds", "Steals", "Blocks", "Turnovers", "3PM"],
+                    "Value": [int(p3Row["Age"]), p3Row["Team"], p3Row["YearsExperience"], round(p3Row['S_GamesPlayed'] / p3Row['TotalGamesSeason'],2) * 100, round(p3Row["S_FantasyPoints"], 2), round(p3Row["S_AvgPoints"], 2), round(p3Row["S_AvgAssists"], 2), round(p3Row["S_AvgRebounds"], 2), round(p3Row["S_AvgSteals"], 2), round(p3Row["S_AvgBlocks"], 2), round(p3Row["S_AvgTurnovers"], 2), round(p3Row["S_Avg3P"], 2)]
+                }) 
+                st.markdown(stats_df3.to_html(index=False), unsafe_allow_html=True)      
+            with col4:
+                
+                st.session_state.player4 = st.selectbox("Player 4", player_names_2025, index=player_names_2025.index(st.session_state.player4) if st.session_state.player4 in player_names_2025 else 0)
+                player4 = st.session_state.player4
+                playerid4 = only2025[only2025['Player'] == player4].iloc[0]['PlayerID']
+                st.image(f"https://www.basketball-reference.com/req/202106291/images/headshots/{playerid4}.jpg")
+                p4Row = selected_data[selected_data['Player'] == player4].iloc[0]
+                stats_df4 = pd.DataFrame({
+                    "Stat": ["Age", "Team", "Years of Experience","PercGamesMade", "Fantasy Points", "Points", "Assists", "Rebounds", "Steals", "Blocks", "Turnovers", "3PM"],
+                    "Value": [int(p4Row["Age"]), p4Row["Team"], p4Row["YearsExperience"], round(p4Row['S_GamesPlayed'] / p4Row['TotalGamesSeason'],2) * 100, round(p4Row["S_FantasyPoints"], 2), round(p4Row["S_AvgPoints"], 2), round(p4Row["S_AvgAssists"], 2), round(p4Row["S_AvgRebounds"], 2), round(p4Row["S_AvgSteals"], 2), round(p4Row["S_AvgBlocks"], 2), round(p4Row["S_AvgTurnovers"], 2), round(p4Row["S_Avg3P"], 2)]
+                }) 
+                st.markdown(stats_df4.to_html(index=False), unsafe_allow_html=True)  
+
+        col_player_ranking, col_player_model = st.columns([4,2.5])
+
+        with col_player_ranking:
+            custom_style = """
+            .sortable-component {
+                border: 3px solid #6495ED;
+                border-radius: 10px;
+                padding: 5px;
+            }
+            .sortable-container {
+                background-color: #F0F0F0;
+                counter-reset: item;
+            }
+            .sortable-container-header {
+                background-color: #FFBFDF;
+                padding-left: 1rem;
+            }
+            .sortable-container-body {
+                background-color: #F0F0F0;
+            }
+            .sortable-item, .sortable-item:hover {
+                background-color: #6495ED;
+                color: #FFFFFF;
+                font-weight: bold;
+                padding: 8px;
+                border-radius: 6px;
+            }
+            .sortable-item::before {
+                content: counter(item) ". ";
+                counter-increment: item;
+            }
+            """
+
+            sorted_items = sort_items(player_list, multi_containers=False, custom_style=custom_style, direction="vertical")
+            st.session_state["player_list"] = sorted_items
+            st.write("🔢 Sorted Items:")
+            # for i, player in enumerate(sorted_items, start=1):
+            #     st.write(f"{i}. {player}")
 
 
-        custom_style = """
-        .sortable-component {
-            border: 3px solid #6495ED;
-            border-radius: 10px;
-            padding: 5px;
-        }
-        .sortable-container {
-            background-color: #F0F0F0;
-            counter-reset: item;
-        }
-        .sortable-container-header {
-            background-color: #FFBFDF;
-            padding-left: 1rem;
-        }
-        .sortable-container-body {
-            background-color: #F0F0F0;
-        }
-        .sortable-item, .sortable-item:hover {
-            background-color: #6495ED;
-            color: #FFFFFF;
-            font-weight: bold;
-            padding: 8px;
-            border-radius: 6px;
-        }
-        .sortable-item::before {
-            content: counter(item) ". ";
-            counter-increment: item;
-        }
-        """
 
-        sorted_items = sort_items(player_list, multi_containers=False, custom_style=custom_style, direction="vertical")
-        st.session_state["player_list"] = sorted_items
-        st.write("🔢 Sorted Items:")
-        for i, player in enumerate(sorted_items, start=1):
-            st.write(f"{i}. {player}")
+        with col_player_model:
+            model_preset = st.selectbox("🔁 Load Existing Model", options=["None"] + available_rankings)
+
+            if model_preset != "None" and st.button("📥 Load Model Preset"):
+                st.session_state.current_model = pd.read_csv(os.path.join(rankings_folder, model_preset))[['Player','Predicted']]
+                st.session_state.current_model.index = st.session_state.current_model.index + 1
+                st.success(f"Model is loaded.") 
+                st.rerun()
+            st.dataframe(st.session_state.current_model)
+            
+
+            
 
 
 
