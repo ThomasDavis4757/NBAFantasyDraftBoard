@@ -17,10 +17,52 @@ import ast
 import json
 import numpy as np
 import time
+from pandas.api.types import is_numeric_dtype
+from sklearn.impute import SimpleImputer
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.preprocessing import StandardScaler
+from sklearn.tree import DecisionTreeRegressor
 
 #print(streamlit_sortables.__version__)
 
 test_front_page = False
+
+model_columns = [
+    'Unnamed: 0.2', 'Unnamed: 0.1', 'Unnamed: 0', 'Player', 'Ht', 'Wt', 'Birth Date', 'Colleges', 'PlayerID',
+    'RecuitRank', 'TeamDrafted', 'PickDrafted', 'Starters', 'S_TotalWins', 'S_GamesPlayed', 'S_AvgPoints',
+    'S_AvgAssists', 'S_AvgRebounds', 'S_AvgSteals', 'S_AvgBlocks', 'S_AvgTurnovers', 'S_AvgFG', 'S_AvgFGA',
+    'S_Avg3P', 'S_Avg3PA', 'S_AvgFT', 'S_AvgFTA', 'S_FantasyPoints', 'S_MinutesPlayed', 'S_GamePointDiff',
+    'S_StartingCount', 'S_Top7Team', 'Season', 'TotalGamesSeason', 'HS_TotalWins', 'HS_GamesPlayed',
+    'HS_AvgPoints', 'HS_AvgAssists', 'HS_AvgRebounds', 'HS_AvgSteals', 'HS_AvgBlocks', 'HS_AvgTurnovers',
+    'HS_AvgFG', 'HS_AvgFGA', 'HS_Avg3P', 'HS_Avg3PA', 'HS_AvgFT', 'HS_AvgFTA', 'HS_FantasyPoints',
+    'HS_MinutesPlayed', 'HS_GamePointDiff', 'HS_StartingCount', 'HS_Top7Team', 'Age', 'PrimaryPosition',
+    'Team', 'NewPos1', 'NewPos2', 'NewPos3', 'FirstSeason', 'FirstSeasonYear', 'YearsExperience',
+    'PickDraftedNumber', 'S_TotalWins_prevyear', 'S_GamesPlayed_prevyear', 'S_AvgPoints_prevyear',
+    'S_AvgAssists_prevyear', 'S_AvgRebounds_prevyear', 'S_AvgSteals_prevyear', 'S_AvgBlocks_prevyear',
+    'S_AvgTurnovers_prevyear', 'S_AvgFG_prevyear', 'S_AvgFGA_prevyear', 'S_Avg3P_prevyear', 'S_Avg3PA_prevyear',
+    'S_AvgFT_prevyear', 'S_AvgFTA_prevyear', 'S_FantasyPoints_prevyear', 'S_MinutesPlayed_prevyear',
+    'S_GamePointDiff_prevyear', 'S_StartingCount_prevyear', 'S_Top7Team_prevyear', 'TotalGamesSeason_prevyear',
+    'S_TotalWins_prev5years', 'S_GamesPlayed_prev5years', 'S_AvgPoints_prev5years', 'S_AvgAssists_prev5years',
+    'S_AvgRebounds_prev5years', 'S_AvgSteals_prev5years', 'S_AvgBlocks_prev5years', 'S_AvgTurnovers_prev5years',
+    'S_AvgFG_prev5years', 'S_AvgFGA_prev5years', 'S_Avg3P_prev5years', 'S_Avg3PA_prev5years', 'S_AvgFT_prev5years',
+    'S_AvgFTA_prev5years', 'S_FantasyPoints_prev5years', 'S_MinutesPlayed_prev5years',
+    'S_GamePointDiff_prev5years', 'S_StartingCount_prev5years', 'S_Top7Team_prev5years',
+    'TotalGamesSeason_prev5years', 'S_TotalWins_futureyear', 'S_GamesPlayed_futureyear',
+    'S_AvgPoints_futureyear', 'S_AvgAssists_futureyear', 'S_AvgRebounds_futureyear', 'S_AvgSteals_futureyear',
+    'S_AvgBlocks_futureyear', 'S_AvgTurnovers_futureyear', 'S_AvgFG_futureyear', 'S_AvgFGA_futureyear',
+    'S_Avg3P_futureyear', 'S_Avg3PA_futureyear', 'S_AvgFT_futureyear', 'S_AvgFTA_futureyear',
+    'S_FantasyPoints_futureyear', 'S_MinutesPlayed_futureyear', 'S_GamePointDiff_futureyear',
+    'S_StartingCount_futureyear', 'S_Top7Team_futureyear', 'TotalGamesSeason_futureyear', 'TargetVariable'
+]
+
+
+
 
     ####################################### Functions ##################################
 
@@ -64,13 +106,18 @@ def get_draft_picks_list(draft_participants, rounds, picking_pos, not_owned_dps,
     list_of_positions = []
     for i in range(int(rounds)):
         if (i+1) % 2 != 0:
-            list_of_positions.append(str(i+1) + "." + str(picking_pos))
+            list_of_positions.append(str(i+1) + "." + str(int(picking_pos)))
         else:
-            list_of_positions.append(str(i+1) + "." + str(draft_participants - (picking_pos - 1)))
+            list_of_positions.append(str(i+1) + "." + str(int(draft_participants) - (int(picking_pos) - 1)))
     
-
-    list_not_owned = not_owned_dps.split(',')
-    list_newly_owned = newly_owned_dps.split(',')
+    try:
+        list_not_owned = not_owned_dps.split(',')
+    except:
+        list_not_owned = []
+    try:
+        list_newly_owned = newly_owned_dps.split(',')
+    except:
+        list_newly_owned = []
     cleaned_not_owned = []
     cleaned_newly_owned = []
     for i, j in zip(list_not_owned, list_newly_owned):
@@ -158,15 +205,100 @@ def is_in_team_highlighted(row):
     player_team_key = f"{formatted_name} - {row['team']}"
     return player_team_key in team_highlighted_names
 
+########################################################################################################################################################
 
 def list_of_all_draft_picks(rounds,num_participants):
     total_picks = rounds * num_participants
     list_of_dps = []
-    for i in range(rounds):
-        for j in range(num_participants):
+    for i in range(int(rounds)):
+        for j in range(int(num_participants)):
             list_of_dps.append(str(i+1) + '.' + str(j+1))
     return list_of_dps
 
+########################################################################################################################################################
+
+def style_stats_df(stats_df, ranks_list):
+    """Apply color styling to the 'Value' column based on provided rank list."""
+    def color_row(val, rank):
+        color = RANK_COLORS.get(rank, "white")
+        return f'<span style="color:{color}">{val}</span>'
+
+    styled_rows = []
+    for i, row in stats_df.iterrows():
+        stat = row['Stat']
+        value = row['Value']
+        rank = ranks_list[i]
+        styled_val = color_row(value, rank)
+        styled_rows.append((stat, styled_val))
+
+    styled_df = pd.DataFrame(styled_rows, columns=["Stat", "Value"])
+    return styled_df.to_html(index=False, escape=False)
+
+########################################################################################################################################################
+
+def get_player_ranks_for_index(player_index: int, stat_ranks: dict) -> list:
+    # These must be in the same order as the 'Stat' column in your stats_df
+    stat_order = ["Age", "Team", "Years of Experience", "PercGamesMade", "Fantasy Points", "Points", "Assists", "Rebounds", "Steals", "Blocks", "Turnovers", "3PM"]
+    ranks = []
+    for stat in stat_order:
+        if stat == "Team":  # Non-numeric, no rank
+            ranks.append(None)
+        elif stat == "PercGamesMade":
+            ranks.append(stat_ranks["PercGamesMade"][player_index])
+        elif stat == "Years of Experience":
+            ranks.append(stat_ranks["YearsExperience"][player_index])
+        else:
+            ranks.append(stat_ranks[stat][player_index])
+    return ranks
+
+########################################################################################################################################################
+
+def add_prediction_value(df, games_made_weight = 0.0, stat_weights = [0.5,1,1,-1,2,2,0.5]):
+    df = df.copy()
+    
+#     Stat weight List
+#     first_number - points
+#     second_number - Assists
+#     third number - Rebounds
+#     fourth number - Turnovers
+#     fifth number - steals
+#     sixth number - blocks
+#     seventh number - 3pointers
+
+    
+    
+    df['TargetVariable'] = df['S_FantasyPoints_futureyear'] - (
+        (df['S_AvgPoints_futureyear'] * 0.5) +
+        (df['S_AvgAssists_futureyear'] * 1) +
+        (df['S_AvgRebounds_futureyear'] * 1) +
+        (df['S_AvgTurnovers_futureyear'] * -1) +
+        (df['S_AvgSteals_futureyear'] * 2) +
+        (df['S_AvgBlocks_futureyear'] * 2) +
+        (df['S_Avg3P_futureyear'] * 0.5) 
+    )
+    
+    df['TargetVariable'] = df['TargetVariable'] + (
+        (df['S_AvgPoints_futureyear'] * stat_weights[0]) +
+        (df['S_AvgAssists_futureyear'] * stat_weights[1]) +
+        (df['S_AvgRebounds_futureyear'] * stat_weights[2]) +
+        (df['S_AvgTurnovers_futureyear'] * stat_weights[5]) +
+        (df['S_AvgSteals_futureyear'] * stat_weights[3]) +
+        (df['S_AvgBlocks_futureyear'] * stat_weights[4]) +
+        (df['S_Avg3P_futureyear'] * stat_weights[6]) 
+    )
+    
+    df['TargetVariable'] = (
+    (df['TargetVariable'] * (1 - (games_made_weight / 100))) +
+    (df['TargetVariable'] * (games_made_weight / 100) * (df['S_GamesPlayed_futureyear'] / df['TotalGamesSeason_futureyear']))
+    )
+    
+#     df['S_PercGamesMade'] = df['S_GamesPlayed'] / df['TotalGamesSeason']
+#     df['S_PercGamesMade_prevyear'] = df['S_GamesPlayed_prevyear'] / df['TotalGamesSeason_prevyear']
+#     df['S_PercGamesMade_prev5years'] = df['S_GamesPlayed_prev5years'] / df['TotalGamesSeason_prev5years']
+    
+    
+    return df
+   
 
 # Setup layout
 st.set_page_config(layout="wide")
@@ -291,10 +423,10 @@ tab1, tab2, tab3, tab4 = st.tabs(["Real Draftboard", "Mock Draftboard", "PlayerR
 
 
 with tab1:
-    st.subheader("🏀 Live Draft Board (Sleeper)")
+    st.title("🏀 Live Draft Board (Sleeper)")
 
     # Create two columns: a thin "sidebar" and a wide main section
-    col_sidebar, col_main = st.columns([1, 4])
+    col_sidebar, col_main = st.columns([1, 4], border = True)
 
     #sleeper API data (for fantasy accurate positions and teams)
     uploaded_data = pd.read_csv('../../data/sleeperapidata/updatedsleeperapidata1.csv')
@@ -526,6 +658,7 @@ with tab1:
                     scraped_positions_list = [scrapos.text for scrapos in scraped_positions]
 
                     st.session_state.last_scraped_data = names
+                    st.write(names)
                     st.session_state.last_scraped_positions = scraped_positions_list
 
                     st.session_state.last_scrape_time = datetime.now().strftime('%H:%M:%S')
@@ -683,11 +816,11 @@ with tab1:
 
 # Placeholder tabs
 with tab2:
-    st.subheader("Mock Draftboard (Coming Soon)")
+    st.title("Mock Draftboard")
 
 
     # Create two columns: a thin "sidebar" and a wide main section
-    col_sidebar, col_main = st.columns([1, 4])
+    col_sidebar, col_main = st.columns([1, 4], border = True)
 
     #sleeper API data (for fantasy accurate positions and teams)
     uploaded_data = pd.read_csv('../../data/sleeperapidata/updatedsleeperapidata1.csv')
@@ -760,6 +893,17 @@ with tab2:
         st.session_state.draft_board['Rank'] = st.session_state.draft_board.index + 1
     if 'players_turn' not in st.session_state:
         st.session_state.players_turn = False
+    if 'num_participants' not in st.session_state:
+        st.session_state.num_participants = 8
+    if 'draft_pos' not in st.session_state:
+        st.session_state.draft_pos = 1
+    if 'rounds' not in st.session_state:
+        st.session_state.rounds = 16
+    if 'lost_picks' not in st.session_state:
+        st.session_state.lost_picks = ""
+    if 'added_picks' not in st.session_state:
+        st.session_state.added_picks = ""
+
 
 
 
@@ -769,20 +913,40 @@ with tab2:
     with col_sidebar:
         st.markdown("### 🛠️ Controls")
 
-        num_draft_participants_mock = st.number_input("Number of Draft Participants:", min_value = 1, max_value = 32,value = 8)
-        draft_picking_position_mock = st.number_input("Draft Position", min_value = 1, max_value = num_draft_participants_mock, value = 1)
-        num_drafting_rounds_mock = st.number_input("Number of rounds", min_value = 1, max_value = 20, value = 16)
-        lost_picks_mock = st.text_input("Enter picks you do NOT have anymore (traded away) ")
-        added_picks_mock = st.text_input("Enter picks you have aquired (gotten from trading) ")
+        num_participants_mock = st.number_input("Number of Draft Participants:", min_value = 1, max_value = 32,value = int(st.session_state.num_participants))
+        draft_pos_mock = st.number_input("Draft Position", min_value = 1, max_value = int(st.session_state.num_participants), value = int(st.session_state.draft_pos))
+        rounds_mock = st.number_input("Number of rounds", min_value = 1, max_value = 20, value = int(st.session_state.rounds))
+        lost_picks_mock = st.text_input("Enter picks you do NOT have anymore (traded away) ",value= st.session_state.lost_picks)
+        added_picks_mock = st.text_input("Enter picks you have aquired (gotten from trading) ", value= st.session_state.added_picks)
         st.text("Must be in 'x.x' format, or 'x.x, x.x', or empty.") 
 
+        if st.button("Update Draft Settings:"): 
+            st.session_state.draft_picks = get_draft_picks_list(st.session_state.num_participants, st.session_state.rounds, st.session_state.draft_pos, st.session_state.lost_picks, st.session_state.added_picks)
 
-        with st.popover("Save Draft Settings"):
+            st.session_state.current_pick = "1.1"
+            st.session_state.picked_players_mock = pd.DataFrame()
+            st.session_state.team_players_with_positions_mock = pd.DataFrame()
+            
+            st.session_state.draft_board = displayed_df_2.copy()
+            st.session_state.draft_board['Rank'] = st.session_state.draft_board.index + 1
+            st.session_state.players_turn = False
+
+            st.session_state.num_participants = num_participants_mock
+            st.session_state.draft_pos = draft_pos_mock
+            st.session_state.rounds = rounds_mock
+            st.session_state.lost_picks = lost_picks_mock
+            st.session_state.added_picks = added_picks_mock
+            st.success("Updated Draft settings for current mock draft")
+            st.rerun()
+
+        st.markdown("---")
+
+        with st.popover("Save Current Draft Settings"):
             draft_setting_name_mock = st.text_input("Enter file name to save as. ")
 
-            st.markdown(f"Number of Participants: {num_draft_participants_mock}")
-            st.markdown(f"Your Pick Location: {draft_picking_position_mock}")
-            st.markdown(f"Rounds: {num_drafting_rounds_mock}")
+            st.markdown(f"Number of Participants: {num_participants_mock}")
+            st.markdown(f"Your Pick Location: {draft_pos_mock}")
+            st.markdown(f"Rounds: {rounds_mock}")
             if len(lost_picks_mock) == 0:
                 st.markdown(f"Didn't lose any picks.")
             else:
@@ -793,9 +957,9 @@ with tab2:
                 st.markdown(f"New picks that you gained: {added_picks_mock}")
             if st.button("Confirm and save:"):
                 settings = {
-                    "num_drafting_participants": num_draft_participants_mock,
-                    "draft_picking_position": draft_picking_position_mock,
-                    "num_drafting_rounds": num_drafting_rounds_mock,
+                    "num_drafting_participants": num_participants_mock,
+                    "draft_picking_position": draft_pos_mock,
+                    "num_drafting_rounds": rounds_mock,
                     "lost_picks": lost_picks_mock,
                     "added_picks": added_picks_mock
                 }
@@ -804,10 +968,19 @@ with tab2:
                 df_mock.to_csv(f"../../data/draft_settings/{draft_setting_name_mock}.csv")
                 st.success("Successfully saved to file!")
 
-
-
-        if st.button("Update Draft Settings:"): 
-            st.session_state.draft_picks = get_draft_picks_list(num_draft_participants_mock, num_drafting_rounds_mock, draft_picking_position_mock, lost_picks_mock, added_picks_mock)
+        st.markdown("---")
+        draftsettings_folder = "../../data/draft_settings"
+        available_draftsettings = [f for f in os.listdir(draftsettings_folder) if f.endswith(".csv")]
+        draftsettings_preset = st.selectbox("🔁 Load Existing Draft Settings", options=["None"] + available_draftsettings)
+        
+        if draftsettings_preset != "None" and st.button("📥 Load Ranking Preset"):
+            draft_settings_df = pd.read_csv(os.path.join(draftsettings_folder, draftsettings_preset))
+            st.session_state.num_participants = draft_settings_df.iloc[0]['num_drafting_participants']
+            st.session_state.draft_pos = draft_settings_df.iloc[0]['draft_picking_position']
+            st.session_state.rounds = draft_settings_df.iloc[0]['num_drafting_rounds']
+            st.session_state.lost_picks = draft_settings_df.iloc[0]['lost_picks']
+            st.session_state.added_picks= draft_settings_df.iloc[0]['added_picks']
+            st.session_state.draft_picks = get_draft_picks_list(st.session_state.num_participants, st.session_state.rounds, st.session_state.draft_pos, st.session_state.lost_picks, st.session_state.added_picks)
             st.session_state.current_pick = "1.1"
             st.session_state.picked_players_mock = pd.DataFrame()
             st.session_state.team_players_with_positions_mock = pd.DataFrame()
@@ -816,10 +989,29 @@ with tab2:
             st.session_state.draft_board['Rank'] = st.session_state.draft_board.index + 1
             st.session_state.players_turn = False
             st.success("Updated Draft settings for current mock draft")
+            st.success(f"Draft Settings have been updated.") 
+            st.rerun()
+
+
+
+
           
 
 
     with col_main:
+        
+        displaying_draft_settings_df = pd.DataFrame([
+            {
+                "Participants": int(st.session_state.num_participants),
+                "Rounds": int(st.session_state.rounds),
+                "Your Draft Position": int(st.session_state.draft_pos),
+                "Lost Picks": st.session_state.lost_picks,
+                "Gained Picks": st.session_state.added_picks
+            }
+        ])
+        st.text("Mock Draft Current Settings")
+        st.table(displaying_draft_settings_df)
+        st.markdown("---")
 
         col_start_draft, col_player_sel_dropdown, col_confirm_pick = st.columns([2,3.5,2])
 
@@ -846,9 +1038,10 @@ with tab2:
             if st.button("Start/Continue Draft Picking"):
                 if len(st.session_state.draft_picks) != 0:
                     if not st.session_state.players_turn:
-                        try:
-                            all_draft_picks = list_of_all_draft_picks(num_drafting_rounds_mock, num_draft_participants_mock)
+                        # try:
+                            all_draft_picks = list_of_all_draft_picks(st.session_state.rounds, st.session_state.num_participants)
                             draft_picks = st.session_state.draft_picks
+                            
                             
                             rest_of_draft_picks = all_draft_picks[all_draft_picks.index(st.session_state.current_pick):]
 
@@ -867,15 +1060,15 @@ with tab2:
                             st.session_state.draft_picks = draft_picks
                             st.success(f"Draft simulated up to your next pick ({st.session_state.current_pick})!")
                             st.session_state.players_turn = True
-                        except Exception as e:
-                            st.warning(f"Error during simulation: {e}")
+                        # except Exception as e:
+                        #     st.warning(f"Error during simulation: {e}")
                     else:
                         st.warning(f"It is pick {st.session_state.current_pick}, and it is your turn to draft.")
                 else:
                     st.success("You are finished with the draft!")
                     st.session_state.players_turn = False
             if st.button("Reset Mock Draft"):
-                st.session_state.draft_picks = get_draft_picks_list(num_draft_participants_mock, num_drafting_rounds_mock, draft_picking_position_mock, lost_picks_mock, added_picks_mock)
+                st.session_state.draft_picks = get_draft_picks_list(st.session_state.num_participants, st.session_state.rounds, st.session_state.draft_pos, st.session_state.lost_picks, st.session_state.added_picks)
                 st.session_state.current_pick = "1.1"
                 st.session_state.picked_players_mock = pd.DataFrame()
                 st.session_state.team_players_with_positions_mock = pd.DataFrame()
@@ -901,17 +1094,17 @@ with tab2:
                     st.session_state.team_players_with_positions_mock = pd.concat([st.session_state.team_players_with_positions_mock,selected_row_df], ignore_index = True)
                     st.session_state.players_turn = False
 
-                    all_picks = list_of_all_draft_picks(num_drafting_rounds_mock, num_draft_participants_mock)
+                    all_picks = list_of_all_draft_picks(rounds_mock, num_participants_mock)
                     current_pick_index = all_picks.index(st.session_state.current_pick)
                     if current_pick_index + 1 < len(all_picks):
                         st.session_state.current_pick = all_picks[current_pick_index + 1]
                 else:
                     st.warning(f"It is not your turn - please click 'Continue Draft Picking' to continue simulating.")
 
-        if test_front_page:
-            st.write(f'These are the players draft picks: {st.session_state.draft_picks}')
-            st.dataframe(st.session_state.picked_players_mock)
-            st.dataframe(st.session_state.team_players_with_positions_mock)
+        # if True:
+        #     st.write(f'These are the players draft picks: {st.session_state.draft_picks}')
+        #     st.dataframe(st.session_state.picked_players_mock)
+        #     st.dataframe(st.session_state.team_players_with_positions_mock)
 
         st.markdown("---")
         
@@ -953,7 +1146,6 @@ with tab2:
 
         
 
-        st.markdown("---")
 
         col_all_players, col_position_players = st.columns([3,2])
 
@@ -1000,81 +1192,83 @@ with tab2:
     
 
 with tab3:
-    st.subheader("Player Rankings (Coming Soon)")
-    st.title("🧩 Drag and Drop List Example")
+    st.title("Player Rankings")
+
 
     col_sidebartab3, col_maintab3 = st.columns([2, 5])
 
+    def define_player_list_sortable():
+        folder_path = '../../data/current_ranking'
+        csv_files = [f for f in os.listdir(folder_path) if f.endswith('.csv')]
 
-    folder_path = '../../data/current_ranking'
-    csv_files = [f for f in os.listdir(folder_path) if f.endswith('.csv')]
+        if csv_files:
+            csv_path = os.path.join(folder_path, csv_files[0])
+            rankingmodel = pd.read_csv(csv_path)
+            current_ranking_name = os.path.splitext(csv_files[0])[0]
+            #print(f"Loaded: {csv_files[0]}")
+        else:
+            print("No CSV files found.")
 
-    if csv_files:
-        csv_path = os.path.join(folder_path, csv_files[0])
-        rankingmodel = pd.read_csv(csv_path)
-        current_ranking_name = os.path.splitext(csv_files[0])[0]
-        #print(f"Loaded: {csv_files[0]}")
-    else:
-        print("No CSV files found.")
+        uploaded_data = pd.read_csv('../../data/sleeperapidata/updatedsleeperapidata1.csv')
+        multi_weights = pd.read_csv('../../data/currentweight/currentpointvalues.csv')
 
-    uploaded_data = pd.read_csv('../../data/sleeperapidata/updatedsleeperapidata1.csv')
-    multi_weights = pd.read_csv('../../data/currentweight/currentpointvalues.csv')
+        reference_names = uploaded_data['full_name'].dropna().unique().tolist()
 
-    reference_names = uploaded_data['full_name'].dropna().unique().tolist()
+        def get_best_match(name, reference_list, threshold=15):
+            match = process.extractOne(name, reference_list, scorer=fuzz.token_sort_ratio)
+            if match and match[1] >= threshold:
+                return match[0]
+            return None 
 
-    def get_best_match(name, reference_list, threshold=25):
-        match = process.extractOne(name, reference_list, scorer=fuzz.token_sort_ratio)
-        if match and match[1] >= threshold:
-            return match[0]
-        return None 
-
-    rankingmodel['Player'] = rankingmodel['Player'].apply(lambda name: get_best_match(name, reference_names))
-
-
-    merged_data = rankingmodel.merge(
-        uploaded_data[['full_name','fantasy_positions','team']],
-        how='left',
-        left_on='Player',
-        right_on='full_name'
-    )
+        rankingmodel['Player'] = rankingmodel['Player'].apply(lambda name: get_best_match(name, reference_names))
 
 
+        merged_data = rankingmodel.merge(
+            uploaded_data[['full_name','fantasy_positions','team']],
+            how='left',
+            left_on='Player',
+            right_on='full_name'
+        )
 
-    merged_data['FirstHalfDisplay'] = (
-        merged_data['full_name'].astype(str) + " | " +
-        merged_data['fantasy_positions'].astype(str) + " | " +
-        merged_data['team'].astype(str)
-    )
 
-    merged_data['SecondHalfDisplay'] = merged_data['S_FantasyPoints'] - (
-    (merged_data['S_AvgPoints'] * 0.5) +
-    (merged_data['S_AvgAssists'] * 1) +
-    (merged_data['S_AvgRebounds'] * 1) +
-    (merged_data['S_AvgTurnovers'] * -1) +
-    (merged_data['S_AvgSteals'] * 2) +
-    (merged_data['S_AvgBlocks'] * 2) +
-    (merged_data['S_Avg3P'] * 0.5)
-    )
 
-    merged_data['SecondHalfDisplay'] = merged_data['SecondHalfDisplay'] + (
-        (merged_data['S_AvgPoints'] * multi_weights['Points'].iloc[0]) +
-        (merged_data['S_AvgAssists'] * multi_weights['Assists'].iloc[0]) +
-        (merged_data['S_AvgRebounds'] * multi_weights['Rebounds'].iloc[0]) +
-        (merged_data['S_AvgTurnovers'] * multi_weights['Turnovers'].iloc[0]) +
-        (merged_data['S_AvgSteals'] * multi_weights['Steals'].iloc[0]) +
-        (merged_data['S_AvgBlocks'] * multi_weights['Blocks'].iloc[0]) +
-        (merged_data['S_Avg3P'] * multi_weights['ThreePointers'].iloc[0])
-    )
+        merged_data['FirstHalfDisplay'] = (
+            merged_data['full_name'].astype(str) + " | " +
+            merged_data['fantasy_positions'].astype(str) + " | " +
+            merged_data['team'].astype(str)
+        )
 
-    merged_data['SecondHalfDisplay'] = (
-        (merged_data['SecondHalfDisplay'] * (1 - (multi_weights['GamesMadeWeight'].iloc[0] / 100))) +
-        (merged_data['SecondHalfDisplay'] * (multi_weights['GamesMadeWeight'].iloc[0] / 100) * (merged_data['S_GamesPlayed'] / merged_data['TotalGamesSeason']))
-    )
+        merged_data['SecondHalfDisplay'] = merged_data['S_FantasyPoints'] - (
+        (merged_data['S_AvgPoints'] * 0.5) +
+        (merged_data['S_AvgAssists'] * 1) +
+        (merged_data['S_AvgRebounds'] * 1) +
+        (merged_data['S_AvgTurnovers'] * -1) +
+        (merged_data['S_AvgSteals'] * 2) +
+        (merged_data['S_AvgBlocks'] * 2) +
+        (merged_data['S_Avg3P'] * 0.5)
+        )
 
-    merged_data['FullDisplay'] = merged_data['FirstHalfDisplay'] + "  |  " + merged_data['SecondHalfDisplay'].round(2).astype(str)
+        merged_data['SecondHalfDisplay'] = merged_data['SecondHalfDisplay'] + (
+            (merged_data['S_AvgPoints'] * multi_weights['Points'].iloc[0]) +
+            (merged_data['S_AvgAssists'] * multi_weights['Assists'].iloc[0]) +
+            (merged_data['S_AvgRebounds'] * multi_weights['Rebounds'].iloc[0]) +
+            (merged_data['S_AvgTurnovers'] * multi_weights['Turnovers'].iloc[0]) +
+            (merged_data['S_AvgSteals'] * multi_weights['Steals'].iloc[0]) +
+            (merged_data['S_AvgBlocks'] * multi_weights['Blocks'].iloc[0]) +
+            (merged_data['S_Avg3P'] * multi_weights['ThreePointers'].iloc[0])
+        )
 
-    player_list = merged_data["FullDisplay"].dropna().tolist()
+        merged_data['SecondHalfDisplay'] = (
+            (merged_data['SecondHalfDisplay'] * (1 - (multi_weights['GamesMadeWeight'].iloc[0] / 100))) +
+            (merged_data['SecondHalfDisplay'] * (multi_weights['GamesMadeWeight'].iloc[0] / 100) * (merged_data['S_GamesPlayed'] / merged_data['TotalGamesSeason']))
+        )
+
+        merged_data['FullDisplay'] = merged_data['FirstHalfDisplay'] + "  |  " + merged_data['SecondHalfDisplay'].round(2).astype(str)
+
+        player_list = merged_data["FullDisplay"].dropna().tolist()
         
+        return player_list
+    player_list = define_player_list_sortable()
 
     rankings_folder = "../../data/rankings"
     available_rankings = [f for f in os.listdir(rankings_folder) if f.endswith(".csv")]
@@ -1091,6 +1285,9 @@ with tab3:
         st.session_state.player3 = ""
     if 'player4' not in st.session_state:
         st.session_state.player4 = ""
+    if 'player_list' not in st.session_state:
+        st.session_state.player_list = player_list
+    
 
 
     all_player_data = pd.read_csv("../../data/seasonfullstatsreal/playerbasedatatotal.csv")
@@ -1105,54 +1302,112 @@ with tab3:
             selected_year = st.number_input('Years', min_value = 2003, max_value = 2025, value = 2025)
             selected_data = all_player_data[all_player_data['Season'] == selected_year]
 
+
             col1, col2, col3, col4 = st.columns([1,1,1,1], border = True)
+            all_players_found = True
             with col1:
                 
                 st.session_state.player1 = st.selectbox("Player 1", player_names_2025, index=player_names_2025.index(st.session_state.player1) if st.session_state.player1 in player_names_2025 else 0)
                 player1 = st.session_state.player1
                 playerid1 = only2025[only2025['Player'] == player1].iloc[0]['PlayerID']
                 st.image(f"https://www.basketball-reference.com/req/202106291/images/headshots/{playerid1}.jpg")
-                p1Row = selected_data[selected_data['Player'] == player1].iloc[0]
-                stats_df1 = pd.DataFrame({
-                    "Stat": ["Age", "Team", "Years of Experience","PercGamesMade", "Fantasy Points", "Points", "Assists", "Rebounds", "Steals", "Blocks", "Turnovers", "3PM"],
-                    "Value": [int(p1Row["Age"]), p1Row["Team"], p1Row["YearsExperience"], round(p1Row['S_GamesPlayed'] / p1Row['TotalGamesSeason'],2) * 100,  round(p1Row["S_FantasyPoints"], 2), round(p1Row["S_AvgPoints"], 2), round(p1Row["S_AvgAssists"], 2), round(p1Row["S_AvgRebounds"], 2), round(p1Row["S_AvgSteals"], 2), round(p1Row["S_AvgBlocks"], 2), round(p1Row["S_AvgTurnovers"], 2), round(p1Row["S_Avg3P"], 2)]
-                })
-                st.markdown(stats_df1.to_html(index=False), unsafe_allow_html=True)            
+                try:
+                    p1Row = selected_data[selected_data['Player'] == player1].iloc[0]
+                except IndexError:
+                    all_players_found = False
+                           
             with col2:
 
                 st.session_state.player2 = st.selectbox("Player 2", player_names_2025, index=player_names_2025.index(st.session_state.player2) if st.session_state.player2 in player_names_2025 else 0)
                 player2 = st.session_state.player2               
                 playerid2 = only2025[only2025['Player'] == player2].iloc[0]['PlayerID']
                 st.image(f"https://www.basketball-reference.com/req/202106291/images/headshots/{playerid2}.jpg")
-                p2Row = selected_data[selected_data['Player'] == player2].iloc[0]
-                stats_df2 = pd.DataFrame({
-                    "Stat": ["Age", "Team", "Years of Experience","PercGamesMade", "Fantasy Points", "Points", "Assists", "Rebounds", "Steals", "Blocks", "Turnovers", "3PM"],
-                    "Value": [int(p2Row["Age"]), p2Row["Team"], p2Row["YearsExperience"], round(p2Row['S_GamesPlayed'] / p2Row['TotalGamesSeason'],2) * 100, round(p2Row["S_FantasyPoints"], 2), round(p2Row["S_AvgPoints"], 2), round(p2Row["S_AvgAssists"], 2), round(p2Row["S_AvgRebounds"], 2), round(p2Row["S_AvgSteals"], 2), round(p2Row["S_AvgBlocks"], 2), round(p2Row["S_AvgTurnovers"], 2), round(p2Row["S_Avg3P"], 2)]
-                })
-                st.markdown(stats_df2.to_html(index=False), unsafe_allow_html=True)
+                try:
+                    p2Row = selected_data[selected_data['Player'] == player2].iloc[0]
+
+                except IndexError:
+                    all_players_found = False
+                 
             with col3:
                 st.session_state.player3 = st.selectbox("Player 3", player_names_2025, index=player_names_2025.index(st.session_state.player3) if st.session_state.player3 in player_names_2025 else 0)
                 player3 = st.session_state.player3
                 playerid3 = only2025[only2025['Player'] == player3].iloc[0]['PlayerID']
                 st.image(f"https://www.basketball-reference.com/req/202106291/images/headshots/{playerid3}.jpg")   
-                p3Row = selected_data[selected_data['Player'] == player3].iloc[0]
-                stats_df3 = pd.DataFrame({
-                    "Stat": ["Age", "Team", "Years of Experience","PercGamesMade", "Fantasy Points", "Points", "Assists", "Rebounds", "Steals", "Blocks", "Turnovers", "3PM"],
-                    "Value": [int(p3Row["Age"]), p3Row["Team"], p3Row["YearsExperience"], round(p3Row['S_GamesPlayed'] / p3Row['TotalGamesSeason'],2) * 100, round(p3Row["S_FantasyPoints"], 2), round(p3Row["S_AvgPoints"], 2), round(p3Row["S_AvgAssists"], 2), round(p3Row["S_AvgRebounds"], 2), round(p3Row["S_AvgSteals"], 2), round(p3Row["S_AvgBlocks"], 2), round(p3Row["S_AvgTurnovers"], 2), round(p3Row["S_Avg3P"], 2)]
-                }) 
-                st.markdown(stats_df3.to_html(index=False), unsafe_allow_html=True)      
+                try:
+                    p3Row = selected_data[selected_data['Player'] == player3].iloc[0]
+                except IndexError:
+                    all_players_found = False
+                 
             with col4:
                 
                 st.session_state.player4 = st.selectbox("Player 4", player_names_2025, index=player_names_2025.index(st.session_state.player4) if st.session_state.player4 in player_names_2025 else 0)
                 player4 = st.session_state.player4
                 playerid4 = only2025[only2025['Player'] == player4].iloc[0]['PlayerID']
                 st.image(f"https://www.basketball-reference.com/req/202106291/images/headshots/{playerid4}.jpg")
-                p4Row = selected_data[selected_data['Player'] == player4].iloc[0]
-                stats_df4 = pd.DataFrame({
-                    "Stat": ["Age", "Team", "Years of Experience","PercGamesMade", "Fantasy Points", "Points", "Assists", "Rebounds", "Steals", "Blocks", "Turnovers", "3PM"],
-                    "Value": [int(p4Row["Age"]), p4Row["Team"], p4Row["YearsExperience"], round(p4Row['S_GamesPlayed'] / p4Row['TotalGamesSeason'],2) * 100, round(p4Row["S_FantasyPoints"], 2), round(p4Row["S_AvgPoints"], 2), round(p4Row["S_AvgAssists"], 2), round(p4Row["S_AvgRebounds"], 2), round(p4Row["S_AvgSteals"], 2), round(p4Row["S_AvgBlocks"], 2), round(p4Row["S_AvgTurnovers"], 2), round(p4Row["S_Avg3P"], 2)]
-                }) 
-                st.markdown(stats_df4.to_html(index=False), unsafe_allow_html=True)  
+                try:
+                    p4Row = selected_data[selected_data['Player'] == player4].iloc[0]
+                except IndexError:
+                    all_players_found = False
+                 
+            if all_players_found:
+                players_stats_df = pd.DataFrame([p1Row, p2Row, p3Row, p4Row], index=["Player 1", "Player 2", "Player 3", "Player 4"])
+                stat_ranks = {
+                    "Age": players_stats_df["Age"].rank(ascending=True, method="min").astype(int).tolist(),
+                    "YearsExperience": players_stats_df["YearsExperience"].rank(ascending=False, method="min").astype(int).tolist(),
+                    "PercGamesMade": (players_stats_df["S_GamesPlayed"] / players_stats_df["TotalGamesSeason"]).rank(ascending=False, method="min").astype(int).tolist(),
+                    "Fantasy Points": players_stats_df["S_FantasyPoints"].rank(ascending=False, method="min").astype(int).tolist(),
+                    "Points": players_stats_df["S_AvgPoints"].rank(ascending=False, method="min").astype(int).tolist(),
+                    "Assists": players_stats_df["S_AvgAssists"].rank(ascending=False, method="min").astype(int).tolist(),
+                    "Rebounds": players_stats_df["S_AvgRebounds"].rank(ascending=False, method="min").astype(int).tolist(),
+                    "Steals": players_stats_df["S_AvgSteals"].rank(ascending=False, method="min").astype(int).tolist(),
+                    "Blocks": players_stats_df["S_AvgBlocks"].rank(ascending=False, method="min").astype(int).tolist(),
+                    "Turnovers": players_stats_df["S_AvgTurnovers"].rank(ascending=True, method="min").astype(int).tolist(),
+                    "3PM": players_stats_df["S_Avg3P"].rank(ascending=False, method="min").astype(int).tolist()
+                }
+                
+                RANK_COLORS = {
+                    1: "#00FF00",   
+                    2: "#FFFF00",   
+                    3: "#FFA500",   
+                    4: "#FF0000"    
+                }
+                with col1:
+                    stats_df1 = pd.DataFrame({
+                        "Stat": ["Age", "Team", "Years of Experience","PercGamesMade", "Fantasy Points", "Points", "Assists", "Rebounds", "Steals", "Blocks", "Turnovers", "3PM"],
+                        "Value": [int(p1Row["Age"]), p1Row["Team"], p1Row["YearsExperience"], round(p1Row['S_GamesPlayed'] / p1Row['TotalGamesSeason'],2) * 100,  round(p1Row["S_FantasyPoints"], 2), round(p1Row["S_AvgPoints"], 2), round(p1Row["S_AvgAssists"], 2), round(p1Row["S_AvgRebounds"], 2), round(p1Row["S_AvgSteals"], 2), round(p1Row["S_AvgBlocks"], 2), round(p1Row["S_AvgTurnovers"], 2), round(p1Row["S_Avg3P"], 2)]
+                    })
+                    # st.markdown(stats_df1.to_html(index=False), unsafe_allow_html=True)
+                    player1_ranks = get_player_ranks_for_index(0, stat_ranks)
+                    st.markdown(style_stats_df(stats_df1, player1_ranks), unsafe_allow_html=True)
+                with col2:
+                    stats_df2 = pd.DataFrame({
+                        "Stat": ["Age", "Team", "Years of Experience","PercGamesMade", "Fantasy Points", "Points", "Assists", "Rebounds", "Steals", "Blocks", "Turnovers", "3PM"],
+                        "Value": [int(p2Row["Age"]), p2Row["Team"], p2Row["YearsExperience"], round(p2Row['S_GamesPlayed'] / p2Row['TotalGamesSeason'],2) * 100, round(p2Row["S_FantasyPoints"], 2), round(p2Row["S_AvgPoints"], 2), round(p2Row["S_AvgAssists"], 2), round(p2Row["S_AvgRebounds"], 2), round(p2Row["S_AvgSteals"], 2), round(p2Row["S_AvgBlocks"], 2), round(p2Row["S_AvgTurnovers"], 2), round(p2Row["S_Avg3P"], 2)]
+                    })
+                    # st.markdown(stats_df2.to_html(index=False), unsafe_allow_html=True)
+                    player2_ranks = get_player_ranks_for_index(1, stat_ranks)
+                    st.markdown(style_stats_df(stats_df2, player2_ranks), unsafe_allow_html=True)
+                with col3:
+                    stats_df3 = pd.DataFrame({
+                        "Stat": ["Age", "Team", "Years of Experience","PercGamesMade", "Fantasy Points", "Points", "Assists", "Rebounds", "Steals", "Blocks", "Turnovers", "3PM"],
+                        "Value": [int(p3Row["Age"]), p3Row["Team"], p3Row["YearsExperience"], round(p3Row['S_GamesPlayed'] / p3Row['TotalGamesSeason'],2) * 100, round(p3Row["S_FantasyPoints"], 2), round(p3Row["S_AvgPoints"], 2), round(p3Row["S_AvgAssists"], 2), round(p3Row["S_AvgRebounds"], 2), round(p3Row["S_AvgSteals"], 2), round(p3Row["S_AvgBlocks"], 2), round(p3Row["S_AvgTurnovers"], 2), round(p3Row["S_Avg3P"], 2)]
+                    }) 
+                    # st.markdown(stats_df3.to_html(index=False), unsafe_allow_html=True)  
+                    player3_ranks = get_player_ranks_for_index(2, stat_ranks)
+                    st.markdown(style_stats_df(stats_df3, player3_ranks), unsafe_allow_html=True)
+                with col4:
+                    stats_df4 = pd.DataFrame({
+                        "Stat": ["Age", "Team", "Years of Experience","PercGamesMade", "Fantasy Points", "Points", "Assists", "Rebounds", "Steals", "Blocks", "Turnovers", "3PM"],
+                        "Value": [int(p4Row["Age"]), p4Row["Team"], p4Row["YearsExperience"], round(p4Row['S_GamesPlayed'] / p4Row['TotalGamesSeason'],2) * 100, round(p4Row["S_FantasyPoints"], 2), round(p4Row["S_AvgPoints"], 2), round(p4Row["S_AvgAssists"], 2), round(p4Row["S_AvgRebounds"], 2), round(p4Row["S_AvgSteals"], 2), round(p4Row["S_AvgBlocks"], 2), round(p4Row["S_AvgTurnovers"], 2), round(p4Row["S_Avg3P"], 2)]
+                    }) 
+                    # st.markdown(stats_df4.to_html(index=False), unsafe_allow_html=True)
+                    player4_ranks = get_player_ranks_for_index(3, stat_ranks)
+                    st.markdown(style_stats_df(stats_df4, player4_ranks), unsafe_allow_html=True)
+            else:
+                st.warning("Not All players played in this year.")
+
+
+
 
         col_player_ranking, col_player_model = st.columns([4,2.5])
 
@@ -1187,7 +1442,7 @@ with tab3:
             }
             """
 
-            sorted_items = sort_items(player_list, multi_containers=False, custom_style=custom_style, direction="vertical")
+            sorted_items = sort_items(st.session_state["player_list"], multi_containers=False, custom_style=custom_style, direction="vertical")
             st.session_state["player_list"] = sorted_items
             st.write("🔢 Sorted Items:")
             # for i, player in enumerate(sorted_items, start=1):
@@ -1262,12 +1517,12 @@ with tab3:
             )
 
             saveable_data = saveable_data[['Player','PlayerID','Predicted','S_GamesPlayed','TotalGamesSeason','S_FantasyPoints','S_AvgPoints','S_AvgAssists','S_AvgRebounds','S_AvgSteals','S_AvgBlocks','S_AvgTurnovers','S_Avg3P']]
-            saveable_data.to_csv(f'../../data/rankings/{current_ranking_name}.csv')
+            saveable_data.to_csv(f'../../data/rankings/{current_ranking_name}')
             for filename in os.listdir(folder_path):
                 file_path = os.path.join(folder_path, filename)
                 if os.path.isfile(file_path):
                     os.remove(file_path)
-            saveable_data.to_csv(f'../../data/current_ranking/{current_ranking_name}.csv')  
+            saveable_data.to_csv(f'../../data/current_ranking/{current_ranking_name}')  
             st.success(f"Successfully saved ranking to ../../data/rankings/{current_ranking_name} ")
 
         st.markdown("---")
@@ -1282,6 +1537,7 @@ with tab3:
                 if os.path.isfile(file_path):
                     os.remove(file_path)
             preset_ranking_df.to_csv(f'../../data/current_ranking/{ranking_preset}.csv')
+            st.session_state.player_list = define_player_list_sortable()
             st.success(f"Ranking is current ranking.") 
             st.rerun()
 
@@ -1322,10 +1578,26 @@ with tab3:
 
 
 with tab4:
-    
+    st.title("Predictive Model/Weight Configuration")
     weights_folder = "../../data/latestweights"
     available_weights = [f for f in os.listdir(weights_folder) if f.endswith(".csv")]
 
+
+
+    cola, colb = st.columns([2,5.5], border = True)
+
+    with colb:
+        preset = st.selectbox("🔁 Load Existing Weights", options=["None"] + available_weights)
+
+        # If preset is selected and button is clicked, apply it before anything else
+        if preset != "None" and st.button("📥 Load Preset"):
+            preset_df = pd.read_csv(os.path.join(weights_folder, preset))
+            preset_df.to_csv('../../data/currentweight/currentpointvalues.csv')
+            st.success(f"Preset is now app wide values.") 
+            if not preset_df.empty:
+                for key in ["Points", "Assists", "Rebounds", "Steals", "Blocks", "Turnovers", "ThreePointers", "GamesMadeWeight"]:
+                    st.session_state[key] = preset_df.iloc[0][key]
+                st.rerun()
 
     defaults = {
         "Points": st.session_state.get("Points", 0.5),
@@ -1339,76 +1611,208 @@ with tab4:
     }
     
 
-    points_val = st.number_input("Points Value", value=defaults["Points"], min_value=-10.0, max_value=10.0, step=0.25)
-    assists_val = st.number_input("Assists Value", value=defaults["Assists"], min_value=-10.0, max_value=10.0, step=0.25)
-    rebounds_val = st.number_input("Rebound Value", value=defaults["Rebounds"], min_value=-10.0, max_value=10.0, step=0.25)
-    steals_val = st.number_input("Steal Value", value=defaults["Steals"], min_value=-10.0, max_value=10.0, step=0.25)
-    blocks_val = st.number_input("Block Value", value=defaults["Blocks"], min_value=-10.0, max_value=10.0, step=0.25)
-    turnovers_val = st.number_input("Turnover Value", value=defaults["Turnovers"], min_value=-10.0, max_value=10.0, step=0.25)
-    three_point_val = st.number_input("3 Point Value", value=defaults["ThreePointers"], min_value=-10.0, max_value=10.0, step=0.25)
 
-    weight = st.slider("Games Made Weight", min_value=0, max_value=100, value=int(defaults["GamesMadeWeight"]), format="%d%%")
-    st.caption(f"Weight: {'No Game Weight' if weight == 0 else 'All Games Weight' if weight == 100 else str(weight) + '%'}")
+    with cola:
+        points_val = st.number_input("Points Value", min_value=-10.0, max_value=10.0, step=0.25, key = 'Points')
+        assists_val = st.number_input("Assists Value",  min_value=-10.0, max_value=10.0, step=0.25, key = 'Assists')
+        rebounds_val = st.number_input("Rebound Value",  min_value=-10.0, max_value=10.0, step=0.25, key = 'Rebounds')
+        steals_val = st.number_input("Steal Value",  min_value=-10.0, max_value=10.0, step=0.25, key = 'Steals')
+        blocks_val = st.number_input("Block Value",  min_value=-10.0, max_value=10.0, step=0.25, key ='Blocks')
+        turnovers_val = st.number_input("Turnover Value",  min_value=-10.0, max_value=10.0, step=0.25, key = 'Turnovers')
+        three_point_val = st.number_input("3 Point Value",  min_value=-10.0, max_value=10.0, step=0.25, key = 'ThreePointers')
 
-    preset = st.selectbox("🔁 Load Existing Weights", options=["None"] + available_weights)
+        weight = st.slider("Games Made Weight", min_value=0, max_value=100,  format="%d%%", key = 'GamesMadeWeight')
+        st.caption(f"Weight: {'No Game Weight' if weight == 0 else 'All Games Weight' if weight == 100 else str(weight) + '%'}")
 
-
-    if preset != "None" and st.button("📥 Load Preset"):
-        preset_df = pd.read_csv(os.path.join(weights_folder, preset))
-        preset_df.to_csv('../../data/currentweight/currentpointvalues.csv')
-        st.success(f"Preset is now app wide values.") 
-        if not preset_df.empty:
-            for key in defaults:
-                st.session_state[key] = preset_df.iloc[0][key]
-            st.rerun() 
-            
-
-
-    if st.button("Confirm Current Preset"):
+    with colb:
+        
         weights = {
-        "Points": points_val,
-        "Assists": assists_val,
-        "Rebounds": rebounds_val,
-        "Steals": steals_val,
-        "Blocks": blocks_val,
-        "Turnovers": turnovers_val,
-        "ThreePointers": three_point_val,
-        "GamesMadeWeight": weight
+            "Points": points_val,
+            "Assists": assists_val,
+            "Rebounds": rebounds_val,
+            "Steals": steals_val,
+            "Blocks": blocks_val,
+            "Turnovers": turnovers_val,
+            "ThreePointers": three_point_val,
+            "GamesMadeWeight": weight
         }
-
         weights_df = pd.DataFrame([weights])
-        weights_df.to_csv('../../data/currentweight/currentpointvalues.csv')
-        st.success(f"Weight Configuration has been confirmed across the app.")
 
-    st.subheader("Model Changing (Coming Soon)")
+        if 'current_model' not in st.session_state:
+            st.session_state.current_model = pd.DataFrame()
 
-
-
-
+        st.write("### Current Settings")
+        st.dataframe(weights_df)
 
 
-    weights = {
-        "Points": points_val,
-        "Assists": assists_val,
-        "Rebounds": rebounds_val,
-        "Steals": steals_val,
-        "Blocks": blocks_val,
-        "Turnovers": turnovers_val,
-        "ThreePointers": three_point_val,
-        "GamesMadeWeight": weight
-    }
-    weights_df = pd.DataFrame([weights])
+
+        if st.button("Create New Model from weights:"):
+            weights = {
+                "Points": points_val,
+                "Assists": assists_val,
+                "Rebounds": rebounds_val,
+                "Steals": steals_val,
+                "Blocks": blocks_val,
+                "Turnovers": turnovers_val,
+                "ThreePointers": three_point_val,
+                "GamesMadeWeight": weight
+            }
+
+            weights_df = pd.DataFrame([weights])
+            weights_list = list(weights.values())
+
+            weights_list_official = weights_list[:-1]
+            games_weight_value = weights_list[-1]
 
 
-    st.write("### Current Settings")
-    st.dataframe(weights_df)
+            weights_df.to_csv('../../data/currentweight/currentpointvalues.csv')
+
+            train_base_data = pd.read_csv(f"../../data/seasonfullstatsreal/playerbasedatatotaltrain.csv")
+            test_base_data = pd.read_csv(f"../../data/seasonfullstatsreal/playerbasedatatotaltest.csv")
+
+            train_base_data = train_base_data.dropna(subset=["S_GamesPlayed_futureyear"])
+            train_base_data = train_base_data.dropna(subset=['YearsExperience'])
+            train_base_data = train_base_data.dropna(subset=['FirstSeasonYear'])
+            train_base_data = train_base_data.dropna(subset=['Team'])
+            train_base_data = train_base_data.dropna(subset=['PrimaryPosition'])
+            train_base_data = train_base_data.dropna(subset=['Age'])
+
+            test_base_data = test_base_data.dropna(subset=['YearsExperience'])
+            test_base_data = test_base_data.dropna(subset=['FirstSeasonYear'])
+            test_base_data = test_base_data.dropna(subset=['Team'])
+            test_base_data = test_base_data.dropna(subset=['PrimaryPosition'])
+            test_base_data = test_base_data.dropna(subset=['Age'])
+
+            st.write(f"Games Weight: {games_weight_value}. weight list: {weights_list_official}")
+            test = add_prediction_value(train_base_data, games_weight_value, weights_list_official)
+
+            X = test[['Ht', 'Wt','S_TotalWins', 'S_GamesPlayed', 'S_AvgPoints',
+                'S_AvgAssists', 'S_AvgRebounds', 'S_AvgSteals', 'S_AvgBlocks', 'S_AvgTurnovers', 'S_AvgFG', 'S_AvgFGA',
+                'S_Avg3P', 'S_Avg3PA', 'S_AvgFT', 'S_AvgFTA', 'S_FantasyPoints', 'S_MinutesPlayed', 'S_GamePointDiff',
+                'S_StartingCount', 'S_Top7Team', 'HS_TotalWins', 'HS_GamesPlayed',
+                'HS_AvgPoints', 'HS_AvgAssists', 'HS_AvgRebounds', 'HS_AvgSteals', 'HS_AvgBlocks', 'HS_AvgTurnovers',
+                'HS_AvgFG', 'HS_AvgFGA', 'HS_Avg3P', 'HS_Avg3PA', 'HS_AvgFT', 'HS_AvgFTA', 'HS_FantasyPoints',
+                'HS_MinutesPlayed', 'HS_GamePointDiff', 'HS_StartingCount', 'HS_Top7Team', 'Age', 'NewPos1', 'NewPos2', 'NewPos3',
+                'YearsExperience', 'S_TotalWins_prevyear', 'S_GamesPlayed_prevyear', 'S_AvgPoints_prevyear',
+                'S_AvgAssists_prevyear', 'S_AvgRebounds_prevyear', 'S_AvgSteals_prevyear', 'S_AvgBlocks_prevyear',
+                'S_AvgTurnovers_prevyear', 'S_AvgFG_prevyear', 'S_AvgFGA_prevyear', 'S_Avg3P_prevyear', 'S_Avg3PA_prevyear',
+                'S_AvgFT_prevyear', 'S_AvgFTA_prevyear', 'S_FantasyPoints_prevyear', 'S_MinutesPlayed_prevyear',
+                'S_GamePointDiff_prevyear', 'S_StartingCount_prevyear', 'S_Top7Team_prevyear', 'S_TotalWins_prev5years', 'S_GamesPlayed_prev5years', 'S_AvgPoints_prev5years', 'S_AvgAssists_prev5years',
+                'S_AvgRebounds_prev5years', 'S_AvgSteals_prev5years', 'S_AvgBlocks_prev5years', 'S_AvgTurnovers_prev5years',
+                'S_AvgFG_prev5years', 'S_AvgFGA_prev5years', 'S_Avg3P_prev5years', 'S_Avg3PA_prev5years', 'S_AvgFT_prev5years',
+                'S_AvgFTA_prev5years', 'S_FantasyPoints_prev5years', 'S_MinutesPlayed_prev5years',
+                'S_GamePointDiff_prev5years', 'S_StartingCount_prev5years', 'S_Top7Team_prev5years']]
 
 
-    weight_name = st.text_input('Name the weight')
-    if st.button("💾 Save Weights to CSV"):
-        save_path = os.path.join(weights_folder, f"weight_{weight_name}.csv")
-        weights_df.to_csv(save_path, index=False)
-        st.success(f"Weights saved to `{save_path}`")
+            y = test['TargetVariable'].values
+
+
+
+            all_features = X.columns
+
+            cat_cols = ['NewPos1', 'NewPos2', 'NewPos3']
+
+
+            num_cols = [col for col in all_features if col not in cat_cols]
+
+            num_transformer = Pipeline(steps=[
+                ('imputer', SimpleImputer(strategy='mean'))#,
+                #('scaler', StandardScaler())
+            ])
+
+
+            cat_transformer = Pipeline(steps=[
+                ('imputer', SimpleImputer(strategy='constant', fill_value='missing')),
+                ('onehot', OneHotEncoder(handle_unknown='ignore'))
+            ])
+
+            preprocessor = ColumnTransformer(
+                transformers=[
+                    ('num', num_transformer, num_cols),
+                    ('cat', cat_transformer, cat_cols)
+                ])
+
+            model = Pipeline(steps=[
+                ('preprocessor', preprocessor),
+                ('regressor', LinearRegression())
+            ])
+
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+            model.fit(X_train, y_train)
+            y_pred = model.predict(X_test)
+
+            st.write(f"r^2 value: {r2_score(y_test, y_pred)}")
+
+            test_base_data_copy = test_base_data.copy()
+            test_base_data_predict = test_base_data[X.columns]
+            new_predictions = model.predict(test_base_data_predict)
+
+
+            results_df = test_base_data_copy[['Player']].copy()
+            results_df['Predicted'] = new_predictions
+
+
+            results_df1 = results_df.sort_values(by=['Predicted'], ascending = False)
+
+
+
+
+
+
+            subset_test_base = test_base_data[['Player','PlayerID','S_GamesPlayed','TotalGamesSeason','S_FantasyPoints','S_AvgPoints','S_AvgAssists','S_AvgRebounds','S_AvgSteals','S_AvgBlocks','S_AvgTurnovers','S_Avg3P']]
+
+            # Then, perform the merge
+            results_df1 = results_df1.merge(
+                subset_test_base,
+                how='left',
+                left_on='Player',
+                right_on='Player'
+            )
+
+            st.session_state.current_model = results_df1
+
+
+        if len(st.session_state.current_model) != 0:
+            model_name = st.text_input("Enter Model Name")
+
+            if st.button("Save Model"):
+                if len(model_name) != 0:
+                    st.session_state.current_model.to_csv(f'../../data/rankings/model_{model_name}.csv')
+                    st.success("Successfully saved model to rankings.")
+                else:
+                    st.warning("Please enter a name for your model.")
+
+        st.dataframe(st.session_state.current_model)
+
+    
+
+        if st.button("Confirm Current Preset"):
+            weights = {
+            "Points": points_val,
+            "Assists": assists_val,
+            "Rebounds": rebounds_val,
+            "Steals": steals_val,
+            "Blocks": blocks_val,
+            "Turnovers": turnovers_val,
+            "ThreePointers": three_point_val,
+            "GamesMadeWeight": weight
+            }
+
+            weights_df = pd.DataFrame([weights])
+            weights_df.to_csv('../../data/currentweight/currentpointvalues.csv')
+            st.success(f"Weight Configuration has been confirmed across the app.")
+
+
+
+
+
+
+        weight_name = st.text_input('Name the weight')
+        if st.button("💾 Save Weights to CSV"):
+            save_path = os.path.join(weights_folder, f"weight_{weight_name}.csv")
+            weights_df.to_csv(save_path, index=False)
+            st.success(f"Weights saved to `{save_path}`")
 
     
     
