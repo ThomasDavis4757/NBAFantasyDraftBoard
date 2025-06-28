@@ -1,0 +1,1232 @@
+,Date,Start (ET),AwayTeam,AwayPTS,HomeTeam,HomePTS,Overtime,Attend.,InSeasonTournament,Year,Day,Month#,MonthName,GameFinished,HomeTeamAbv,AwayTeamAbv,HomeWin,AwayWin,HomePointDiff,AwayPointDiff,GameID
+0,2024-10-22,7:30p,New York Knicks,109.0,Boston Celtics,132.0,False,19156.0,False,2024,22,10,october,True,BOS,NYK,True,False,23.0,-23.0,20242210BOS
+1,2024-10-22,10:00p,Minnesota Timberwolves,103.0,Los Angeles Lakers,110.0,False,18997.0,False,2024,22,10,october,True,LAL,MIN,True,False,7.0,-7.0,20242210LAL
+2,2024-10-23,7:00p,Indiana Pacers,115.0,Detroit Pistons,109.0,False,20062.0,False,2024,23,10,october,True,DET,IND,False,True,-6.0,6.0,20242310DET
+3,2024-10-23,7:30p,Brooklyn Nets,116.0,Atlanta Hawks,120.0,False,17548.0,False,2024,23,10,october,True,ATL,BRK,True,False,4.0,-4.0,20242310ATL
+4,2024-10-23,7:30p,Orlando Magic,116.0,Miami Heat,97.0,False,19630.0,False,2024,23,10,october,True,MIA,ORL,False,True,-19.0,19.0,20242310MIA
+5,2024-10-23,7:30p,Milwaukee Bucks,124.0,Philadelphia 76ers,109.0,False,19754.0,False,2024,23,10,october,True,PHI,MIL,False,True,-15.0,15.0,20242310PHI
+6,2024-10-23,7:30p,Cleveland Cavaliers,136.0,Toronto Raptors,106.0,False,19800.0,False,2024,23,10,october,True,TOR,CLE,False,True,-30.0,30.0,20242310TOR
+7,2024-10-23,8:00p,Charlotte Hornets,110.0,Houston Rockets,105.0,False,18055.0,False,2024,23,10,october,True,HOU,CHO,False,True,-5.0,5.0,20242310HOU
+8,2024-10-23,8:00p,Chicago Bulls,111.0,New Orleans Pelicans,123.0,False,18581.0,False,2024,23,10,october,True,NOP,CHI,True,False,12.0,-12.0,20242310NOP
+9,2024-10-23,9:00p,Memphis Grizzlies,126.0,Utah Jazz,124.0,False,18175.0,False,2024,23,10,october,True,UTA,MEM,False,True,-2.0,2.0,20242310UTA
+10,2024-10-23,10:00p,Phoenix Suns,116.0,Los Angeles Clippers,113.0,True,18300.0,False,2024,23,10,october,True,LAC,PHO,False,True,-3.0,3.0,20242310LAC
+11,2024-10-23,10:00p,Golden State Warriors,140.0,Portland Trail Blazers,104.0,False,19480.0,False,2024,23,10,october,True,POR,GSW,False,True,-36.0,36.0,20242310POR
+12,2024-10-24,7:00p,Boston Celtics,122.0,Washington Wizards,102.0,False,18610.0,False,2024,24,10,october,True,WAS,BOS,False,True,-20.0,20.0,20242410WAS
+13,2024-10-24,7:30p,San Antonio Spurs,109.0,Dallas Mavericks,120.0,False,20373.0,False,2024,24,10,october,True,DAL,SAS,True,False,11.0,-11.0,20242410DAL
+14,2024-10-24,10:00p,Minnesota Timberwolves,117.0,Sacramento Kings,115.0,False,18049.0,False,2024,24,10,october,True,SAC,MIN,False,True,-2.0,2.0,20242410SAC
+15,2024-10-24,10:00p,Oklahoma City Thunder,102.0,Denver Nuggets,87.0,False,19786.0,False,2024,24,10,october,True,DEN,OKC,False,True,-15.0,15.0,20242410DEN
+16,2024-10-25,7:00p,Brooklyn Nets,101.0,Orlando Magic,116.0,False,19087.0,False,2024,25,10,october,True,ORL,BRK,True,False,15.0,-15.0,20242510ORL
+17,2024-10-25,7:00p,Philadelphia 76ers,107.0,Toronto Raptors,115.0,False,18345.0,False,2024,25,10,october,True,TOR,PHI,True,False,8.0,-8.0,20242510TOR
+18,2024-10-25,7:30p,Charlotte Hornets,120.0,Atlanta Hawks,125.0,False,14433.0,False,2024,25,10,october,True,ATL,CHO,True,False,5.0,-5.0,20242510ATL
+19,2024-10-25,7:30p,Detroit Pistons,101.0,Cleveland Cavaliers,113.0,False,19432.0,False,2024,25,10,october,True,CLE,DET,True,False,12.0,-12.0,20242510CLE
+20,2024-10-25,7:30p,Indiana Pacers,98.0,New York Knicks,123.0,False,19812.0,False,2024,25,10,october,True,NYK,IND,True,False,25.0,-25.0,20242510NYK
+21,2024-10-25,8:00p,Memphis Grizzlies,108.0,Houston Rockets,128.0,False,18055.0,False,2024,25,10,october,True,HOU,MEM,True,False,20.0,-20.0,20242510HOU
+22,2024-10-25,8:00p,Chicago Bulls,133.0,Milwaukee Bucks,122.0,False,17790.0,False,2024,25,10,october,True,MIL,CHI,False,True,-11.0,11.0,20242510MIL
+23,2024-10-25,9:30p,Golden State Warriors,127.0,Utah Jazz,86.0,False,18175.0,False,2024,25,10,october,True,UTA,GSW,False,True,-41.0,41.0,20242510UTA
+24,2024-10-25,10:00p,Phoenix Suns,116.0,Los Angeles Lakers,123.0,False,18997.0,False,2024,25,10,october,True,LAL,PHO,True,False,7.0,-7.0,20242510LAL
+25,2024-10-25,10:00p,New Orleans Pelicans,105.0,Portland Trail Blazers,103.0,False,16190.0,False,2024,25,10,october,True,POR,NOP,False,True,-2.0,2.0,20242510POR
+26,2024-10-26,5:00p,Los Angeles Clippers,109.0,Denver Nuggets,104.0,False,19691.0,False,2024,26,10,october,True,DEN,LAC,False,True,-5.0,5.0,20242610DEN
+27,2024-10-26,7:00p,Cleveland Cavaliers,135.0,Washington Wizards,116.0,False,15156.0,False,2024,26,10,october,True,WAS,CLE,False,True,-19.0,19.0,20242610WAS
+28,2024-10-26,7:00p,Boston Celtics,124.0,Detroit Pistons,118.0,False,19311.0,False,2024,26,10,october,True,DET,BOS,False,True,-6.0,6.0,20242610DET
+29,2024-10-26,7:00p,Miami Heat,114.0,Charlotte Hornets,106.0,False,19102.0,False,2024,26,10,october,True,CHO,MIA,False,True,-8.0,8.0,20242610CHO
+30,2024-10-26,8:00p,Orlando Magic,111.0,Memphis Grizzlies,124.0,False,17809.0,False,2024,26,10,october,True,MEM,ORL,True,False,13.0,-13.0,20242610MEM
+31,2024-10-26,8:00p,Toronto Raptors,101.0,Minnesota Timberwolves,112.0,False,18978.0,False,2024,26,10,october,True,MIN,TOR,True,False,11.0,-11.0,20242610MIN
+32,2024-10-26,8:00p,Oklahoma City Thunder,114.0,Chicago Bulls,95.0,False,20923.0,False,2024,26,10,october,True,CHI,OKC,False,True,-19.0,19.0,20242610CHI
+33,2024-10-26,8:30p,Houston Rockets,106.0,San Antonio Spurs,109.0,False,18715.0,False,2024,26,10,october,True,SAS,HOU,True,False,3.0,-3.0,20242610SAS
+34,2024-10-26,10:00p,Dallas Mavericks,102.0,Phoenix Suns,114.0,False,17071.0,False,2024,26,10,october,True,PHO,DAL,True,False,12.0,-12.0,20242610PHO
+35,2024-10-26,10:30p,Sacramento Kings,127.0,Los Angeles Lakers,131.0,False,18997.0,False,2024,26,10,october,True,LAL,SAC,True,False,4.0,-4.0,20242610LAL
+36,2024-10-27,3:30p,Philadelphia 76ers,118.0,Indiana Pacers,114.0,True,17274.0,False,2024,27,10,october,True,IND,PHI,False,True,-4.0,4.0,20242710IND
+37,2024-10-27,6:00p,New Orleans Pelicans,103.0,Portland Trail Blazers,125.0,False,16138.0,False,2024,27,10,october,True,POR,NOP,True,False,22.0,-22.0,20242710POR
+38,2024-10-27,6:00p,Milwaukee Bucks,102.0,Brooklyn Nets,115.0,False,17926.0,False,2024,27,10,october,True,BRK,MIL,True,False,13.0,-13.0,20242710BRK
+39,2024-10-27,7:00p,Atlanta Hawks,104.0,Oklahoma City Thunder,128.0,False,18203.0,False,2024,27,10,october,True,OKC,ATL,True,False,24.0,-24.0,20242710OKC
+40,2024-10-27,8:30p,Los Angeles Clippers,112.0,Golden State Warriors,104.0,False,18064.0,False,2024,27,10,october,True,GSW,LAC,False,True,-8.0,8.0,20242710GSW
+41,2024-10-28,7:00p,Indiana Pacers,115.0,Orlando Magic,119.0,False,18846.0,False,2024,28,10,october,True,ORL,IND,True,False,4.0,-4.0,20242810ORL
+42,2024-10-28,7:30p,Washington Wizards,121.0,Atlanta Hawks,119.0,False,14566.0,False,2024,28,10,october,True,ATL,WAS,False,True,-2.0,2.0,20242810ATL
+43,2024-10-28,7:30p,Milwaukee Bucks,108.0,Boston Celtics,119.0,False,19156.0,False,2024,28,10,october,True,BOS,MIL,True,False,11.0,-11.0,20242810BOS
+44,2024-10-28,7:30p,Denver Nuggets,127.0,Toronto Raptors,125.0,True,19082.0,False,2024,28,10,october,True,TOR,DEN,False,True,-2.0,2.0,20242810TOR
+45,2024-10-28,7:30p,Detroit Pistons,98.0,Miami Heat,106.0,False,19626.0,False,2024,28,10,october,True,MIA,DET,True,False,8.0,-8.0,20242810MIA
+46,2024-10-28,7:30p,Cleveland Cavaliers,110.0,New York Knicks,104.0,False,19812.0,False,2024,28,10,october,True,NYK,CLE,False,True,-6.0,6.0,20242810NYK
+47,2024-10-28,8:00p,Houston Rockets,106.0,San Antonio Spurs,101.0,False,17519.0,False,2024,28,10,october,True,SAS,HOU,False,True,-5.0,5.0,20242810SAS
+48,2024-10-28,8:00p,Chicago Bulls,126.0,Memphis Grizzlies,123.0,False,15906.0,False,2024,28,10,october,True,MEM,CHI,False,True,-3.0,3.0,20242810MEM
+49,2024-10-28,8:30p,Utah Jazz,102.0,Dallas Mavericks,110.0,False,19811.0,False,2024,28,10,october,True,DAL,UTA,True,False,8.0,-8.0,20242810DAL
+50,2024-10-28,10:00p,Portland Trail Blazers,98.0,Sacramento Kings,111.0,False,16426.0,False,2024,28,10,october,True,SAC,POR,True,False,13.0,-13.0,20242810SAC
+51,2024-10-28,10:00p,Los Angeles Lakers,105.0,Phoenix Suns,109.0,False,17071.0,False,2024,28,10,october,True,PHO,LAL,True,False,4.0,-4.0,20242810PHO
+52,2024-10-29,7:30p,Denver Nuggets,144.0,Brooklyn Nets,139.0,True,17926.0,False,2024,29,10,october,True,BRK,DEN,False,True,-5.0,5.0,20242910BRK
+53,2024-10-29,7:30p,Dallas Mavericks,120.0,Minnesota Timberwolves,114.0,False,18978.0,False,2024,29,10,october,True,MIN,DAL,False,True,-6.0,6.0,20242910MIN
+54,2024-10-29,9:00p,Sacramento Kings,113.0,Utah Jazz,96.0,False,18175.0,False,2024,29,10,october,True,UTA,SAC,False,True,-17.0,17.0,20242910UTA
+55,2024-10-29,10:00p,New Orleans Pelicans,106.0,Golden State Warriors,124.0,False,18064.0,False,2024,29,10,october,True,GSW,NOP,True,False,18.0,-18.0,20242910GSW
+56,2024-10-30,7:00p,Detroit Pistons,105.0,Philadelphia 76ers,95.0,False,19759.0,False,2024,30,10,october,True,PHI,DET,False,True,-10.0,10.0,20243010PHI
+57,2024-10-30,7:00p,Atlanta Hawks,120.0,Washington Wizards,133.0,False,14255.0,False,2024,30,10,october,True,WAS,ATL,True,False,13.0,-13.0,20243010WAS
+58,2024-10-30,7:00p,Boston Celtics,132.0,Indiana Pacers,135.0,True,17274.0,False,2024,30,10,october,True,IND,BOS,True,False,3.0,-3.0,20243010IND
+59,2024-10-30,7:00p,Los Angeles Lakers,110.0,Cleveland Cavaliers,134.0,False,19432.0,False,2024,30,10,october,True,CLE,LAL,True,False,24.0,-24.0,20243010CLE
+60,2024-10-30,7:00p,Toronto Raptors,133.0,Charlotte Hornets,138.0,False,13113.0,False,2024,30,10,october,True,CHO,TOR,True,False,5.0,-5.0,20243010CHO
+61,2024-10-30,7:30p,New York Knicks,116.0,Miami Heat,107.0,False,19620.0,False,2024,30,10,october,True,MIA,NYK,False,True,-9.0,9.0,20243010MIA
+62,2024-10-30,8:00p,Orlando Magic,99.0,Chicago Bulls,102.0,False,19015.0,False,2024,30,10,october,True,CHI,ORL,True,False,3.0,-3.0,20243010CHI
+63,2024-10-30,8:00p,Brooklyn Nets,119.0,Memphis Grizzlies,106.0,False,14745.0,False,2024,30,10,october,True,MEM,BRK,False,True,-13.0,13.0,20243010MEM
+64,2024-10-30,9:30p,San Antonio Spurs,93.0,Oklahoma City Thunder,105.0,False,17136.0,False,2024,30,10,october,True,OKC,SAS,True,False,12.0,-12.0,20243010OKC
+65,2024-10-30,10:00p,New Orleans Pelicans,89.0,Golden State Warriors,104.0,False,18064.0,False,2024,30,10,october,True,GSW,NOP,True,False,15.0,-15.0,20243010GSW
+66,2024-10-30,10:30p,Portland Trail Blazers,106.0,Los Angeles Clippers,105.0,False,16727.0,False,2024,30,10,october,True,LAC,POR,False,True,-1.0,1.0,20243010LAC
+67,2024-10-31,8:00p,Milwaukee Bucks,99.0,Memphis Grizzlies,122.0,False,15377.0,False,2024,31,10,october,True,MEM,MIL,True,False,23.0,-23.0,20243110MEM
+68,2024-10-31,8:30p,Houston Rockets,108.0,Dallas Mavericks,102.0,False,20011.0,False,2024,31,10,october,True,DAL,HOU,False,True,-6.0,6.0,20243110DAL
+69,2024-10-31,9:00p,San Antonio Spurs,106.0,Utah Jazz,88.0,False,18175.0,False,2024,31,10,october,True,UTA,SAS,False,True,-18.0,18.0,20243110UTA
+70,2024-10-31,10:30p,Phoenix Suns,125.0,Los Angeles Clippers,119.0,False,16827.0,False,2024,31,10,october,True,LAC,PHO,False,True,-6.0,6.0,20243110LAC
+0,2024-11-01,7:00p,Boston Celtics,124.0,Charlotte Hornets,109.0,False,18557.0,False,2024,01,11,november,True,CHO,BOS,False,True,-15.0,15.0,20240111CHO
+1,2024-11-01,7:00p,Orlando Magic,109.0,Cleveland Cavaliers,120.0,False,19432.0,False,2024,01,11,november,True,CLE,ORL,True,False,11.0,-11.0,20240111CLE
+2,2024-11-01,7:00p,New York Knicks,128.0,Detroit Pistons,98.0,False,17022.0,False,2024,01,11,november,True,DET,NYK,False,True,-30.0,30.0,20240111DET
+3,2024-11-01,7:30p,Sacramento Kings,123.0,Atlanta Hawks,115.0,False,15156.0,False,2024,01,11,november,True,ATL,SAC,False,True,-8.0,8.0,20240111ATL
+4,2024-11-01,7:30p,Chicago Bulls,112.0,Brooklyn Nets,120.0,False,17977.0,False,2024,01,11,november,True,BRK,CHI,True,False,8.0,-8.0,20240111BRK
+5,2024-11-01,7:30p,Los Angeles Lakers,131.0,Toronto Raptors,125.0,False,19800.0,False,2024,01,11,november,True,TOR,LAL,False,True,-6.0,6.0,20240111TOR
+6,2024-11-01,8:00p,Indiana Pacers,118.0,New Orleans Pelicans,125.0,False,15133.0,False,2024,01,11,november,True,NOP,IND,True,False,7.0,-7.0,20240111NOP
+7,2024-11-01,9:30p,Denver Nuggets,116.0,Minnesota Timberwolves,119.0,False,18978.0,False,2024,01,11,november,True,MIN,DEN,True,False,3.0,-3.0,20240111MIN
+8,2024-11-01,10:00p,Oklahoma City Thunder,137.0,Portland Trail Blazers,114.0,False,17815.0,False,2024,01,11,november,True,POR,OKC,False,True,-23.0,23.0,20240111POR
+9,2024-11-02,6:00p,Boston Celtics,113.0,Charlotte Hornets,103.0,False,19253.0,False,2024,02,11,november,True,CHO,BOS,False,True,-10.0,10.0,20240211CHO
+10,2024-11-02,7:30p,Memphis Grizzlies,124.0,Philadelphia 76ers,107.0,False,20066.0,False,2024,02,11,november,True,PHI,MEM,False,True,-17.0,17.0,20240211PHI
+11,2024-11-02,7:30p,Sacramento Kings,128.0,Toronto Raptors,131.0,True,19815.0,False,2024,02,11,november,True,TOR,SAC,True,False,3.0,-3.0,20240211TOR
+12,2024-11-02,8:00p,Golden State Warriors,127.0,Houston Rockets,121.0,True,18055.0,False,2024,02,11,november,True,HOU,GSW,False,True,-6.0,6.0,20240211HOU
+13,2024-11-02,8:00p,Cleveland Cavaliers,114.0,Milwaukee Bucks,113.0,False,17341.0,False,2024,02,11,november,True,MIL,CLE,False,True,-1.0,1.0,20240211MIL
+14,2024-11-02,8:00p,Minnesota Timberwolves,103.0,San Antonio Spurs,113.0,False,18257.0,False,2024,02,11,november,True,SAS,MIN,True,False,10.0,-10.0,20240211SAS
+15,2024-11-02,9:30p,Miami Heat,118.0,Washington Wizards,98.0,False,20328.0,False,2024,02,11,november,True,WAS,MIA,False,True,-20.0,20.0,20240211WAS
+16,2024-11-02,10:00p,Utah Jazz,103.0,Denver Nuggets,129.0,False,19702.0,False,2024,02,11,november,True,DEN,UTA,True,False,26.0,-26.0,20240211DEN
+17,2024-11-02,10:00p,Portland Trail Blazers,97.0,Phoenix Suns,103.0,False,17071.0,False,2024,02,11,november,True,PHO,POR,True,False,6.0,-6.0,20240211PHO
+18,2024-11-02,10:30p,Oklahoma City Thunder,105.0,Los Angeles Clippers,92.0,False,16827.0,False,2024,02,11,november,True,LAC,OKC,False,True,-13.0,13.0,20240211LAC
+19,2024-11-03,3:30p,Detroit Pistons,106.0,Brooklyn Nets,92.0,False,17086.0,False,2024,03,11,november,True,BRK,DET,False,True,-14.0,14.0,20240311BRK
+20,2024-11-03,7:00p,Atlanta Hawks,126.0,New Orleans Pelicans,111.0,False,15505.0,False,2024,03,11,november,True,NOP,ATL,False,True,-15.0,15.0,20240311NOP
+21,2024-11-03,7:30p,Orlando Magic,85.0,Dallas Mavericks,108.0,False,19977.0,False,2024,03,11,november,True,DAL,ORL,True,False,23.0,-23.0,20240311DAL
+22,2024-11-04,7:00p,Milwaukee Bucks,114.0,Cleveland Cavaliers,116.0,False,19432.0,False,2024,04,11,november,True,CLE,MIL,True,False,2.0,-2.0,20240411CLE
+23,2024-11-04,7:15p,Golden State Warriors,125.0,Washington Wizards,112.0,False,15674.0,False,2024,04,11,november,True,WAS,GSW,False,True,-13.0,13.0,20240411WAS
+24,2024-11-04,7:30p,Los Angeles Lakers,103.0,Detroit Pistons,115.0,False,20062.0,False,2024,04,11,november,True,DET,LAL,True,False,12.0,-12.0,20240411DET
+25,2024-11-04,7:45p,Boston Celtics,123.0,Atlanta Hawks,93.0,False,15031.0,False,2024,04,11,november,True,ATL,BOS,False,True,-30.0,30.0,20240411ATL
+26,2024-11-04,8:00p,Memphis Grizzlies,104.0,Brooklyn Nets,106.0,False,18088.0,False,2024,04,11,november,True,BRK,MEM,True,False,2.0,-2.0,20240411BRK
+27,2024-11-04,8:15p,Sacramento Kings,111.0,Miami Heat,110.0,False,19604.0,False,2024,04,11,november,True,MIA,SAC,False,True,-1.0,1.0,20240411MIA
+28,2024-11-04,8:30p,Utah Jazz,135.0,Chicago Bulls,126.0,False,19621.0,False,2024,04,11,november,True,CHI,UTA,False,True,-9.0,9.0,20240411CHI
+29,2024-11-04,8:45p,New York Knicks,97.0,Houston Rockets,109.0,False,16417.0,False,2024,04,11,november,True,HOU,NYK,True,False,12.0,-12.0,20240411HOU
+30,2024-11-04,9:00p,Charlotte Hornets,93.0,Minnesota Timberwolves,114.0,False,18978.0,False,2024,04,11,november,True,MIN,CHO,True,False,21.0,-21.0,20240411MIN
+31,2024-11-04,9:15p,Orlando Magic,86.0,Oklahoma City Thunder,102.0,False,17044.0,False,2024,04,11,november,True,OKC,ORL,True,False,16.0,-16.0,20240411OKC
+32,2024-11-04,9:30p,Portland Trail Blazers,118.0,New Orleans Pelicans,100.0,False,14932.0,False,2024,04,11,november,True,NOP,POR,False,True,-18.0,18.0,20240411NOP
+33,2024-11-04,9:45p,Indiana Pacers,134.0,Dallas Mavericks,127.0,False,19613.0,False,2024,04,11,november,True,DAL,IND,False,True,-7.0,7.0,20240411DAL
+34,2024-11-04,10:00p,Toronto Raptors,119.0,Denver Nuggets,121.0,False,19525.0,False,2024,04,11,november,True,DEN,TOR,True,False,2.0,-2.0,20240411DEN
+35,2024-11-04,10:15p,Philadelphia 76ers,116.0,Phoenix Suns,118.0,False,17071.0,False,2024,04,11,november,True,PHO,PHI,True,False,2.0,-2.0,20240411PHO
+36,2024-11-04,10:30p,San Antonio Spurs,104.0,Los Angeles Clippers,113.0,False,15927.0,False,2024,04,11,november,True,LAC,SAS,True,False,9.0,-9.0,20240411LAC
+37,2024-11-06,7:00p,Detroit Pistons,107.0,Charlotte Hornets,108.0,False,13247.0,False,2024,06,11,november,True,CHO,DET,True,False,1.0,-1.0,20240611CHO
+38,2024-11-06,7:00p,Orlando Magic,111.0,Indiana Pacers,118.0,False,16218.0,False,2024,06,11,november,True,IND,ORL,True,False,7.0,-7.0,20240611IND
+39,2024-11-06,7:30p,New York Knicks,116.0,Atlanta Hawks,121.0,False,16072.0,False,2024,06,11,november,True,ATL,NYK,True,False,5.0,-5.0,20240611ATL
+40,2024-11-06,7:30p,Golden State Warriors,118.0,Boston Celtics,112.0,False,19156.0,False,2024,06,11,november,True,BOS,GSW,False,True,-6.0,6.0,20240611BOS
+41,2024-11-06,8:00p,San Antonio Spurs,100.0,Houston Rockets,127.0,False,16208.0,False,2024,06,11,november,True,HOU,SAS,True,False,27.0,-27.0,20240611HOU
+42,2024-11-06,8:00p,Los Angeles Lakers,114.0,Memphis Grizzlies,131.0,False,17794.0,False,2024,06,11,november,True,MEM,LAL,True,False,17.0,-17.0,20240611MEM
+43,2024-11-06,8:00p,Cleveland Cavaliers,131.0,New Orleans Pelicans,122.0,False,15694.0,False,2024,06,11,november,True,NOP,CLE,False,True,-9.0,9.0,20240611NOP
+44,2024-11-06,8:30p,Chicago Bulls,99.0,Dallas Mavericks,119.0,False,20011.0,False,2024,06,11,november,True,DAL,CHI,True,False,20.0,-20.0,20240611DAL
+45,2024-11-06,9:00p,Oklahoma City Thunder,122.0,Denver Nuggets,124.0,False,19522.0,False,2024,06,11,november,True,DEN,OKC,True,False,2.0,-2.0,20240611DEN
+46,2024-11-06,9:00p,Miami Heat,112.0,Phoenix Suns,115.0,False,17071.0,False,2024,06,11,november,True,PHO,MIA,True,False,3.0,-3.0,20240611PHO
+47,2024-11-06,10:00p,Philadelphia 76ers,98.0,Los Angeles Clippers,110.0,False,15627.0,False,2024,06,11,november,True,LAC,PHI,True,False,12.0,-12.0,20240611LAC
+48,2024-11-06,10:00p,Toronto Raptors,107.0,Sacramento Kings,122.0,False,16026.0,False,2024,06,11,november,True,SAC,TOR,True,False,15.0,-15.0,20240611SAC
+49,2024-11-07,8:00p,Minnesota Timberwolves,135.0,Chicago Bulls,119.0,False,19621.0,False,2024,07,11,november,True,CHI,MIN,False,True,-16.0,16.0,20240711CHI
+50,2024-11-07,8:00p,Utah Jazz,100.0,Milwaukee Bucks,123.0,False,17341.0,False,2024,07,11,november,True,MIL,UTA,True,False,23.0,-23.0,20240711MIL
+51,2024-11-07,8:00p,Portland Trail Blazers,105.0,San Antonio Spurs,118.0,False,17120.0,False,2024,07,11,november,True,SAS,POR,True,False,13.0,-13.0,20240711SAS
+52,2024-11-08,7:00p,Indiana Pacers,83.0,Charlotte Hornets,103.0,False,17024.0,False,2024,08,11,november,True,CHO,IND,True,False,20.0,-20.0,20240811CHO
+53,2024-11-08,7:00p,Atlanta Hawks,121.0,Detroit Pistons,122.0,False,17913.0,False,2024,08,11,november,True,DET,ATL,True,False,1.0,-1.0,20240811DET
+54,2024-11-08,7:00p,New Orleans Pelicans,88.0,Orlando Magic,115.0,False,18565.0,False,2024,08,11,november,True,ORL,NOP,True,False,27.0,-27.0,20240811ORL
+55,2024-11-08,7:30p,Brooklyn Nets,104.0,Boston Celtics,108.0,True,19156.0,False,2024,08,11,november,True,BOS,BRK,True,False,4.0,-4.0,20240811BOS
+56,2024-11-08,7:30p,Golden State Warriors,117.0,Cleveland Cavaliers,136.0,False,19432.0,False,2024,08,11,november,True,CLE,GSW,True,False,19.0,-19.0,20240811CLE
+57,2024-11-08,7:30p,Phoenix Suns,114.0,Dallas Mavericks,113.0,False,20277.0,False,2024,08,11,november,True,DAL,PHO,False,True,-1.0,1.0,20240811DAL
+58,2024-11-08,7:30p,Milwaukee Bucks,94.0,New York Knicks,116.0,False,19812.0,False,2024,08,11,november,True,NYK,MIL,True,False,22.0,-22.0,20240811NYK
+59,2024-11-08,8:00p,Washington Wizards,104.0,Memphis Grizzlies,128.0,False,16216.0,False,2024,08,11,november,True,MEM,WAS,True,False,24.0,-24.0,20240811MEM
+60,2024-11-08,8:00p,Houston Rockets,107.0,Oklahoma City Thunder,126.0,False,18203.0,False,2024,08,11,november,True,OKC,HOU,True,False,19.0,-19.0,20240811OKC
+61,2024-11-08,9:00p,Miami Heat,122.0,Denver Nuggets,135.0,False,19621.0,False,2024,08,11,november,True,DEN,MIA,True,False,13.0,-13.0,20240811DEN
+62,2024-11-08,9:00p,Portland Trail Blazers,102.0,Minnesota Timberwolves,127.0,False,18978.0,False,2024,08,11,november,True,MIN,POR,True,False,25.0,-25.0,20240811MIN
+63,2024-11-08,10:00p,Philadelphia 76ers,106.0,Los Angeles Lakers,116.0,False,18485.0,False,2024,08,11,november,True,LAL,PHI,True,False,10.0,-10.0,20240811LAL
+64,2024-11-08,10:00p,Los Angeles Clippers,107.0,Sacramento Kings,98.0,False,17832.0,False,2024,08,11,november,True,SAC,LAC,False,True,-9.0,9.0,20240811SAC
+65,2024-11-09,5:00p,Utah Jazz,111.0,San Antonio Spurs,110.0,False,18354.0,False,2024,09,11,november,True,SAS,UTA,False,True,-1.0,1.0,20240911SAS
+66,2024-11-09,7:30p,Chicago Bulls,125.0,Atlanta Hawks,113.0,False,17826.0,False,2024,09,11,november,True,ATL,CHI,False,True,-12.0,12.0,20240911ATL
+67,2024-11-09,7:30p,Brooklyn Nets,100.0,Cleveland Cavaliers,105.0,False,19432.0,False,2024,09,11,november,True,CLE,BRK,True,False,5.0,-5.0,20240911CLE
+68,2024-11-09,10:30p,Toronto Raptors,103.0,Los Angeles Clippers,105.0,False,17927.0,False,2024,09,11,november,True,LAC,TOR,True,False,2.0,-2.0,20240911LAC
+69,2024-11-10,3:00p,Houston Rockets,101.0,Detroit Pistons,99.0,False,18744.0,False,2024,10,11,november,True,DET,HOU,False,True,-2.0,2.0,20241011DET
+70,2024-11-10,3:30p,Boston Celtics,113.0,Milwaukee Bucks,107.0,False,17341.0,False,2024,10,11,november,True,MIL,BOS,False,True,-6.0,6.0,20241011MIL
+71,2024-11-10,5:00p,New York Knicks,121.0,Indiana Pacers,132.0,False,17274.0,False,2024,10,11,november,True,IND,NYK,True,False,11.0,-11.0,20241011IND
+72,2024-11-10,6:00p,Washington Wizards,94.0,Orlando Magic,121.0,False,18352.0,False,2024,10,11,november,True,ORL,WAS,True,False,27.0,-27.0,20241011ORL
+73,2024-11-10,7:00p,Miami Heat,95.0,Minnesota Timberwolves,94.0,False,18978.0,False,2024,10,11,november,True,MIN,MIA,False,True,-1.0,1.0,20241011MIN
+74,2024-11-10,7:00p,Golden State Warriors,127.0,Oklahoma City Thunder,116.0,False,18203.0,False,2024,10,11,november,True,OKC,GSW,False,True,-11.0,11.0,20241011OKC
+75,2024-11-10,7:00p,Charlotte Hornets,105.0,Philadelphia 76ers,107.0,True,19764.0,False,2024,10,11,november,True,PHI,CHO,True,False,2.0,-2.0,20241011PHI
+76,2024-11-10,8:00p,Dallas Mavericks,120.0,Denver Nuggets,122.0,False,19908.0,False,2024,10,11,november,True,DEN,DAL,True,False,2.0,-2.0,20241011DEN
+77,2024-11-10,8:00p,Sacramento Kings,127.0,Phoenix Suns,118.0,True,17071.0,False,2024,10,11,november,True,PHO,SAC,False,True,-9.0,9.0,20241011PHO
+78,2024-11-10,9:00p,Memphis Grizzlies,134.0,Portland Trail Blazers,89.0,False,18477.0,False,2024,10,11,november,True,POR,MEM,False,True,-45.0,45.0,20241011POR
+79,2024-11-10,9:30p,Toronto Raptors,103.0,Los Angeles Lakers,123.0,False,18997.0,False,2024,10,11,november,True,LAL,TOR,True,False,20.0,-20.0,20241011LAL
+80,2024-11-11,8:00p,Cleveland Cavaliers,119.0,Chicago Bulls,113.0,False,20560.0,False,2024,11,11,november,True,CHI,CLE,False,True,-6.0,6.0,20241111CHI
+81,2024-11-11,8:00p,Washington Wizards,92.0,Houston Rockets,107.0,False,15998.0,False,2024,11,11,november,True,HOU,WAS,True,False,15.0,-15.0,20241111HOU
+82,2024-11-11,8:00p,Brooklyn Nets,107.0,New Orleans Pelicans,105.0,False,16895.0,False,2024,11,11,november,True,NOP,BRK,False,True,-2.0,2.0,20241111NOP
+83,2024-11-11,8:00p,Los Angeles Clippers,128.0,Oklahoma City Thunder,134.0,False,17430.0,False,2024,11,11,november,True,OKC,LAC,True,False,6.0,-6.0,20241111OKC
+84,2024-11-11,8:00p,Sacramento Kings,96.0,San Antonio Spurs,116.0,False,17163.0,False,2024,11,11,november,True,SAS,SAC,True,False,20.0,-20.0,20241111SAS
+85,2024-11-12,7:00p,Atlanta Hawks,117.0,Boston Celtics,116.0,False,19156.0,False,2024,12,11,november,True,BOS,ATL,False,True,-1.0,1.0,20241211BOS
+86,2024-11-12,7:00p,Miami Heat,121.0,Detroit Pistons,123.0,True,17806.0,False,2024,12,11,november,True,DET,MIA,True,False,2.0,-2.0,20241211DET
+87,2024-11-12,7:00p,Charlotte Hornets,89.0,Orlando Magic,114.0,False,17541.0,False,2024,12,11,november,True,ORL,CHO,True,False,25.0,-25.0,20241211ORL
+88,2024-11-12,7:30p,New York Knicks,111.0,Philadelphia 76ers,99.0,False,19758.0,False,2024,12,11,november,True,PHI,NYK,False,True,-12.0,12.0,20241211PHI
+89,2024-11-12,8:00p,Toronto Raptors,85.0,Milwaukee Bucks,99.0,False,17341.0,False,2024,12,11,november,True,MIL,TOR,True,False,14.0,-14.0,20241211MIL
+90,2024-11-12,9:00p,Phoenix Suns,120.0,Utah Jazz,112.0,False,18175.0,False,2024,12,11,november,True,UTA,PHO,False,True,-8.0,8.0,20241211UTA
+91,2024-11-12,10:00p,Dallas Mavericks,117.0,Golden State Warriors,120.0,False,18064.0,False,2024,12,11,november,True,GSW,DAL,True,False,3.0,-3.0,20241211GSW
+92,2024-11-12,10:00p,Minnesota Timberwolves,108.0,Portland Trail Blazers,122.0,False,16880.0,False,2024,12,11,november,True,POR,MIN,True,False,14.0,-14.0,20241211POR
+93,2024-11-13,7:00p,Indiana Pacers,90.0,Orlando Magic,94.0,False,17087.0,False,2024,13,11,november,True,ORL,IND,True,False,4.0,-4.0,20241311ORL
+94,2024-11-13,7:30p,Boston Celtics,139.0,Brooklyn Nets,114.0,False,18112.0,False,2024,13,11,november,True,BRK,BOS,False,True,-25.0,25.0,20241311BRK
+95,2024-11-13,7:30p,Chicago Bulls,124.0,New York Knicks,123.0,False,19812.0,False,2024,13,11,november,True,NYK,CHI,False,True,-1.0,1.0,20241311NYK
+96,2024-11-13,7:30p,New Orleans Pelicans,88.0,Oklahoma City Thunder,106.0,False,17180.0,False,2024,13,11,november,True,OKC,NOP,True,False,18.0,-18.0,20241311OKC
+97,2024-11-13,7:30p,Cleveland Cavaliers,114.0,Philadelphia 76ers,106.0,False,19777.0,False,2024,13,11,november,True,PHI,CLE,False,True,-8.0,8.0,20241311PHI
+98,2024-11-13,8:00p,Los Angeles Clippers,103.0,Houston Rockets,111.0,False,16493.0,False,2024,13,11,november,True,HOU,LAC,True,False,8.0,-8.0,20241311HOU
+99,2024-11-13,8:00p,Detroit Pistons,120.0,Milwaukee Bucks,127.0,True,17341.0,False,2024,13,11,november,True,MIL,DET,True,False,7.0,-7.0,20241311MIL
+100,2024-11-13,8:00p,Washington Wizards,130.0,San Antonio Spurs,139.0,False,16602.0,False,2024,13,11,november,True,SAS,WAS,True,False,9.0,-9.0,20241311SAS
+101,2024-11-13,10:00p,Memphis Grizzlies,123.0,Los Angeles Lakers,128.0,False,18997.0,False,2024,13,11,november,True,LAL,MEM,True,False,5.0,-5.0,20241311LAL
+102,2024-11-13,10:00p,Minnesota Timberwolves,98.0,Portland Trail Blazers,106.0,False,17353.0,False,2024,13,11,november,True,POR,MIN,True,False,8.0,-8.0,20241311POR
+103,2024-11-13,10:00p,Phoenix Suns,104.0,Sacramento Kings,127.0,False,16204.0,False,2024,13,11,november,True,SAC,PHO,True,False,23.0,-23.0,20241311SAC
+104,2024-11-14,9:00p,Dallas Mavericks,113.0,Utah Jazz,115.0,False,18175.0,False,2024,14,11,november,True,UTA,DAL,True,False,2.0,-2.0,20241411UTA
+105,2024-11-15,7:00p,Miami Heat,124.0,Indiana Pacers,111.0,False,17274.0,False,2024,15,11,november,True,IND,MIA,False,True,-13.0,13.0,20241511IND
+106,2024-11-15,7:00p,Philadelphia 76ers,86.0,Orlando Magic,98.0,False,17843.0,False,2024,15,11,november,True,ORL,PHI,True,False,12.0,-12.0,20241511ORL
+107,2024-11-15,7:00p,Detroit Pistons,99.0,Toronto Raptors,95.0,False,19245.0,False,2024,15,11,november,True,TOR,DET,False,True,-4.0,4.0,20241511TOR
+108,2024-11-15,7:30p,Washington Wizards,117.0,Atlanta Hawks,129.0,False,16038.0,False,2024,15,11,november,True,ATL,WAS,True,False,12.0,-12.0,20241511ATL
+109,2024-11-15,7:30p,Chicago Bulls,126.0,Cleveland Cavaliers,144.0,False,19432.0,False,2024,15,11,november,True,CLE,CHI,True,False,18.0,-18.0,20241511CLE
+110,2024-11-15,7:30p,Brooklyn Nets,122.0,New York Knicks,124.0,False,19812.0,False,2024,15,11,november,True,NYK,BRK,True,False,2.0,-2.0,20241511NYK
+111,2024-11-15,7:30p,Los Angeles Lakers,120.0,San Antonio Spurs,115.0,False,18916.0,False,2024,15,11,november,True,SAS,LAL,False,True,-5.0,5.0,20241511SAS
+112,2024-11-15,8:00p,Los Angeles Clippers,104.0,Houston Rockets,125.0,False,18055.0,False,2024,15,11,november,True,HOU,LAC,True,False,21.0,-21.0,20241511HOU
+113,2024-11-15,8:00p,Denver Nuggets,94.0,New Orleans Pelicans,101.0,False,16137.0,False,2024,15,11,november,True,NOP,DEN,True,False,7.0,-7.0,20241511NOP
+114,2024-11-15,8:00p,Phoenix Suns,83.0,Oklahoma City Thunder,99.0,False,18203.0,False,2024,15,11,november,True,OKC,PHO,True,False,16.0,-16.0,20241511OKC
+115,2024-11-15,10:00p,Memphis Grizzlies,118.0,Golden State Warriors,123.0,False,18064.0,False,2024,15,11,november,True,GSW,MEM,True,False,5.0,-5.0,20241511GSW
+116,2024-11-15,10:00p,Minnesota Timberwolves,130.0,Sacramento Kings,126.0,True,16478.0,False,2024,15,11,november,True,SAC,MIN,False,True,-4.0,4.0,20241511SAC
+117,2024-11-16,3:00p,Milwaukee Bucks,114.0,Charlotte Hornets,115.0,False,19145.0,False,2024,16,11,november,True,CHO,MIL,True,False,1.0,-1.0,20241611CHO
+118,2024-11-16,8:00p,Toronto Raptors,123.0,Boston Celtics,126.0,True,19156.0,False,2024,16,11,november,True,BOS,TOR,True,False,3.0,-3.0,20241611BOS
+119,2024-11-16,8:00p,Los Angeles Lakers,104.0,New Orleans Pelicans,99.0,False,18761.0,False,2024,16,11,november,True,NOP,LAL,False,True,-5.0,5.0,20241611NOP
+120,2024-11-16,8:30p,San Antonio Spurs,93.0,Dallas Mavericks,110.0,False,20311.0,False,2024,16,11,november,True,DAL,SAS,True,False,17.0,-17.0,20241611DAL
+121,2024-11-16,10:00p,Utah Jazz,117.0,Sacramento Kings,121.0,False,16568.0,False,2024,16,11,november,True,SAC,UTA,True,False,4.0,-4.0,20241611SAC
+122,2024-11-17,3:30p,Phoenix Suns,117.0,Minnesota Timberwolves,120.0,False,18978.0,False,2024,17,11,november,True,MIN,PHO,True,False,3.0,-3.0,20241711MIN
+123,2024-11-17,5:00p,Miami Heat,110.0,Indiana Pacers,119.0,False,16184.0,False,2024,17,11,november,True,IND,MIA,True,False,9.0,-9.0,20241711IND
+124,2024-11-17,6:00p,Charlotte Hornets,114.0,Cleveland Cavaliers,128.0,False,19432.0,False,2024,17,11,november,True,CLE,CHO,True,False,14.0,-14.0,20241711CLE
+125,2024-11-17,6:00p,Denver Nuggets,90.0,Memphis Grizzlies,105.0,False,16351.0,False,2024,17,11,november,True,MEM,DEN,True,False,15.0,-15.0,20241711MEM
+126,2024-11-17,6:00p,Atlanta Hawks,110.0,Portland Trail Blazers,114.0,False,17384.0,False,2024,17,11,november,True,POR,ATL,True,False,4.0,-4.0,20241711POR
+127,2024-11-17,6:00p,Detroit Pistons,124.0,Washington Wizards,104.0,False,14789.0,False,2024,17,11,november,True,WAS,DET,False,True,-20.0,20.0,20241711WAS
+128,2024-11-17,7:00p,Houston Rockets,143.0,Chicago Bulls,107.0,False,20667.0,False,2024,17,11,november,True,CHI,HOU,False,True,-36.0,36.0,20241711CHI
+129,2024-11-17,7:00p,Brooklyn Nets,104.0,New York Knicks,114.0,False,19812.0,False,2024,17,11,november,True,NYK,BRK,True,False,10.0,-10.0,20241711NYK
+130,2024-11-17,7:00p,Dallas Mavericks,121.0,Oklahoma City Thunder,119.0,False,18203.0,False,2024,17,11,november,True,OKC,DAL,False,True,-2.0,2.0,20241711OKC
+131,2024-11-17,9:00p,Utah Jazz,105.0,Los Angeles Clippers,116.0,False,15500.0,False,2024,17,11,november,True,LAC,UTA,True,False,11.0,-11.0,20241711LAC
+132,2024-11-18,7:00p,Chicago Bulls,122.0,Detroit Pistons,112.0,False,18022.0,False,2024,18,11,november,True,DET,CHI,False,True,-10.0,10.0,20241811DET
+133,2024-11-18,7:30p,Philadelphia 76ers,89.0,Miami Heat,106.0,False,19608.0,False,2024,18,11,november,True,MIA,PHI,True,False,17.0,-17.0,20241811MIA
+134,2024-11-18,7:30p,Washington Wizards,106.0,New York Knicks,134.0,False,19812.0,False,2024,18,11,november,True,NYK,WAS,True,False,28.0,-28.0,20241811NYK
+135,2024-11-18,7:30p,Indiana Pacers,119.0,Toronto Raptors,130.0,False,19025.0,False,2024,18,11,november,True,TOR,IND,True,False,11.0,-11.0,20241811TOR
+136,2024-11-18,8:00p,Houston Rockets,100.0,Milwaukee Bucks,101.0,False,17341.0,False,2024,18,11,november,True,MIL,HOU,True,False,1.0,-1.0,20241811MIL
+137,2024-11-18,9:00p,Orlando Magic,109.0,Phoenix Suns,99.0,False,17071.0,False,2024,18,11,november,True,PHO,ORL,False,True,-10.0,10.0,20241811PHO
+138,2024-11-18,10:00p,Atlanta Hawks,109.0,Sacramento Kings,108.0,False,16333.0,False,2024,18,11,november,True,SAC,ATL,False,True,-1.0,1.0,20241811SAC
+139,2024-11-18,10:30p,Golden State Warriors,99.0,Los Angeles Clippers,102.0,False,17927.0,False,2024,18,11,november,True,LAC,GSW,True,False,3.0,-3.0,20241811LAC
+140,2024-11-19,7:00p,Cleveland Cavaliers,117.0,Boston Celtics,120.0,False,19156.0,False,2024,19,11,november,True,BOS,CLE,True,False,3.0,-3.0,20241911BOS
+141,2024-11-19,7:30p,Charlotte Hornets,115.0,Brooklyn Nets,116.0,False,18117.0,False,2024,19,11,november,True,BRK,CHO,True,False,1.0,-1.0,20241911BRK
+142,2024-11-19,8:00p,Denver Nuggets,122.0,Memphis Grizzlies,110.0,False,15377.0,False,2024,19,11,november,True,MEM,DEN,False,True,-12.0,12.0,20241911MEM
+143,2024-11-19,8:30p,New Orleans Pelicans,91.0,Dallas Mavericks,132.0,False,20077.0,False,2024,19,11,november,True,DAL,NOP,True,False,41.0,-41.0,20241911DAL
+144,2024-11-19,9:30p,Oklahoma City Thunder,104.0,San Antonio Spurs,110.0,False,16667.0,False,2024,19,11,november,True,SAS,OKC,True,False,6.0,-6.0,20241911SAS
+145,2024-11-19,10:30p,Utah Jazz,118.0,Los Angeles Lakers,124.0,False,18997.0,False,2024,19,11,november,True,LAL,UTA,True,False,6.0,-6.0,20241911LAL
+146,2024-11-20,7:30p,New Orleans Pelicans,100.0,Cleveland Cavaliers,128.0,False,19432.0,False,2024,20,11,november,True,CLE,NOP,True,False,28.0,-28.0,20242011CLE
+147,2024-11-20,7:30p,Chicago Bulls,106.0,Milwaukee Bucks,122.0,False,17341.0,False,2024,20,11,november,True,MIL,CHI,True,False,16.0,-16.0,20242011MIL
+148,2024-11-20,8:00p,Indiana Pacers,113.0,Houston Rockets,130.0,False,16087.0,False,2024,20,11,november,True,HOU,IND,True,False,17.0,-17.0,20242011HOU
+149,2024-11-20,8:00p,Philadelphia 76ers,111.0,Memphis Grizzlies,117.0,False,15533.0,False,2024,20,11,november,True,MEM,PHI,True,False,6.0,-6.0,20242011MEM
+150,2024-11-20,8:00p,Portland Trail Blazers,99.0,Oklahoma City Thunder,109.0,False,17752.0,False,2024,20,11,november,True,OKC,POR,True,False,10.0,-10.0,20242011OKC
+151,2024-11-20,10:00p,Atlanta Hawks,97.0,Golden State Warriors,120.0,False,18064.0,False,2024,20,11,november,True,GSW,ATL,True,False,23.0,-23.0,20242011GSW
+152,2024-11-20,10:00p,New York Knicks,138.0,Phoenix Suns,122.0,False,17071.0,False,2024,20,11,november,True,PHO,NYK,False,True,-16.0,16.0,20242011PHO
+153,2024-11-20,10:30p,Orlando Magic,93.0,Los Angeles Clippers,104.0,False,16563.0,False,2024,20,11,november,True,LAC,ORL,True,False,11.0,-11.0,20242011LAC
+154,2024-11-21,7:00p,Detroit Pistons,121.0,Charlotte Hornets,123.0,True,14671.0,False,2024,21,11,november,True,CHO,DET,True,False,2.0,-2.0,20242111CHO
+155,2024-11-21,7:30p,Minnesota Timberwolves,105.0,Toronto Raptors,110.0,False,19296.0,False,2024,21,11,november,True,TOR,MIN,True,False,5.0,-5.0,20242111TOR
+156,2024-11-21,8:00p,Utah Jazz,118.0,San Antonio Spurs,126.0,False,17087.0,False,2024,21,11,november,True,SAS,UTA,True,False,8.0,-8.0,20242111SAS
+157,2024-11-21,10:30p,Orlando Magic,119.0,Los Angeles Lakers,118.0,False,18997.0,False,2024,21,11,november,True,LAL,ORL,False,True,-1.0,1.0,20242111LAL
+158,2024-11-22,7:00p,Brooklyn Nets,98.0,Philadelphia 76ers,113.0,False,19817.0,False,2024,22,11,november,True,PHI,BRK,True,False,15.0,-15.0,20242211PHI
+159,2024-11-22,7:00p,Boston Celtics,108.0,Washington Wizards,96.0,False,20385.0,False,2024,22,11,november,True,WAS,BOS,False,True,-12.0,12.0,20242211WAS
+160,2024-11-22,7:30p,Golden State Warriors,112.0,New Orleans Pelicans,108.0,False,16820.0,False,2024,22,11,november,True,NOP,GSW,False,True,-4.0,4.0,20242211NOP
+161,2024-11-22,8:00p,Atlanta Hawks,122.0,Chicago Bulls,136.0,False,19979.0,False,2024,22,11,november,True,CHI,ATL,True,False,14.0,-14.0,20242211CHI
+162,2024-11-22,8:00p,Portland Trail Blazers,88.0,Houston Rockets,116.0,False,15546.0,False,2024,22,11,november,True,HOU,POR,True,False,28.0,-28.0,20242211HOU
+163,2024-11-22,8:00p,Indiana Pacers,117.0,Milwaukee Bucks,129.0,False,17341.0,False,2024,22,11,november,True,MIL,IND,True,False,12.0,-12.0,20242211MIL
+164,2024-11-22,10:00p,Dallas Mavericks,123.0,Denver Nuggets,120.0,False,19923.0,False,2024,22,11,november,True,DEN,DAL,False,True,-3.0,3.0,20242211DEN
+165,2024-11-22,10:30p,Sacramento Kings,88.0,Los Angeles Clippers,104.0,False,16228.0,False,2024,22,11,november,True,LAC,SAC,True,False,16.0,-16.0,20242211LAC
+166,2024-11-23,5:00p,New York Knicks,106.0,Utah Jazz,121.0,False,18175.0,False,2024,23,11,november,True,UTA,NYK,True,False,15.0,-15.0,20242311UTA
+167,2024-11-23,7:00p,Detroit Pistons,100.0,Orlando Magic,111.0,False,19094.0,False,2024,23,11,november,True,ORL,DET,True,False,11.0,-11.0,20242311ORL
+168,2024-11-23,8:00p,Memphis Grizzlies,142.0,Chicago Bulls,131.0,False,19449.0,False,2024,23,11,november,True,CHI,MEM,False,True,-11.0,11.0,20242311CHI
+169,2024-11-23,8:00p,Portland Trail Blazers,104.0,Houston Rockets,98.0,False,16102.0,False,2024,23,11,november,True,HOU,POR,False,True,-6.0,6.0,20242311HOU
+170,2024-11-23,8:00p,Charlotte Hornets,119.0,Milwaukee Bucks,125.0,False,17341.0,False,2024,23,11,november,True,MIL,CHO,True,False,6.0,-6.0,20242311MIL
+171,2024-11-23,8:30p,Golden State Warriors,94.0,San Antonio Spurs,104.0,False,18847.0,False,2024,23,11,november,True,SAS,GSW,True,False,10.0,-10.0,20242311SAS
+172,2024-11-23,10:30p,Denver Nuggets,127.0,Los Angeles Lakers,102.0,False,18997.0,False,2024,23,11,november,True,LAL,DEN,False,True,-25.0,25.0,20242311LAL
+173,2024-11-24,3:30p,Minnesota Timberwolves,105.0,Boston Celtics,107.0,False,19156.0,False,2024,24,11,november,True,BOS,MIN,True,False,2.0,-2.0,20242411BOS
+174,2024-11-24,5:00p,Washington Wizards,103.0,Indiana Pacers,115.0,False,17274.0,False,2024,24,11,november,True,IND,WAS,True,False,12.0,-12.0,20242411IND
+175,2024-11-24,6:00p,Dallas Mavericks,118.0,Miami Heat,123.0,True,19714.0,False,2024,24,11,november,True,MIA,DAL,True,False,5.0,-5.0,20242411MIA
+176,2024-11-24,6:00p,Los Angeles Clippers,125.0,Philadelphia 76ers,99.0,False,19780.0,False,2024,24,11,november,True,PHI,LAC,False,True,-26.0,26.0,20242411PHI
+177,2024-11-24,7:30p,Toronto Raptors,108.0,Cleveland Cavaliers,122.0,False,19432.0,False,2024,24,11,november,True,CLE,TOR,True,False,14.0,-14.0,20242411CLE
+178,2024-11-24,9:00p,Brooklyn Nets,108.0,Sacramento Kings,103.0,False,16750.0,False,2024,24,11,november,True,SAC,BRK,False,True,-5.0,5.0,20242411SAC
+179,2024-11-25,7:00p,Orlando Magic,95.0,Charlotte Hornets,84.0,False,14898.0,False,2024,25,11,november,True,CHO,ORL,False,True,-11.0,11.0,20242511CHO
+180,2024-11-25,7:00p,Toronto Raptors,100.0,Detroit Pistons,102.0,False,18421.0,False,2024,25,11,november,True,DET,TOR,True,False,2.0,-2.0,20242511DET
+181,2024-11-25,7:00p,New Orleans Pelicans,110.0,Indiana Pacers,114.0,False,16059.0,False,2024,25,11,november,True,IND,NOP,True,False,4.0,-4.0,20242511IND
+182,2024-11-25,7:30p,Dallas Mavericks,129.0,Atlanta Hawks,119.0,False,17186.0,False,2024,25,11,november,True,ATL,DAL,False,True,-10.0,10.0,20242511ATL
+183,2024-11-25,7:30p,Los Angeles Clippers,94.0,Boston Celtics,126.0,False,19156.0,False,2024,25,11,november,True,BOS,LAC,True,False,32.0,-32.0,20242511BOS
+184,2024-11-25,8:00p,Portland Trail Blazers,98.0,Memphis Grizzlies,123.0,False,15796.0,False,2024,25,11,november,True,MEM,POR,True,False,25.0,-25.0,20242511MEM
+185,2024-11-25,9:00p,New York Knicks,145.0,Denver Nuggets,118.0,False,19842.0,False,2024,25,11,november,True,DEN,NYK,False,True,-27.0,27.0,20242511DEN
+186,2024-11-25,10:00p,Brooklyn Nets,128.0,Golden State Warriors,120.0,False,18064.0,False,2024,25,11,november,True,GSW,BRK,False,True,-8.0,8.0,20242511GSW
+187,2024-11-25,10:00p,Oklahoma City Thunder,130.0,Sacramento Kings,109.0,False,17832.0,False,2024,25,11,november,True,SAC,OKC,False,True,-21.0,21.0,20242511SAC
+188,2024-11-26,7:00p,Chicago Bulls,127.0,Washington Wizards,108.0,False,15921.0,False,2024,26,11,november,True,WAS,CHI,False,True,-19.0,19.0,20242611WAS
+189,2024-11-26,7:30p,Milwaukee Bucks,106.0,Miami Heat,103.0,False,19622.0,False,2024,26,11,november,True,MIA,MIL,False,True,-3.0,3.0,20242611MIA
+190,2024-11-26,8:00p,Houston Rockets,117.0,Minnesota Timberwolves,111.0,True,18978.0,False,2024,26,11,november,True,MIN,HOU,False,True,-6.0,6.0,20242611MIN
+191,2024-11-26,9:00p,San Antonio Spurs,128.0,Utah Jazz,115.0,False,18175.0,False,2024,26,11,november,True,UTA,SAS,False,True,-13.0,13.0,20242611UTA
+192,2024-11-26,10:00p,Los Angeles Lakers,100.0,Phoenix Suns,127.0,False,17071.0,False,2024,26,11,november,True,PHO,LAL,True,False,27.0,-27.0,20242611PHO
+193,2024-11-27,7:00p,Miami Heat,98.0,Charlotte Hornets,94.0,False,17710.0,False,2024,27,11,november,True,CHO,MIA,False,True,-4.0,4.0,20242711CHO
+194,2024-11-27,7:00p,Atlanta Hawks,135.0,Cleveland Cavaliers,124.0,False,19432.0,False,2024,27,11,november,True,CLE,ATL,False,True,-11.0,11.0,20242711CLE
+195,2024-11-27,7:00p,Portland Trail Blazers,114.0,Indiana Pacers,121.0,False,17274.0,False,2024,27,11,november,True,IND,POR,True,False,7.0,-7.0,20242711IND
+196,2024-11-27,7:00p,Chicago Bulls,119.0,Orlando Magic,133.0,False,18309.0,False,2024,27,11,november,True,ORL,CHI,True,False,14.0,-14.0,20242711ORL
+197,2024-11-27,7:00p,Houston Rockets,122.0,Philadelphia 76ers,115.0,True,19765.0,False,2024,27,11,november,True,PHI,HOU,False,True,-7.0,7.0,20242711PHI
+198,2024-11-27,7:00p,Los Angeles Clippers,121.0,Washington Wizards,96.0,False,15066.0,False,2024,27,11,november,True,WAS,LAC,False,True,-25.0,25.0,20242711WAS
+199,2024-11-27,7:30p,New York Knicks,114.0,Dallas Mavericks,129.0,False,20413.0,False,2024,27,11,november,True,DAL,NYK,True,False,15.0,-15.0,20242711DAL
+200,2024-11-27,8:00p,Detroit Pistons,111.0,Memphis Grizzlies,131.0,False,16261.0,False,2024,27,11,november,True,MEM,DET,True,False,20.0,-20.0,20242711MEM
+201,2024-11-27,8:00p,Sacramento Kings,115.0,Minnesota Timberwolves,104.0,False,18978.0,False,2024,27,11,november,True,MIN,SAC,False,True,-11.0,11.0,20242711MIN
+202,2024-11-27,8:00p,Toronto Raptors,119.0,New Orleans Pelicans,93.0,False,17307.0,False,2024,27,11,november,True,NOP,TOR,False,True,-26.0,26.0,20242711NOP
+203,2024-11-27,8:30p,Los Angeles Lakers,119.0,San Antonio Spurs,101.0,False,19120.0,False,2024,27,11,november,True,SAS,LAL,False,True,-18.0,18.0,20242711SAS
+204,2024-11-27,9:00p,Brooklyn Nets,127.0,Phoenix Suns,117.0,False,17071.0,False,2024,27,11,november,True,PHO,BRK,False,True,-10.0,10.0,20242711PHO
+205,2024-11-27,9:00p,Denver Nuggets,122.0,Utah Jazz,103.0,False,18175.0,False,2024,27,11,november,True,UTA,DEN,False,True,-19.0,19.0,20242711UTA
+206,2024-11-27,10:00p,Oklahoma City Thunder,105.0,Golden State Warriors,101.0,False,18064.0,False,2024,27,11,november,True,GSW,OKC,False,True,-4.0,4.0,20242711GSW
+207,2024-11-29,12:00p,New York Knicks,99.0,Charlotte Hornets,98.0,False,19313.0,False,2024,29,11,november,True,CHO,NYK,False,True,-1.0,1.0,20242911CHO
+208,2024-11-29,2:30p,Cleveland Cavaliers,101.0,Atlanta Hawks,117.0,False,17881.0,False,2024,29,11,november,True,ATL,CLE,True,False,16.0,-16.0,20242911ATL
+209,2024-11-29,5:00p,New Orleans Pelicans,109.0,Memphis Grizzlies,120.0,False,17014.0,False,2024,29,11,november,True,MEM,NOP,True,False,11.0,-11.0,20242911MEM
+210,2024-11-29,7:30p,Orlando Magic,123.0,Brooklyn Nets,100.0,False,18143.0,False,2024,29,11,november,True,BRK,ORL,False,True,-23.0,23.0,20242911BRK
+211,2024-11-29,7:30p,Los Angeles Clippers,92.0,Minnesota Timberwolves,93.0,False,18978.0,False,2024,29,11,november,True,MIN,LAC,True,False,1.0,-1.0,20242911MIN
+212,2024-11-29,8:00p,Boston Celtics,138.0,Chicago Bulls,129.0,False,19798.0,False,2024,29,11,november,True,CHI,BOS,False,True,-9.0,9.0,20242911CHI
+213,2024-11-29,8:00p,Detroit Pistons,130.0,Indiana Pacers,106.0,False,17274.0,False,2024,29,11,november,True,IND,DET,False,True,-24.0,24.0,20242911IND
+214,2024-11-29,8:00p,Toronto Raptors,111.0,Miami Heat,121.0,False,19607.0,False,2024,29,11,november,True,MIA,TOR,True,False,10.0,-10.0,20242911MIA
+215,2024-11-29,10:00p,Oklahoma City Thunder,101.0,Los Angeles Lakers,93.0,False,18997.0,False,2024,29,11,november,True,LAL,OKC,False,True,-8.0,8.0,20242911LAL
+216,2024-11-29,10:00p,Sacramento Kings,106.0,Portland Trail Blazers,115.0,False,17565.0,False,2024,29,11,november,True,POR,SAC,True,False,9.0,-9.0,20242911POR
+217,2024-11-30,6:00p,Atlanta Hawks,107.0,Charlotte Hornets,104.0,False,17969.0,False,2024,30,11,november,True,CHO,ATL,False,True,-3.0,3.0,20243011CHO
+218,2024-11-30,7:00p,Philadelphia 76ers,111.0,Detroit Pistons,96.0,False,22062.0,False,2024,30,11,november,True,DET,PHI,False,True,-15.0,15.0,20243011DET
+219,2024-11-30,8:00p,Washington Wizards,114.0,Milwaukee Bucks,124.0,False,17341.0,False,2024,30,11,november,True,MIL,WAS,True,False,10.0,-10.0,20243011MIL
+220,2024-11-30,9:00p,Golden State Warriors,105.0,Phoenix Suns,113.0,False,17071.0,False,2024,30,11,november,True,PHO,GSW,True,False,8.0,-8.0,20243011PHO
+221,2024-11-30,9:30p,Dallas Mavericks,106.0,Utah Jazz,94.0,False,18175.0,False,2024,30,11,november,True,UTA,DAL,False,True,-12.0,12.0,20243011UTA
+0,2024-12-01,3:30p,Orlando Magic,100.0,Brooklyn Nets,92.0,False,16505.0,False,2024,01,12,december,True,BRK,ORL,False,True,-8.0,8.0,20240112BRK
+1,2024-12-01,3:30p,Indiana Pacers,121.0,Memphis Grizzlies,136.0,False,15901.0,False,2024,01,12,december,True,MEM,IND,True,False,15.0,-15.0,20240112MEM
+2,2024-12-01,6:00p,Boston Celtics,111.0,Cleveland Cavaliers,115.0,False,19432.0,False,2024,01,12,december,True,CLE,BOS,True,False,4.0,-4.0,20240112CLE
+3,2024-12-01,6:00p,New Orleans Pelicans,85.0,New York Knicks,118.0,False,19812.0,False,2024,01,12,december,True,NYK,NOP,True,False,33.0,-33.0,20240112NYK
+4,2024-12-01,6:00p,Miami Heat,116.0,Toronto Raptors,119.0,False,18153.0,False,2024,01,12,december,True,TOR,MIA,True,False,3.0,-3.0,20240112TOR
+5,2024-12-01,7:00p,Oklahoma City Thunder,116.0,Houston Rockets,119.0,False,18055.0,False,2024,01,12,december,True,HOU,OKC,True,False,3.0,-3.0,20240112HOU
+6,2024-12-01,8:00p,Los Angeles Lakers,105.0,Utah Jazz,104.0,False,18175.0,False,2024,01,12,december,True,UTA,LAL,False,True,-1.0,1.0,20240112UTA
+7,2024-12-01,9:00p,Dallas Mavericks,137.0,Portland Trail Blazers,131.0,False,16205.0,False,2024,01,12,december,True,POR,DAL,False,True,-6.0,6.0,20240112POR
+8,2024-12-01,9:00p,San Antonio Spurs,127.0,Sacramento Kings,125.0,False,16014.0,False,2024,01,12,december,True,SAC,SAS,False,True,-2.0,2.0,20240112SAC
+9,2024-12-01,10:00p,Denver Nuggets,122.0,Los Angeles Clippers,126.0,False,16182.0,False,2024,01,12,december,True,LAC,DEN,True,False,4.0,-4.0,20240112LAC
+10,2024-12-02,7:30p,New Orleans Pelicans,112.0,Atlanta Hawks,124.0,False,15034.0,False,2024,02,12,december,True,ATL,NOP,True,False,12.0,-12.0,20240212ATL
+11,2024-12-02,7:30p,Miami Heat,89.0,Boston Celtics,108.0,False,19156.0,False,2024,02,12,december,True,BOS,MIA,True,False,19.0,-19.0,20240212BOS
+12,2024-12-02,8:00p,Brooklyn Nets,102.0,Chicago Bulls,128.0,False,19131.0,False,2024,02,12,december,True,CHI,BRK,True,False,26.0,-26.0,20240212CHI
+13,2024-12-02,8:00p,Los Angeles Lakers,80.0,Minnesota Timberwolves,109.0,False,18978.0,False,2024,02,12,december,True,MIN,LAL,True,False,29.0,-29.0,20240212MIN
+14,2024-12-03,7:00p,Philadelphia 76ers,110.0,Charlotte Hornets,104.0,False,14956.0,False,2024,03,12,december,True,CHO,PHI,False,True,-6.0,6.0,20240312CHO
+15,2024-12-03,7:00p,Washington Wizards,87.0,Cleveland Cavaliers,118.0,False,19432.0,False,2024,03,12,december,True,CLE,WAS,True,False,31.0,-31.0,20240312CLE
+16,2024-12-03,7:00p,Milwaukee Bucks,128.0,Detroit Pistons,107.0,False,17988.0,False,2024,03,12,december,True,DET,MIL,False,True,-21.0,21.0,20240312DET
+17,2024-12-03,7:30p,Orlando Magic,106.0,New York Knicks,121.0,False,19812.0,False,2024,03,12,december,True,NYK,ORL,True,False,15.0,-15.0,20240312NYK
+18,2024-12-03,7:30p,Indiana Pacers,111.0,Toronto Raptors,122.0,False,17741.0,False,2024,03,12,december,True,TOR,IND,True,False,11.0,-11.0,20240312TOR
+19,2024-12-03,8:00p,Utah Jazz,106.0,Oklahoma City Thunder,133.0,False,17711.0,False,2024,03,12,december,True,OKC,UTA,True,False,27.0,-27.0,20240312OKC
+20,2024-12-03,8:30p,Memphis Grizzlies,116.0,Dallas Mavericks,121.0,False,20277.0,False,2024,03,12,december,True,DAL,MEM,True,False,5.0,-5.0,20240312DAL
+21,2024-12-03,9:00p,San Antonio Spurs,93.0,Phoenix Suns,104.0,False,17071.0,False,2024,03,12,december,True,PHO,SAS,True,False,11.0,-11.0,20240312PHO
+22,2024-12-03,10:00p,Golden State Warriors,115.0,Denver Nuggets,119.0,False,19912.0,False,2024,03,12,december,True,DEN,GSW,True,False,4.0,-4.0,20240312DEN
+23,2024-12-03,10:00p,Houston Rockets,111.0,Sacramento Kings,120.0,False,15019.0,False,2024,03,12,december,True,SAC,HOU,True,False,9.0,-9.0,20240312SAC
+24,2024-12-03,10:30p,Portland Trail Blazers,105.0,Los Angeles Clippers,127.0,False,15583.0,False,2024,03,12,december,True,LAC,POR,True,False,22.0,-22.0,20240312LAC
+25,2024-12-04,7:30p,Detroit Pistons,120.0,Boston Celtics,130.0,False,19156.0,False,2024,04,12,december,True,BOS,DET,True,False,10.0,-10.0,20240412BOS
+26,2024-12-04,7:30p,Indiana Pacers,90.0,Brooklyn Nets,99.0,False,16748.0,False,2024,04,12,december,True,BRK,IND,True,False,9.0,-9.0,20240412BRK
+27,2024-12-04,7:30p,Los Angeles Lakers,93.0,Miami Heat,134.0,False,19657.0,False,2024,04,12,december,True,MIA,LAL,True,False,41.0,-41.0,20240412MIA
+28,2024-12-04,7:30p,Orlando Magic,106.0,Philadelphia 76ers,102.0,False,19851.0,False,2024,04,12,december,True,PHI,ORL,False,True,-4.0,4.0,20240412PHI
+29,2024-12-04,8:00p,Atlanta Hawks,119.0,Milwaukee Bucks,104.0,False,17341.0,False,2024,04,12,december,True,MIL,ATL,False,True,-15.0,15.0,20240412MIL
+30,2024-12-04,10:30p,Minnesota Timberwolves,108.0,Los Angeles Clippers,80.0,False,15111.0,False,2024,04,12,december,True,LAC,MIN,False,True,-28.0,28.0,20240412LAC
+31,2024-12-05,7:00p,Denver Nuggets,114.0,Cleveland Cavaliers,126.0,False,19432.0,False,2024,05,12,december,True,CLE,DEN,True,False,12.0,-12.0,20240512CLE
+32,2024-12-05,7:00p,Dallas Mavericks,137.0,Washington Wizards,101.0,False,15921.0,False,2024,05,12,december,True,WAS,DAL,False,True,-36.0,36.0,20240512WAS
+33,2024-12-05,7:30p,Charlotte Hornets,101.0,New York Knicks,125.0,False,19812.0,False,2024,05,12,december,True,NYK,CHO,True,False,24.0,-24.0,20240512NYK
+34,2024-12-05,7:30p,Oklahoma City Thunder,129.0,Toronto Raptors,92.0,False,18356.0,False,2024,05,12,december,True,TOR,OKC,False,True,-37.0,37.0,20240512TOR
+35,2024-12-05,8:00p,Sacramento Kings,110.0,Memphis Grizzlies,115.0,False,15776.0,False,2024,05,12,december,True,MEM,SAC,True,False,5.0,-5.0,20240512MEM
+36,2024-12-05,8:00p,Phoenix Suns,124.0,New Orleans Pelicans,126.0,False,16365.0,False,2024,05,12,december,True,NOP,PHO,True,False,2.0,-2.0,20240512NOP
+37,2024-12-05,8:00p,Chicago Bulls,139.0,San Antonio Spurs,124.0,False,17720.0,False,2024,05,12,december,True,SAS,CHI,False,True,-15.0,15.0,20240512SAS
+38,2024-12-05,10:00p,Houston Rockets,93.0,Golden State Warriors,99.0,False,18064.0,False,2024,05,12,december,True,GSW,HOU,True,False,6.0,-6.0,20240512GSW
+39,2024-12-06,7:00p,Orlando Magic,94.0,Philadelphia 76ers,102.0,False,19802.0,False,2024,06,12,december,True,PHI,ORL,True,False,8.0,-8.0,20240612PHI
+40,2024-12-06,7:30p,Los Angeles Lakers,132.0,Atlanta Hawks,134.0,True,18040.0,False,2024,06,12,december,True,ATL,LAL,True,False,2.0,-2.0,20240612ATL
+41,2024-12-06,7:30p,Milwaukee Bucks,105.0,Boston Celtics,111.0,False,,False,2024,06,12,december,True,BOS,MIL,True,False,6.0,-6.0,20240612BOS
+42,2024-12-06,8:00p,Indiana Pacers,132.0,Chicago Bulls,123.0,False,19544.0,False,2024,06,12,december,True,CHI,IND,False,True,-9.0,9.0,20240612CHI
+43,2024-12-06,8:00p,Sacramento Kings,140.0,San Antonio Spurs,113.0,False,16796.0,False,2024,06,12,december,True,SAS,SAC,False,True,-27.0,27.0,20240612SAS
+44,2024-12-06,10:00p,Minnesota Timberwolves,107.0,Golden State Warriors,90.0,False,18064.0,False,2024,06,12,december,True,GSW,MIN,False,True,-17.0,17.0,20240612GSW
+45,2024-12-06,10:00p,Utah Jazz,141.0,Portland Trail Blazers,99.0,False,16446.0,False,2024,06,12,december,True,POR,UTA,False,True,-42.0,42.0,20240612POR
+46,2024-12-07,1:00p,Cleveland Cavaliers,116.0,Charlotte Hornets,102.0,False,18832.0,False,2024,07,12,december,True,CHO,CLE,False,True,-14.0,14.0,20240712CHO
+47,2024-12-07,7:00p,Oklahoma City Thunder,119.0,New Orleans Pelicans,109.0,False,15718.0,False,2024,07,12,december,True,NOP,OKC,False,True,-10.0,10.0,20240712NOP
+48,2024-12-07,7:00p,Denver Nuggets,113.0,Washington Wizards,122.0,False,16182.0,False,2024,07,12,december,True,WAS,DEN,True,False,9.0,-9.0,20240712WAS
+49,2024-12-07,7:30p,Detroit Pistons,120.0,New York Knicks,111.0,False,19812.0,False,2024,07,12,december,True,NYK,DET,False,True,-9.0,9.0,20240712NYK
+50,2024-12-07,7:30p,Dallas Mavericks,125.0,Toronto Raptors,118.0,False,19625.0,False,2024,07,12,december,True,TOR,DAL,False,True,-7.0,7.0,20240712TOR
+51,2024-12-07,8:00p,Memphis Grizzlies,127.0,Boston Celtics,121.0,False,19156.0,False,2024,07,12,december,True,BOS,MEM,False,True,-6.0,6.0,20240712BOS
+52,2024-12-07,8:00p,Phoenix Suns,111.0,Miami Heat,121.0,False,19600.0,False,2024,07,12,december,True,MIA,PHO,True,False,10.0,-10.0,20240712MIA
+53,2024-12-08,1:00p,Philadelphia 76ers,108.0,Chicago Bulls,100.0,False,18837.0,False,2024,08,12,december,True,CHI,PHI,False,True,-8.0,8.0,20240812CHI
+54,2024-12-08,3:30p,Milwaukee Bucks,118.0,Brooklyn Nets,113.0,False,17926.0,False,2024,08,12,december,True,BRK,MIL,False,True,-5.0,5.0,20240812BRK
+55,2024-12-08,5:00p,Charlotte Hornets,113.0,Indiana Pacers,109.0,False,17274.0,False,2024,08,12,december,True,IND,CHO,False,True,-4.0,4.0,20240812IND
+56,2024-12-08,6:00p,Denver Nuggets,141.0,Atlanta Hawks,111.0,False,16137.0,False,2024,08,12,december,True,ATL,DEN,False,True,-30.0,30.0,20240812ATL
+57,2024-12-08,6:00p,Cleveland Cavaliers,113.0,Miami Heat,122.0,False,19600.0,False,2024,08,12,december,True,MIA,CLE,True,False,9.0,-9.0,20240812MIA
+58,2024-12-08,6:30p,Phoenix Suns,110.0,Orlando Magic,115.0,False,18311.0,False,2024,08,12,december,True,ORL,PHO,True,False,5.0,-5.0,20240812ORL
+59,2024-12-08,7:00p,New Orleans Pelicans,116.0,San Antonio Spurs,121.0,False,16840.0,False,2024,08,12,december,True,SAS,NOP,True,False,5.0,-5.0,20240812SAS
+60,2024-12-08,7:00p,Memphis Grizzlies,140.0,Washington Wizards,112.0,False,15012.0,False,2024,08,12,december,True,WAS,MEM,False,True,-28.0,28.0,20240812WAS
+61,2024-12-08,8:30p,Minnesota Timberwolves,106.0,Golden State Warriors,114.0,False,18064.0,False,2024,08,12,december,True,GSW,MIN,True,False,8.0,-8.0,20240812GSW
+62,2024-12-08,9:00p,Houston Rockets,117.0,Los Angeles Clippers,106.0,False,14782.0,False,2024,08,12,december,True,LAC,HOU,False,True,-11.0,11.0,20240812LAC
+63,2024-12-08,9:00p,Utah Jazz,97.0,Sacramento Kings,141.0,False,15706.0,False,2024,08,12,december,True,SAC,UTA,True,False,44.0,-44.0,20240812SAC
+64,2024-12-08,9:30p,Portland Trail Blazers,98.0,Los Angeles Lakers,107.0,False,18997.0,False,2024,08,12,december,True,LAL,POR,True,False,9.0,-9.0,20240812LAL
+65,2024-12-09,7:30p,New York Knicks,113.0,Toronto Raptors,108.0,False,18284.0,False,2024,09,12,december,True,TOR,NYK,False,True,-5.0,5.0,20240912TOR
+66,2024-12-10,7:00p,Orlando Magic,109.0,Milwaukee Bucks,114.0,False,17341.0,False,2024,10,12,december,True,MIL,ORL,True,False,5.0,-5.0,20241012MIL
+67,2024-12-10,9:30p,Dallas Mavericks,104.0,Oklahoma City Thunder,118.0,False,17724.0,False,2024,10,12,december,True,OKC,DAL,True,False,14.0,-14.0,20241012OKC
+68,2024-12-11,7:00p,Atlanta Hawks,108.0,New York Knicks,100.0,False,19812.0,False,2024,11,12,december,True,NYK,ATL,False,True,-8.0,8.0,20241112NYK
+69,2024-12-11,9:30p,Golden State Warriors,90.0,Houston Rockets,91.0,False,18055.0,False,2024,11,12,december,True,HOU,GSW,True,False,1.0,-1.0,20241112HOU
+70,2024-12-12,7:30p,Detroit Pistons,99.0,Boston Celtics,123.0,False,19156.0,False,2024,12,12,december,True,BOS,DET,True,False,24.0,-24.0,20241212BOS
+71,2024-12-12,7:30p,Toronto Raptors,104.0,Miami Heat,114.0,False,19600.0,False,2024,12,12,december,True,MIA,TOR,True,False,10.0,-10.0,20241212MIA
+72,2024-12-12,8:00p,Sacramento Kings,111.0,New Orleans Pelicans,109.0,False,15488.0,False,2024,12,12,december,True,NOP,SAC,False,True,-2.0,2.0,20241212NOP
+73,2024-12-13,7:00p,Washington Wizards,105.0,Cleveland Cavaliers,115.0,False,19432.0,False,2024,13,12,december,True,CLE,WAS,True,False,10.0,-10.0,20241312CLE
+74,2024-12-13,7:00p,Indiana Pacers,121.0,Philadelphia 76ers,107.0,False,19771.0,False,2024,13,12,december,True,PHI,IND,False,True,-14.0,14.0,20241312PHI
+75,2024-12-13,8:00p,Charlotte Hornets,95.0,Chicago Bulls,109.0,False,19543.0,False,2024,13,12,december,True,CHI,CHO,True,False,14.0,-14.0,20241312CHI
+76,2024-12-13,8:00p,Brooklyn Nets,119.0,Memphis Grizzlies,135.0,False,15983.0,False,2024,13,12,december,True,MEM,BRK,True,False,16.0,-16.0,20241312MEM
+77,2024-12-13,8:00p,Los Angeles Lakers,87.0,Minnesota Timberwolves,97.0,False,18978.0,False,2024,13,12,december,True,MIN,LAL,True,False,10.0,-10.0,20241312MIN
+78,2024-12-13,9:00p,Los Angeles Clippers,98.0,Denver Nuggets,120.0,False,19779.0,False,2024,13,12,december,True,DEN,LAC,True,False,22.0,-22.0,20241312DEN
+79,2024-12-13,9:30p,Phoenix Suns,134.0,Utah Jazz,126.0,False,18175.0,False,2024,13,12,december,True,UTA,PHO,False,True,-8.0,8.0,20241312UTA
+80,2024-12-13,10:00p,San Antonio Spurs,118.0,Portland Trail Blazers,116.0,False,17025.0,False,2024,13,12,december,True,POR,SAS,False,True,-2.0,2.0,20241312POR
+81,2024-12-14,4:30p,Atlanta Hawks,102.0,Milwaukee Bucks,110.0,False,17113.0,False,2024,14,12,december,True,MIL,ATL,True,False,8.0,-8.0,20241412MIL
+82,2024-12-14,8:30p,Houston Rockets,96.0,Oklahoma City Thunder,111.0,False,17937.0,False,2024,14,12,december,True,OKC,HOU,True,False,15.0,-15.0,20241412OKC
+83,2024-12-15,5:00p,New Orleans Pelicans,104.0,Indiana Pacers,119.0,False,16792.0,False,2024,15,12,december,True,IND,NOP,True,False,15.0,-15.0,20241512IND
+84,2024-12-15,6:00p,New York Knicks,100.0,Orlando Magic,91.0,False,17029.0,False,2024,15,12,december,True,ORL,NYK,False,True,-9.0,9.0,20241512ORL
+85,2024-12-15,6:00p,Boston Celtics,112.0,Washington Wizards,98.0,False,16227.0,False,2024,15,12,december,True,WAS,BOS,False,True,-14.0,14.0,20241512WAS
+86,2024-12-15,7:00p,Minnesota Timberwolves,106.0,San Antonio Spurs,92.0,False,16816.0,False,2024,15,12,december,True,SAS,MIN,False,True,-14.0,14.0,20241512SAS
+87,2024-12-15,8:00p,Portland Trail Blazers,109.0,Phoenix Suns,116.0,False,17071.0,False,2024,15,12,december,True,PHO,POR,True,False,7.0,-7.0,20241512PHO
+88,2024-12-15,8:30p,Dallas Mavericks,143.0,Golden State Warriors,133.0,False,18064.0,False,2024,15,12,december,True,GSW,DAL,False,True,-10.0,10.0,20241512GSW
+89,2024-12-15,9:30p,Memphis Grizzlies,110.0,Los Angeles Lakers,116.0,False,15106.0,False,2024,15,12,december,True,LAL,MEM,True,False,6.0,-6.0,20241512LAL
+90,2024-12-16,7:00p,Philadelphia 76ers,121.0,Charlotte Hornets,108.0,False,14677.0,False,2024,16,12,december,True,CHO,PHI,False,True,-13.0,13.0,20241612CHO
+91,2024-12-16,7:00p,Miami Heat,124.0,Detroit Pistons,125.0,True,17810.0,False,2024,16,12,december,True,DET,MIA,True,False,1.0,-1.0,20241612DET
+92,2024-12-16,7:30p,Cleveland Cavaliers,130.0,Brooklyn Nets,101.0,False,16588.0,False,2024,16,12,december,True,BRK,CLE,False,True,-29.0,29.0,20241612BRK
+93,2024-12-16,7:30p,Chicago Bulls,122.0,Toronto Raptors,121.0,False,16324.0,False,2024,16,12,december,True,TOR,CHI,False,True,-1.0,1.0,20241612TOR
+94,2024-12-16,10:00p,Denver Nuggets,130.0,Sacramento Kings,129.0,False,16936.0,False,2024,16,12,december,True,SAC,DEN,False,True,-1.0,1.0,20241612SAC
+95,2024-12-16,10:30p,Utah Jazz,107.0,Los Angeles Clippers,144.0,False,14651.0,False,2024,16,12,december,True,LAC,UTA,True,False,37.0,-37.0,20241612LAC
+96,2024-12-17,8:30p,Milwaukee Bucks,97.0,Oklahoma City Thunder,81.0,False,18519.0,False,2024,17,12,december,True,OKC,MIL,False,True,-16.0,16.0,20241712OKC
+97,2024-12-19,7:00p,Utah Jazz,126.0,Detroit Pistons,119.0,False,18022.0,False,2024,19,12,december,True,DET,UTA,False,True,-7.0,7.0,20241912DET
+98,2024-12-19,7:00p,Oklahoma City Thunder,105.0,Orlando Magic,99.0,False,18896.0,False,2024,19,12,december,True,ORL,OKC,False,True,-6.0,6.0,20241912ORL
+99,2024-12-19,7:00p,Charlotte Hornets,114.0,Washington Wizards,123.0,False,15256.0,False,2024,19,12,december,True,WAS,CHO,True,False,9.0,-9.0,20241912WAS
+100,2024-12-19,7:30p,Chicago Bulls,117.0,Boston Celtics,108.0,False,19156.0,False,2024,19,12,december,True,BOS,CHI,False,True,-9.0,9.0,20241912BOS
+101,2024-12-19,7:30p,Brooklyn Nets,101.0,Toronto Raptors,94.0,False,19214.0,False,2024,19,12,december,True,TOR,BRK,False,True,-7.0,7.0,20241912TOR
+102,2024-12-19,8:00p,New Orleans Pelicans,113.0,Houston Rockets,133.0,False,18055.0,False,2024,19,12,december,True,HOU,NOP,True,False,20.0,-20.0,20241912HOU
+103,2024-12-19,8:00p,Golden State Warriors,93.0,Memphis Grizzlies,144.0,False,17729.0,False,2024,19,12,december,True,MEM,GSW,True,False,51.0,-51.0,20241912MEM
+104,2024-12-19,8:00p,Atlanta Hawks,126.0,San Antonio Spurs,133.0,True,17852.0,False,2024,19,12,december,True,SAS,ATL,True,False,7.0,-7.0,20241912SAS
+105,2024-12-19,8:30p,Los Angeles Clippers,118.0,Dallas Mavericks,95.0,False,20044.0,False,2024,19,12,december,True,DAL,LAC,False,True,-23.0,23.0,20241912DAL
+106,2024-12-19,9:00p,Indiana Pacers,120.0,Phoenix Suns,111.0,False,17071.0,False,2024,19,12,december,True,PHO,IND,False,True,-9.0,9.0,20241912PHO
+107,2024-12-19,9:30p,New York Knicks,133.0,Minnesota Timberwolves,107.0,False,18978.0,False,2024,19,12,december,True,MIN,NYK,False,True,-26.0,26.0,20241912MIN
+108,2024-12-19,10:00p,Denver Nuggets,124.0,Portland Trail Blazers,126.0,False,16753.0,False,2024,19,12,december,True,POR,DEN,True,False,2.0,-2.0,20241912POR
+109,2024-12-19,10:00p,Los Angeles Lakers,113.0,Sacramento Kings,100.0,False,17832.0,False,2024,19,12,december,True,SAC,LAL,False,True,-13.0,13.0,20241912SAC
+110,2024-12-20,7:00p,Charlotte Hornets,98.0,Philadelphia 76ers,108.0,False,20291.0,False,2024,20,12,december,True,PHI,CHO,True,False,10.0,-10.0,20242012PHI
+111,2024-12-20,7:30p,Milwaukee Bucks,101.0,Cleveland Cavaliers,124.0,False,19432.0,False,2024,20,12,december,True,CLE,MIL,True,False,23.0,-23.0,20242012CLE
+112,2024-12-20,8:00p,Oklahoma City Thunder,104.0,Miami Heat,97.0,False,19801.0,False,2024,20,12,december,True,MIA,OKC,False,True,-7.0,7.0,20242012MIA
+113,2024-12-21,6:00p,Los Angeles Lakers,103.0,Sacramento Kings,99.0,False,17832.0,False,2024,21,12,december,True,SAC,LAL,False,True,-4.0,4.0,20242112SAC
+114,2024-12-21,7:00p,Miami Heat,114.0,Orlando Magic,121.0,False,18080.0,False,2024,21,12,december,True,ORL,MIA,True,False,7.0,-7.0,20242112ORL
+115,2024-12-21,7:30p,Memphis Grizzlies,128.0,Atlanta Hawks,112.0,False,16909.0,False,2024,21,12,december,True,ATL,MEM,False,True,-16.0,16.0,20242112ATL
+116,2024-12-21,7:30p,Utah Jazz,105.0,Brooklyn Nets,94.0,False,17926.0,False,2024,21,12,december,True,BRK,UTA,False,True,-11.0,11.0,20242112BRK
+117,2024-12-21,8:00p,Boston Celtics,123.0,Chicago Bulls,98.0,False,19803.0,False,2024,21,12,december,True,CHI,BOS,False,True,-25.0,25.0,20242112CHI
+118,2024-12-21,8:00p,Philadelphia 76ers,99.0,Cleveland Cavaliers,126.0,False,19432.0,False,2024,21,12,december,True,CLE,PHI,True,False,27.0,-27.0,20242112CLE
+119,2024-12-21,8:00p,Washington Wizards,101.0,Milwaukee Bucks,112.0,False,17341.0,False,2024,21,12,december,True,MIL,WAS,True,False,11.0,-11.0,20242112MIL
+120,2024-12-21,8:00p,Golden State Warriors,113.0,Minnesota Timberwolves,103.0,False,18978.0,False,2024,21,12,december,True,MIN,GSW,False,True,-10.0,10.0,20242112MIN
+121,2024-12-21,8:00p,New York Knicks,104.0,New Orleans Pelicans,93.0,False,16696.0,False,2024,21,12,december,True,NOP,NYK,False,True,-11.0,11.0,20242112NOP
+122,2024-12-21,8:30p,Los Angeles Clippers,97.0,Dallas Mavericks,113.0,False,20102.0,False,2024,21,12,december,True,DAL,LAC,True,False,16.0,-16.0,20242112DAL
+123,2024-12-21,8:30p,Portland Trail Blazers,94.0,San Antonio Spurs,114.0,False,18354.0,False,2024,21,12,december,True,SAS,POR,True,False,20.0,-20.0,20242112SAS
+124,2024-12-21,9:00p,Detroit Pistons,133.0,Phoenix Suns,125.0,False,17071.0,False,2024,21,12,december,True,PHO,DET,False,True,-8.0,8.0,20242112PHO
+125,2024-12-22,6:00p,Indiana Pacers,122.0,Sacramento Kings,95.0,False,17832.0,False,2024,22,12,december,True,SAC,IND,False,True,-27.0,27.0,20242212SAC
+126,2024-12-22,6:00p,Houston Rockets,114.0,Toronto Raptors,110.0,False,19305.0,False,2024,22,12,december,True,TOR,HOU,False,True,-4.0,4.0,20242212TOR
+127,2024-12-22,7:00p,Denver Nuggets,132.0,New Orleans Pelicans,129.0,True,17474.0,False,2024,22,12,december,True,NOP,DEN,False,True,-3.0,3.0,20242212NOP
+128,2024-12-23,7:00p,Houston Rockets,114.0,Charlotte Hornets,101.0,False,19134.0,False,2024,23,12,december,True,CHO,HOU,False,True,-13.0,13.0,20242312CHO
+129,2024-12-23,7:00p,Utah Jazz,113.0,Cleveland Cavaliers,124.0,False,19432.0,False,2024,23,12,december,True,CLE,UTA,True,False,11.0,-11.0,20242312CLE
+130,2024-12-23,7:00p,Boston Celtics,104.0,Orlando Magic,108.0,False,18846.0,False,2024,23,12,december,True,ORL,BOS,True,False,4.0,-4.0,20242312ORL
+131,2024-12-23,7:00p,San Antonio Spurs,106.0,Philadelphia 76ers,111.0,False,19986.0,False,2024,23,12,december,True,PHI,SAS,True,False,5.0,-5.0,20242312PHI
+132,2024-12-23,7:30p,Minnesota Timberwolves,104.0,Atlanta Hawks,117.0,False,17051.0,False,2024,23,12,december,True,ATL,MIN,True,False,13.0,-13.0,20242312ATL
+133,2024-12-23,7:30p,Brooklyn Nets,95.0,Miami Heat,110.0,False,19832.0,False,2024,23,12,december,True,MIA,BRK,True,False,15.0,-15.0,20242312MIA
+134,2024-12-23,7:30p,Toronto Raptors,125.0,New York Knicks,139.0,False,19812.0,False,2024,23,12,december,True,NYK,TOR,True,False,14.0,-14.0,20242312NYK
+135,2024-12-23,8:00p,Milwaukee Bucks,112.0,Chicago Bulls,91.0,False,21234.0,False,2024,23,12,december,True,CHI,MIL,False,True,-21.0,21.0,20242312CHI
+136,2024-12-23,8:00p,Los Angeles Clippers,114.0,Memphis Grizzlies,110.0,False,17265.0,False,2024,23,12,december,True,MEM,LAC,False,True,-4.0,4.0,20242312MEM
+137,2024-12-23,8:00p,Washington Wizards,105.0,Oklahoma City Thunder,123.0,False,18203.0,False,2024,23,12,december,True,OKC,WAS,True,False,18.0,-18.0,20242312OKC
+138,2024-12-23,8:30p,Portland Trail Blazers,108.0,Dallas Mavericks,132.0,False,20225.0,False,2024,23,12,december,True,DAL,POR,True,False,24.0,-24.0,20242312DAL
+139,2024-12-23,10:00p,Phoenix Suns,90.0,Denver Nuggets,117.0,False,19910.0,False,2024,23,12,december,True,DEN,PHO,True,False,27.0,-27.0,20242312DEN
+140,2024-12-23,10:00p,Indiana Pacers,111.0,Golden State Warriors,105.0,False,18064.0,False,2024,23,12,december,True,GSW,IND,False,True,-6.0,6.0,20242312GSW
+141,2024-12-23,10:30p,Detroit Pistons,117.0,Los Angeles Lakers,114.0,False,18997.0,False,2024,23,12,december,True,LAL,DET,False,True,-3.0,3.0,20242312LAL
+142,2024-12-25,12:00p,San Antonio Spurs,114.0,New York Knicks,117.0,False,19812.0,False,2024,25,12,december,True,NYK,SAS,True,False,3.0,-3.0,20242512NYK
+143,2024-12-25,2:30p,Minnesota Timberwolves,105.0,Dallas Mavericks,99.0,False,20341.0,False,2024,25,12,december,True,DAL,MIN,False,True,-6.0,6.0,20242512DAL
+144,2024-12-25,5:00p,Philadelphia 76ers,118.0,Boston Celtics,114.0,False,19156.0,False,2024,25,12,december,True,BOS,PHI,False,True,-4.0,4.0,20242512BOS
+145,2024-12-25,8:00p,Los Angeles Lakers,115.0,Golden State Warriors,113.0,False,18064.0,False,2024,25,12,december,True,GSW,LAL,False,True,-2.0,2.0,20242512GSW
+146,2024-12-25,10:30p,Denver Nuggets,100.0,Phoenix Suns,110.0,False,17071.0,False,2024,25,12,december,True,PHO,DEN,True,False,10.0,-10.0,20242512PHO
+147,2024-12-26,7:00p,Oklahoma City Thunder,120.0,Indiana Pacers,114.0,False,17274.0,False,2024,26,12,december,True,IND,OKC,False,True,-6.0,6.0,20242612IND
+148,2024-12-26,7:00p,Miami Heat,89.0,Orlando Magic,88.0,False,18846.0,False,2024,26,12,december,True,ORL,MIA,False,True,-1.0,1.0,20242612ORL
+149,2024-12-26,7:00p,Charlotte Hornets,110.0,Washington Wizards,113.0,False,17193.0,False,2024,26,12,december,True,WAS,CHO,True,False,3.0,-3.0,20242612WAS
+150,2024-12-26,7:30p,Chicago Bulls,133.0,Atlanta Hawks,141.0,False,17760.0,False,2024,26,12,december,True,ATL,CHI,True,False,8.0,-8.0,20242612ATL
+151,2024-12-26,8:00p,Toronto Raptors,126.0,Memphis Grizzlies,155.0,False,17196.0,False,2024,26,12,december,True,MEM,TOR,True,False,29.0,-29.0,20242612MEM
+152,2024-12-26,8:00p,Brooklyn Nets,111.0,Milwaukee Bucks,105.0,False,17957.0,False,2024,26,12,december,True,MIL,BRK,False,True,-6.0,6.0,20242612MIL
+153,2024-12-26,8:00p,Houston Rockets,128.0,New Orleans Pelicans,111.0,False,16052.0,False,2024,26,12,december,True,NOP,HOU,False,True,-17.0,17.0,20242612NOP
+154,2024-12-26,10:00p,Utah Jazz,120.0,Portland Trail Blazers,122.0,False,16934.0,False,2024,26,12,december,True,POR,UTA,True,False,2.0,-2.0,20242612POR
+155,2024-12-26,10:00p,Detroit Pistons,114.0,Sacramento Kings,113.0,False,17832.0,False,2024,26,12,december,True,SAC,DET,False,True,-1.0,1.0,20242612SAC
+156,2024-12-27,7:00p,New York Knicks,108.0,Orlando Magic,85.0,False,18961.0,False,2024,27,12,december,True,ORL,NYK,False,True,-23.0,23.0,20242712ORL
+157,2024-12-27,7:30p,Indiana Pacers,105.0,Boston Celtics,142.0,False,19156.0,False,2024,27,12,december,True,BOS,IND,True,False,37.0,-37.0,20242712BOS
+158,2024-12-27,7:30p,San Antonio Spurs,96.0,Brooklyn Nets,87.0,False,17990.0,False,2024,27,12,december,True,BRK,SAS,False,True,-9.0,9.0,20242712BRK
+159,2024-12-27,8:00p,Minnesota Timberwolves,113.0,Houston Rockets,112.0,False,18055.0,False,2024,27,12,december,True,HOU,MIN,False,True,-1.0,1.0,20242712HOU
+160,2024-12-27,8:00p,Memphis Grizzlies,132.0,New Orleans Pelicans,124.0,False,17328.0,False,2024,27,12,december,True,NOP,MEM,False,True,-8.0,8.0,20242712NOP
+161,2024-12-27,9:00p,Cleveland Cavaliers,149.0,Denver Nuggets,135.0,False,19952.0,False,2024,27,12,december,True,DEN,CLE,False,True,-14.0,14.0,20242712DEN
+162,2024-12-27,9:00p,Dallas Mavericks,98.0,Phoenix Suns,89.0,False,17071.0,False,2024,27,12,december,True,PHO,DAL,False,True,-9.0,9.0,20242712PHO
+163,2024-12-27,10:00p,Golden State Warriors,92.0,Los Angeles Clippers,102.0,False,17927.0,False,2024,27,12,december,True,LAC,GSW,True,False,10.0,-10.0,20242712LAC
+164,2024-12-28,3:00p,Miami Heat,110.0,Atlanta Hawks,120.0,False,17856.0,False,2024,28,12,december,True,ATL,MIA,True,False,10.0,-10.0,20242812ATL
+165,2024-12-28,6:00p,Oklahoma City Thunder,106.0,Charlotte Hornets,94.0,False,19325.0,False,2024,28,12,december,True,CHO,OKC,False,True,-12.0,12.0,20242812CHO
+166,2024-12-28,7:00p,New York Knicks,136.0,Washington Wizards,132.0,True,20385.0,False,2024,28,12,december,True,WAS,NYK,False,True,-4.0,4.0,20242812WAS
+167,2024-12-28,8:00p,Milwaukee Bucks,111.0,Chicago Bulls,116.0,False,21511.0,False,2024,28,12,december,True,CHI,MIL,True,False,5.0,-5.0,20242812CHI
+168,2024-12-28,8:30p,Phoenix Suns,105.0,Golden State Warriors,109.0,False,18064.0,False,2024,28,12,december,True,GSW,PHO,True,False,4.0,-4.0,20242812GSW
+169,2024-12-28,9:00p,Detroit Pistons,121.0,Denver Nuggets,134.0,False,19876.0,False,2024,28,12,december,True,DEN,DET,True,False,13.0,-13.0,20242812DEN
+170,2024-12-28,9:30p,Philadelphia 76ers,114.0,Utah Jazz,111.0,False,18175.0,False,2024,28,12,december,True,UTA,PHI,False,True,-3.0,3.0,20242812UTA
+171,2024-12-28,10:00p,Dallas Mavericks,122.0,Portland Trail Blazers,126.0,False,19335.0,False,2024,28,12,december,True,POR,DAL,True,False,4.0,-4.0,20242812POR
+172,2024-12-28,10:30p,Sacramento Kings,122.0,Los Angeles Lakers,132.0,False,18997.0,False,2024,28,12,december,True,LAL,SAC,True,False,10.0,-10.0,20242812LAL
+173,2024-12-29,3:30p,Brooklyn Nets,101.0,Orlando Magic,102.0,False,19397.0,False,2024,29,12,december,True,ORL,BRK,True,False,1.0,-1.0,20242912ORL
+174,2024-12-29,6:00p,Indiana Pacers,123.0,Boston Celtics,114.0,False,19156.0,False,2024,29,12,december,True,BOS,IND,False,True,-9.0,9.0,20242912BOS
+175,2024-12-29,6:00p,Atlanta Hawks,136.0,Toronto Raptors,107.0,False,19359.0,False,2024,29,12,december,True,TOR,ATL,False,True,-29.0,29.0,20242912TOR
+176,2024-12-29,7:00p,Miami Heat,104.0,Houston Rockets,100.0,False,18055.0,False,2024,29,12,december,True,HOU,MIA,False,True,-4.0,4.0,20242912HOU
+177,2024-12-29,7:00p,Memphis Grizzlies,106.0,Oklahoma City Thunder,130.0,False,18203.0,False,2024,29,12,december,True,OKC,MEM,True,False,24.0,-24.0,20242912OKC
+178,2024-12-29,9:00p,San Antonio Spurs,110.0,Minnesota Timberwolves,112.0,False,18978.0,False,2024,29,12,december,True,MIN,SAS,True,False,2.0,-2.0,20242912MIN
+179,2024-12-30,7:00p,Chicago Bulls,115.0,Charlotte Hornets,108.0,True,19197.0,False,2024,30,12,december,True,CHO,CHI,False,True,-7.0,7.0,20243012CHO
+180,2024-12-30,7:00p,New York Knicks,126.0,Washington Wizards,106.0,False,20385.0,False,2024,30,12,december,True,WAS,NYK,False,True,-20.0,20.0,20243012WAS
+181,2024-12-30,8:00p,Los Angeles Clippers,116.0,New Orleans Pelicans,113.0,False,17303.0,False,2024,30,12,december,True,NOP,LAC,False,True,-3.0,3.0,20243012NOP
+182,2024-12-30,9:00p,Denver Nuggets,132.0,Utah Jazz,121.0,False,18175.0,False,2024,30,12,december,True,UTA,DEN,False,True,-11.0,11.0,20243012UTA
+183,2024-12-30,10:00p,Cleveland Cavaliers,113.0,Golden State Warriors,95.0,False,18064.0,False,2024,30,12,december,True,GSW,CLE,False,True,-18.0,18.0,20243012GSW
+184,2024-12-30,10:00p,Philadelphia 76ers,125.0,Portland Trail Blazers,103.0,False,16721.0,False,2024,30,12,december,True,POR,PHI,False,True,-22.0,22.0,20243012POR
+185,2024-12-30,10:00p,Dallas Mavericks,100.0,Sacramento Kings,110.0,False,16844.0,False,2024,30,12,december,True,SAC,DAL,True,False,10.0,-10.0,20243012SAC
+186,2024-12-31,3:00p,Toronto Raptors,71.0,Boston Celtics,125.0,False,19156.0,False,2024,31,12,december,True,BOS,TOR,True,False,54.0,-54.0,20243112BOS
+187,2024-12-31,3:00p,Milwaukee Bucks,120.0,Indiana Pacers,112.0,False,17274.0,False,2024,31,12,december,True,IND,MIL,False,True,-8.0,8.0,20243112IND
+188,2024-12-31,7:00p,Los Angeles Clippers,86.0,San Antonio Spurs,122.0,False,18690.0,False,2024,31,12,december,True,SAS,LAC,True,False,36.0,-36.0,20243112SAS
+189,2024-12-31,8:00p,Minnesota Timberwolves,105.0,Oklahoma City Thunder,113.0,False,18203.0,False,2024,31,12,december,True,OKC,MIN,True,False,8.0,-8.0,20243112OKC
+190,2024-12-31,9:00p,Cleveland Cavaliers,122.0,Los Angeles Lakers,110.0,False,18997.0,False,2024,31,12,december,True,LAL,CLE,False,True,-12.0,12.0,20243112LAL
+191,2024-12-31,9:00p,Memphis Grizzlies,117.0,Phoenix Suns,112.0,False,17071.0,False,2024,31,12,december,True,PHO,MEM,False,True,-5.0,5.0,20243112PHO
+0,2025-01-01,7:00p,Orlando Magic,96.0,Detroit Pistons,105.0,False,19399.0,False,2025,01,1,january,True,DET,ORL,True,False,9.0,-9.0,2025011DET
+1,2025-01-01,7:00p,Chicago Bulls,107.0,Washington Wizards,125.0,False,16298.0,False,2025,01,1,january,True,WAS,CHI,True,False,18.0,-18.0,2025011WAS
+2,2025-01-01,7:30p,New Orleans Pelicans,108.0,Miami Heat,119.0,False,20013.0,False,2025,01,1,january,True,MIA,NOP,True,False,11.0,-11.0,2025011MIA
+3,2025-01-01,7:30p,Utah Jazz,103.0,New York Knicks,119.0,False,19812.0,False,2025,01,1,january,True,NYK,UTA,True,False,16.0,-16.0,2025011NYK
+4,2025-01-01,7:30p,Brooklyn Nets,113.0,Toronto Raptors,130.0,False,19104.0,False,2025,01,1,january,True,TOR,BRK,True,False,17.0,-17.0,2025011TOR
+5,2025-01-01,8:00p,Dallas Mavericks,99.0,Houston Rockets,110.0,False,18055.0,False,2025,01,1,january,True,HOU,DAL,True,False,11.0,-11.0,2025011HOU
+6,2025-01-01,9:00p,Atlanta Hawks,120.0,Denver Nuggets,139.0,False,19902.0,False,2025,01,1,january,True,DEN,ATL,True,False,19.0,-19.0,2025011DEN
+7,2025-01-01,10:00p,Philadelphia 76ers,107.0,Sacramento Kings,113.0,False,16024.0,False,2025,01,1,january,True,SAC,PHI,True,False,6.0,-6.0,2025011SAC
+8,2025-01-02,7:30p,Indiana Pacers,128.0,Miami Heat,115.0,False,19959.0,False,2025,02,1,january,True,MIA,IND,False,True,-13.0,13.0,2025021MIA
+9,2025-01-02,7:30p,Boston Celtics,118.0,Minnesota Timberwolves,115.0,False,18978.0,False,2025,02,1,january,True,MIN,BOS,False,True,-3.0,3.0,2025021MIN
+10,2025-01-02,8:00p,Brooklyn Nets,113.0,Milwaukee Bucks,110.0,False,17341.0,False,2025,02,1,january,True,MIL,BRK,False,True,-3.0,3.0,2025021MIL
+11,2025-01-02,8:00p,Los Angeles Clippers,98.0,Oklahoma City Thunder,116.0,False,18203.0,False,2025,02,1,january,True,OKC,LAC,True,False,18.0,-18.0,2025021OKC
+12,2025-01-02,10:00p,Philadelphia 76ers,105.0,Golden State Warriors,139.0,False,18064.0,False,2025,02,1,january,True,GSW,PHI,True,False,34.0,-34.0,2025021GSW
+13,2025-01-02,10:30p,Portland Trail Blazers,106.0,Los Angeles Lakers,114.0,False,17812.0,False,2025,02,1,january,True,LAL,POR,True,False,8.0,-8.0,2025021LAL
+14,2025-01-03,7:00p,Charlotte Hornets,94.0,Detroit Pistons,98.0,False,18866.0,False,2025,03,1,january,True,DET,CHO,True,False,4.0,-4.0,2025031DET
+15,2025-01-03,7:30p,Orlando Magic,106.0,Toronto Raptors,97.0,False,19278.0,False,2025,03,1,january,True,TOR,ORL,False,True,-9.0,9.0,2025031TOR
+16,2025-01-03,8:00p,Boston Celtics,109.0,Houston Rockets,86.0,False,18055.0,False,2025,03,1,january,True,HOU,BOS,False,True,-23.0,23.0,2025031HOU
+17,2025-01-03,8:00p,Washington Wizards,120.0,New Orleans Pelicans,132.0,False,17307.0,False,2025,03,1,january,True,NOP,WAS,True,False,12.0,-12.0,2025031NOP
+18,2025-01-03,8:00p,New York Knicks,107.0,Oklahoma City Thunder,117.0,False,,False,2025,03,1,january,True,OKC,NYK,True,False,10.0,-10.0,2025031OKC
+19,2025-01-03,8:30p,Cleveland Cavaliers,134.0,Dallas Mavericks,122.0,False,20231.0,False,2025,03,1,january,True,DAL,CLE,False,True,-12.0,12.0,2025031DAL
+20,2025-01-03,9:00p,San Antonio Spurs,113.0,Denver Nuggets,110.0,False,19922.0,False,2025,03,1,january,True,DEN,SAS,False,True,-3.0,3.0,2025031DEN
+21,2025-01-03,10:00p,Memphis Grizzlies,133.0,Sacramento Kings,138.0,False,16601.0,False,2025,03,1,january,True,SAC,MEM,True,False,5.0,-5.0,2025031SAC
+22,2025-01-03,10:30p,Atlanta Hawks,102.0,Los Angeles Lakers,119.0,False,18997.0,False,2025,03,1,january,True,LAL,ATL,True,False,17.0,-17.0,2025031LAL
+23,2025-01-04,6:00p,Philadelphia 76ers,123.0,Brooklyn Nets,94.0,False,17926.0,False,2025,04,1,january,True,BRK,PHI,False,True,-29.0,29.0,2025041BRK
+24,2025-01-04,7:00p,Minnesota Timberwolves,105.0,Detroit Pistons,119.0,False,20062.0,False,2025,04,1,january,True,DET,MIN,True,False,14.0,-14.0,2025041DET
+25,2025-01-04,7:00p,Phoenix Suns,108.0,Indiana Pacers,126.0,False,17274.0,False,2025,04,1,january,True,IND,PHO,True,False,18.0,-18.0,2025041IND
+26,2025-01-04,8:00p,New York Knicks,126.0,Chicago Bulls,139.0,False,22491.0,False,2025,04,1,january,True,CHI,NYK,True,False,13.0,-13.0,2025041CHI
+27,2025-01-04,8:00p,Utah Jazz,136.0,Miami Heat,100.0,False,19934.0,False,2025,04,1,january,True,MIA,UTA,False,True,-36.0,36.0,2025041MIA
+28,2025-01-04,8:00p,Portland Trail Blazers,105.0,Milwaukee Bucks,102.0,False,17595.0,False,2025,04,1,january,True,MIL,POR,False,True,-3.0,3.0,2025041MIL
+29,2025-01-04,8:00p,Denver Nuggets,122.0,San Antonio Spurs,111.0,True,19038.0,False,2025,04,1,january,True,SAS,DEN,False,True,-11.0,11.0,2025041SAS
+30,2025-01-04,8:30p,Memphis Grizzlies,113.0,Golden State Warriors,121.0,False,18064.0,False,2025,04,1,january,True,GSW,MEM,True,False,8.0,-8.0,2025041GSW
+31,2025-01-04,10:30p,Atlanta Hawks,105.0,Los Angeles Clippers,131.0,False,17927.0,False,2025,04,1,january,True,LAC,ATL,True,False,26.0,-26.0,2025041LAC
+32,2025-01-05,3:30p,Boston Celtics,92.0,Oklahoma City Thunder,105.0,False,18203.0,False,2025,05,1,january,True,OKC,BOS,True,False,13.0,-13.0,2025051OKC
+33,2025-01-05,6:00p,Charlotte Hornets,105.0,Cleveland Cavaliers,115.0,False,19432.0,False,2025,05,1,january,True,CLE,CHO,True,False,10.0,-10.0,2025051CLE
+34,2025-01-05,6:00p,New Orleans Pelicans,110.0,Washington Wizards,98.0,False,15451.0,False,2025,05,1,january,True,WAS,NOP,False,True,-12.0,12.0,2025051WAS
+35,2025-01-05,6:30p,Utah Jazz,105.0,Orlando Magic,92.0,False,19198.0,False,2025,05,1,january,True,ORL,UTA,False,True,-13.0,13.0,2025051ORL
+36,2025-01-05,7:00p,Los Angeles Lakers,115.0,Houston Rockets,119.0,False,18055.0,False,2025,05,1,january,True,HOU,LAL,True,False,4.0,-4.0,2025051HOU
+37,2025-01-05,8:30p,Sacramento Kings,129.0,Golden State Warriors,99.0,False,18064.0,False,2025,05,1,january,True,GSW,SAC,False,True,-30.0,30.0,2025051GSW
+38,2025-01-06,7:00p,Portland Trail Blazers,115.0,Detroit Pistons,118.0,False,16002.0,False,2025,06,1,january,True,DET,POR,True,False,3.0,-3.0,2025061DET
+39,2025-01-06,7:00p,Phoenix Suns,109.0,Philadelphia 76ers,99.0,False,19791.0,False,2025,06,1,january,True,PHI,PHO,False,True,-10.0,10.0,2025061PHI
+40,2025-01-06,7:30p,Indiana Pacers,113.0,Brooklyn Nets,99.0,False,16088.0,False,2025,06,1,january,True,BRK,IND,False,True,-14.0,14.0,2025061BRK
+41,2025-01-06,7:30p,Orlando Magic,103.0,New York Knicks,94.0,False,19812.0,False,2025,06,1,january,True,NYK,ORL,False,True,-9.0,9.0,2025061NYK
+42,2025-01-06,7:30p,Milwaukee Bucks,128.0,Toronto Raptors,104.0,False,17829.0,False,2025,06,1,january,True,TOR,MIL,False,True,-24.0,24.0,2025061TOR
+43,2025-01-06,8:00p,San Antonio Spurs,110.0,Chicago Bulls,114.0,False,18886.0,False,2025,06,1,january,True,CHI,SAS,True,False,4.0,-4.0,2025061CHI
+44,2025-01-06,8:00p,Dallas Mavericks,104.0,Memphis Grizzlies,119.0,False,16412.0,False,2025,06,1,january,True,MEM,DAL,True,False,15.0,-15.0,2025061MEM
+45,2025-01-06,8:00p,Los Angeles Clippers,106.0,Minnesota Timberwolves,108.0,False,18978.0,False,2025,06,1,january,True,MIN,LAC,True,False,2.0,-2.0,2025061MIN
+46,2025-01-06,10:00p,Miami Heat,118.0,Sacramento Kings,123.0,False,17832.0,False,2025,06,1,january,True,SAC,MIA,True,False,5.0,-5.0,2025061SAC
+47,2025-01-07,7:00p,Phoenix Suns,104.0,Charlotte Hornets,115.0,False,16647.0,False,2025,07,1,january,True,CHO,PHO,True,False,11.0,-11.0,2025071CHO
+48,2025-01-07,7:00p,Houston Rockets,135.0,Washington Wizards,112.0,False,12930.0,False,2025,07,1,january,True,WAS,HOU,False,True,-23.0,23.0,2025071WAS
+49,2025-01-07,7:30p,Los Angeles Lakers,97.0,Dallas Mavericks,118.0,False,20126.0,False,2025,07,1,january,True,DAL,LAL,True,False,21.0,-21.0,2025071DAL
+50,2025-01-07,8:00p,Minnesota Timberwolves,104.0,New Orleans Pelicans,97.0,False,16282.0,False,2025,07,1,january,True,NOP,MIN,False,True,-7.0,7.0,2025071NOP
+51,2025-01-07,9:00p,Atlanta Hawks,124.0,Utah Jazz,121.0,False,18175.0,False,2025,07,1,january,True,UTA,ATL,False,True,-3.0,3.0,2025071UTA
+52,2025-01-07,10:00p,Boston Celtics,118.0,Denver Nuggets,106.0,False,19904.0,False,2025,07,1,january,True,DEN,BOS,False,True,-12.0,12.0,2025071DEN
+53,2025-01-07,10:00p,Miami Heat,114.0,Golden State Warriors,98.0,False,18064.0,False,2025,07,1,january,True,GSW,MIA,False,True,-16.0,16.0,2025071GSW
+54,2025-01-08,7:00p,Oklahoma City Thunder,122.0,Cleveland Cavaliers,129.0,False,19432.0,False,2025,08,1,january,True,CLE,OKC,True,False,7.0,-7.0,2025081CLE
+55,2025-01-08,7:00p,Chicago Bulls,113.0,Indiana Pacers,129.0,False,16758.0,False,2025,08,1,january,True,IND,CHI,True,False,16.0,-16.0,2025081IND
+56,2025-01-08,7:00p,Washington Wizards,103.0,Philadelphia 76ers,109.0,False,19762.0,False,2025,08,1,january,True,PHI,WAS,True,False,6.0,-6.0,2025081PHI
+57,2025-01-08,7:30p,Detroit Pistons,113.0,Brooklyn Nets,98.0,False,16098.0,False,2025,08,1,january,True,BRK,DET,False,True,-15.0,15.0,2025081BRK
+58,2025-01-08,7:30p,Toronto Raptors,98.0,New York Knicks,112.0,False,19812.0,False,2025,08,1,january,True,NYK,TOR,True,False,14.0,-14.0,2025081NYK
+59,2025-01-08,8:00p,Portland Trail Blazers,119.0,New Orleans Pelicans,100.0,False,16425.0,False,2025,08,1,january,True,NOP,POR,False,True,-19.0,19.0,2025081NOP
+60,2025-01-08,9:00p,Los Angeles Clippers,103.0,Denver Nuggets,126.0,False,19711.0,False,2025,08,1,january,True,DEN,LAC,True,False,23.0,-23.0,2025081DEN
+61,2025-01-08,9:30p,San Antonio Spurs,105.0,Milwaukee Bucks,121.0,False,17341.0,False,2025,08,1,january,True,MIL,SAS,True,False,16.0,-16.0,2025081MIL
+62,2025-01-09,7:00p,Toronto Raptors,126.0,Cleveland Cavaliers,132.0,False,19432.0,False,2025,09,1,january,True,CLE,TOR,True,False,6.0,-6.0,2025091CLE
+63,2025-01-09,7:00p,Golden State Warriors,107.0,Detroit Pistons,104.0,False,20062.0,False,2025,09,1,january,True,DET,GSW,False,True,-3.0,3.0,2025091DET
+64,2025-01-09,7:00p,Minnesota Timberwolves,104.0,Orlando Magic,89.0,False,18846.0,False,2025,09,1,january,True,ORL,MIN,False,True,-15.0,15.0,2025091ORL
+65,2025-01-09,7:30p,Portland Trail Blazers,111.0,Dallas Mavericks,117.0,False,19241.0,False,2025,09,1,january,True,DAL,POR,True,False,6.0,-6.0,2025091DAL
+66,2025-01-09,8:00p,Houston Rockets,119.0,Memphis Grizzlies,115.0,False,16298.0,False,2025,09,1,january,True,MEM,HOU,False,True,-4.0,4.0,2025091MEM
+67,2025-01-09,9:00p,Atlanta Hawks,115.0,Phoenix Suns,123.0,False,17071.0,False,2025,09,1,january,True,PHO,ATL,True,False,8.0,-8.0,2025091PHO
+68,2025-01-09,9:00p,Miami Heat,97.0,Utah Jazz,92.0,False,18175.0,False,2025,09,1,january,True,UTA,MIA,False,True,-5.0,5.0,2025091UTA
+69,2025-01-10,7:00p,Golden State Warriors,96.0,Indiana Pacers,108.0,False,17274.0,False,2025,10,1,january,True,IND,GSW,True,False,12.0,-12.0,2025101IND
+70,2025-01-10,7:00p,Milwaukee Bucks,109.0,Orlando Magic,106.0,False,18846.0,False,2025,10,1,january,True,ORL,MIL,False,True,-3.0,3.0,2025101ORL
+71,2025-01-10,7:00p,New Orleans Pelicans,123.0,Philadelphia 76ers,115.0,False,19779.0,False,2025,10,1,january,True,PHI,NOP,False,True,-8.0,8.0,2025101PHI
+72,2025-01-10,7:30p,Sacramento Kings,114.0,Boston Celtics,97.0,False,19156.0,False,2025,10,1,january,True,BOS,SAC,False,True,-17.0,17.0,2025101BOS
+73,2025-01-10,7:30p,Oklahoma City Thunder,126.0,New York Knicks,101.0,False,19812.0,False,2025,10,1,january,True,NYK,OKC,False,True,-25.0,25.0,2025101NYK
+74,2025-01-10,8:00p,Washington Wizards,105.0,Chicago Bulls,138.0,False,21391.0,False,2025,10,1,january,True,CHI,WAS,True,False,33.0,-33.0,2025101CHI
+75,2025-01-10,9:00p,Brooklyn Nets,105.0,Denver Nuggets,124.0,False,19959.0,False,2025,10,1,january,True,DEN,BRK,True,False,19.0,-19.0,2025101DEN
+76,2025-01-11,5:00p,Utah Jazz,106.0,Phoenix Suns,114.0,False,17071.0,False,2025,11,1,january,True,PHO,UTA,True,False,8.0,-8.0,2025111PHO
+77,2025-01-11,7:00p,Toronto Raptors,114.0,Detroit Pistons,123.0,False,19011.0,False,2025,11,1,january,True,DET,TOR,True,False,9.0,-9.0,2025111DET
+78,2025-01-11,8:00p,Memphis Grizzlies,127.0,Minnesota Timberwolves,125.0,False,18978.0,False,2025,11,1,january,True,MIN,MEM,False,True,-2.0,2.0,2025111MIN
+79,2025-01-11,10:00p,Miami Heat,119.0,Portland Trail Blazers,98.0,False,17505.0,False,2025,11,1,january,True,POR,MIA,False,True,-21.0,21.0,2025111POR
+80,2025-01-12,3:00p,Denver Nuggets,112.0,Dallas Mavericks,101.0,False,20031.0,False,2025,12,1,january,True,DAL,DEN,False,True,-11.0,11.0,2025121DAL
+81,2025-01-12,3:00p,Milwaukee Bucks,106.0,New York Knicks,140.0,False,19812.0,False,2025,12,1,january,True,NYK,MIL,True,False,34.0,-34.0,2025121NYK
+82,2025-01-12,3:30p,Sacramento Kings,124.0,Chicago Bulls,119.0,False,18233.0,False,2025,12,1,january,True,CHI,SAC,False,True,-5.0,5.0,2025121CHI
+83,2025-01-12,6:00p,New Orleans Pelicans,119.0,Boston Celtics,120.0,False,19156.0,False,2025,12,1,january,True,BOS,NOP,True,False,1.0,-1.0,2025121BOS
+84,2025-01-12,6:00p,Indiana Pacers,108.0,Cleveland Cavaliers,93.0,False,19432.0,False,2025,12,1,january,True,CLE,IND,False,True,-15.0,15.0,2025121CLE
+85,2025-01-12,6:00p,Philadelphia 76ers,99.0,Orlando Magic,104.0,False,17723.0,False,2025,12,1,january,True,ORL,PHI,True,False,5.0,-5.0,2025121ORL
+86,2025-01-12,6:00p,Oklahoma City Thunder,136.0,Washington Wizards,95.0,False,15711.0,False,2025,12,1,january,True,WAS,OKC,False,True,-41.0,41.0,2025121WAS
+87,2025-01-12,8:00p,Brooklyn Nets,111.0,Utah Jazz,112.0,True,18175.0,False,2025,12,1,january,True,UTA,BRK,True,False,1.0,-1.0,2025121UTA
+88,2025-01-12,9:00p,Charlotte Hornets,113.0,Phoenix Suns,120.0,False,17071.0,False,2025,12,1,january,True,PHO,CHO,True,False,7.0,-7.0,2025121PHO
+89,2025-01-13,7:00p,Minnesota Timberwolves,120.0,Washington Wizards,106.0,False,14386.0,False,2025,13,1,january,True,WAS,MIN,False,True,-14.0,14.0,2025131WAS
+90,2025-01-13,7:30p,Detroit Pistons,124.0,New York Knicks,119.0,False,19812.0,False,2025,13,1,january,True,NYK,DET,False,True,-5.0,5.0,2025131NYK
+91,2025-01-13,7:30p,Golden State Warriors,101.0,Toronto Raptors,104.0,False,19165.0,False,2025,13,1,january,True,TOR,GSW,True,False,3.0,-3.0,2025131TOR
+92,2025-01-13,8:00p,Memphis Grizzlies,118.0,Houston Rockets,120.0,False,18055.0,False,2025,13,1,january,True,HOU,MEM,True,False,2.0,-2.0,2025131HOU
+93,2025-01-13,10:30p,Miami Heat,98.0,Los Angeles Clippers,109.0,False,13119.0,False,2025,13,1,january,True,LAC,MIA,True,False,11.0,-11.0,2025131LAC
+94,2025-01-13,10:30p,San Antonio Spurs,126.0,Los Angeles Lakers,102.0,False,18737.0,False,2025,13,1,january,True,LAL,SAS,False,True,-24.0,24.0,2025131LAL
+95,2025-01-14,7:00p,Cleveland Cavaliers,127.0,Indiana Pacers,117.0,False,16035.0,False,2025,14,1,january,True,IND,CLE,False,True,-10.0,10.0,2025141IND
+96,2025-01-14,7:00p,Oklahoma City Thunder,118.0,Philadelphia 76ers,102.0,False,19771.0,False,2025,14,1,january,True,PHI,OKC,False,True,-16.0,16.0,2025141PHI
+97,2025-01-14,7:30p,Phoenix Suns,117.0,Atlanta Hawks,122.0,False,16221.0,False,2025,14,1,january,True,ATL,PHO,True,False,5.0,-5.0,2025141ATL
+98,2025-01-14,8:00p,New Orleans Pelicans,119.0,Chicago Bulls,113.0,False,17210.0,False,2025,14,1,january,True,CHI,NOP,False,True,-6.0,6.0,2025141CHI
+99,2025-01-14,8:00p,Sacramento Kings,115.0,Milwaukee Bucks,130.0,False,17341.0,False,2025,14,1,january,True,MIL,SAC,True,False,15.0,-15.0,2025141MIL
+100,2025-01-14,9:30p,Denver Nuggets,118.0,Dallas Mavericks,99.0,False,19798.0,False,2025,14,1,january,True,DAL,DEN,False,True,-19.0,19.0,2025141DAL
+101,2025-01-14,10:00p,Brooklyn Nets,132.0,Portland Trail Blazers,114.0,False,16127.0,False,2025,14,1,january,True,POR,BRK,False,True,-18.0,18.0,2025141POR
+102,2025-01-15,7:00p,New York Knicks,125.0,Philadelphia 76ers,119.0,True,20088.0,False,2025,15,1,january,True,PHI,NYK,False,True,-6.0,6.0,2025151PHI
+103,2025-01-15,7:30p,Boston Celtics,97.0,Toronto Raptors,110.0,False,18566.0,False,2025,15,1,january,True,TOR,BOS,True,False,13.0,-13.0,2025151TOR
+104,2025-01-15,8:00p,Atlanta Hawks,110.0,Chicago Bulls,94.0,False,17692.0,False,2025,15,1,january,True,CHI,ATL,False,True,-16.0,16.0,2025151CHI
+105,2025-01-15,8:00p,Orlando Magic,93.0,Milwaukee Bucks,122.0,False,17341.0,False,2025,15,1,january,True,MIL,ORL,True,False,29.0,-29.0,2025151MIL
+106,2025-01-15,8:00p,Dallas Mavericks,116.0,New Orleans Pelicans,119.0,False,16488.0,False,2025,15,1,january,True,NOP,DAL,True,False,3.0,-3.0,2025151NOP
+107,2025-01-15,8:00p,Memphis Grizzlies,129.0,San Antonio Spurs,115.0,False,18354.0,False,2025,15,1,january,True,SAS,MEM,False,True,-14.0,14.0,2025151SAS
+108,2025-01-15,9:00p,Houston Rockets,128.0,Denver Nuggets,108.0,False,19837.0,False,2025,15,1,january,True,DEN,HOU,False,True,-20.0,20.0,2025151DEN
+109,2025-01-15,9:00p,Charlotte Hornets,117.0,Utah Jazz,112.0,False,18175.0,False,2025,15,1,january,True,UTA,CHO,False,True,-5.0,5.0,2025151UTA
+110,2025-01-15,9:30p,Golden State Warriors,116.0,Minnesota Timberwolves,115.0,False,18978.0,False,2025,15,1,january,True,MIN,GSW,False,True,-1.0,1.0,2025151MIN
+111,2025-01-15,10:00p,Miami Heat,108.0,Los Angeles Lakers,117.0,False,17005.0,False,2025,15,1,january,True,LAL,MIA,True,False,9.0,-9.0,2025151LAL
+112,2025-01-15,10:30p,Brooklyn Nets,67.0,Los Angeles Clippers,126.0,False,13091.0,False,2025,15,1,january,True,LAC,BRK,True,False,59.0,-59.0,2025151LAC
+113,2025-01-16,7:00p,Indiana Pacers,111.0,Detroit Pistons,100.0,False,16366.0,False,2025,16,1,january,True,DET,IND,False,True,-11.0,11.0,2025161DET
+114,2025-01-16,7:00p,Phoenix Suns,130.0,Washington Wizards,123.0,False,15792.0,False,2025,16,1,january,True,WAS,PHO,False,True,-7.0,7.0,2025161WAS
+115,2025-01-16,7:30p,Cleveland Cavaliers,114.0,Oklahoma City Thunder,134.0,False,18203.0,False,2025,16,1,january,True,OKC,CLE,True,False,20.0,-20.0,2025161OKC
+116,2025-01-16,10:00p,Los Angeles Clippers,118.0,Portland Trail Blazers,89.0,False,16374.0,False,2025,16,1,january,True,POR,LAC,False,True,-29.0,29.0,2025161POR
+117,2025-01-16,10:00p,Houston Rockets,127.0,Sacramento Kings,132.0,False,18227.0,False,2025,16,1,january,True,SAC,HOU,True,False,5.0,-5.0,2025161SAC
+118,2025-01-17,7:00p,Orlando Magic,94.0,Boston Celtics,121.0,False,19156.0,False,2025,17,1,january,True,BOS,ORL,True,False,27.0,-27.0,2025171BOS
+119,2025-01-17,7:30p,Minnesota Timberwolves,116.0,New York Knicks,99.0,False,19812.0,False,2025,17,1,january,True,NYK,MIN,False,True,-17.0,17.0,2025171NYK
+120,2025-01-17,8:00p,Charlotte Hornets,125.0,Chicago Bulls,123.0,False,20598.0,False,2025,17,1,january,True,CHI,CHO,False,True,-2.0,2.0,2025171CHI
+121,2025-01-17,8:00p,Denver Nuggets,133.0,Miami Heat,113.0,False,19828.0,False,2025,17,1,january,True,MIA,DEN,False,True,-20.0,20.0,2025171MIA
+122,2025-01-17,8:00p,Toronto Raptors,112.0,Milwaukee Bucks,130.0,False,17341.0,False,2025,17,1,january,True,MIL,TOR,True,False,18.0,-18.0,2025171MIL
+123,2025-01-17,8:00p,Utah Jazz,123.0,New Orleans Pelicans,136.0,False,18321.0,False,2025,17,1,january,True,NOP,UTA,True,False,13.0,-13.0,2025171NOP
+124,2025-01-17,8:30p,Oklahoma City Thunder,98.0,Dallas Mavericks,106.0,False,20311.0,False,2025,17,1,january,True,DAL,OKC,True,False,8.0,-8.0,2025171DAL
+125,2025-01-17,9:30p,Memphis Grizzlies,140.0,San Antonio Spurs,112.0,False,18354.0,False,2025,17,1,january,True,SAS,MEM,False,True,-28.0,28.0,2025171SAS
+126,2025-01-17,10:30p,Brooklyn Nets,101.0,Los Angeles Lakers,102.0,False,18473.0,False,2025,17,1,january,True,LAL,BRK,True,False,1.0,-1.0,2025171LAL
+127,2025-01-18,4:00p,Phoenix Suns,125.0,Detroit Pistons,121.0,False,20062.0,False,2025,18,1,january,True,DET,PHO,False,True,-4.0,4.0,2025181DET
+128,2025-01-18,7:00p,Atlanta Hawks,119.0,Boston Celtics,115.0,True,19156.0,False,2025,18,1,january,True,BOS,ATL,False,True,-4.0,4.0,2025181BOS
+129,2025-01-18,7:00p,Philadelphia 76ers,102.0,Indiana Pacers,115.0,False,17274.0,False,2025,18,1,january,True,IND,PHI,True,False,13.0,-13.0,2025181IND
+130,2025-01-18,8:30p,Washington Wizards,114.0,Golden State Warriors,122.0,False,18064.0,False,2025,18,1,january,True,GSW,WAS,True,False,8.0,-8.0,2025181GSW
+131,2025-01-18,9:00p,Cleveland Cavaliers,124.0,Minnesota Timberwolves,117.0,False,18978.0,False,2025,18,1,january,True,MIN,CLE,False,True,-7.0,7.0,2025181MIN
+132,2025-01-18,10:00p,Houston Rockets,125.0,Portland Trail Blazers,103.0,False,17077.0,False,2025,18,1,january,True,POR,HOU,False,True,-22.0,22.0,2025181POR
+133,2025-01-19,3:00p,San Antonio Spurs,107.0,Miami Heat,128.0,False,19828.0,False,2025,19,1,january,True,MIA,SAS,True,False,21.0,-21.0,2025191MIA
+134,2025-01-19,6:00p,Denver Nuggets,113.0,Orlando Magic,100.0,False,18846.0,False,2025,19,1,january,True,ORL,DEN,False,True,-13.0,13.0,2025191ORL
+135,2025-01-19,7:00p,Philadelphia 76ers,109.0,Milwaukee Bucks,123.0,False,17345.0,False,2025,19,1,january,True,MIL,PHI,True,False,14.0,-14.0,2025191MIL
+136,2025-01-19,7:00p,Brooklyn Nets,101.0,Oklahoma City Thunder,127.0,False,18203.0,False,2025,19,1,january,True,OKC,BRK,True,False,26.0,-26.0,2025191OKC
+137,2025-01-19,9:00p,Los Angeles Lakers,102.0,Los Angeles Clippers,116.0,False,17927.0,False,2025,19,1,january,True,LAC,LAL,True,False,14.0,-14.0,2025191LAC
+138,2025-01-19,9:00p,Chicago Bulls,102.0,Portland Trail Blazers,113.0,False,16976.0,False,2025,19,1,january,True,POR,CHI,True,False,11.0,-11.0,2025191POR
+139,2025-01-19,9:00p,Washington Wizards,100.0,Sacramento Kings,123.0,False,17832.0,False,2025,19,1,january,True,SAC,WAS,True,False,23.0,-23.0,2025191SAC
+140,2025-01-20,12:00p,Dallas Mavericks,105.0,Charlotte Hornets,110.0,False,19314.0,False,2025,20,1,january,True,CHO,DAL,True,False,5.0,-5.0,2025201CHO
+141,2025-01-20,2:00p,Detroit Pistons,107.0,Houston Rockets,96.0,False,18055.0,False,2025,20,1,january,True,HOU,DET,False,True,-11.0,11.0,2025201HOU
+142,2025-01-20,2:30p,Minnesota Timberwolves,106.0,Memphis Grizzlies,108.0,False,17794.0,False,2025,20,1,january,True,MEM,MIN,True,False,2.0,-2.0,2025201MEM
+143,2025-01-20,3:00p,Atlanta Hawks,110.0,New York Knicks,119.0,False,19812.0,False,2025,20,1,january,True,NYK,ATL,True,False,9.0,-9.0,2025201NYK
+144,2025-01-20,3:30p,Phoenix Suns,92.0,Cleveland Cavaliers,118.0,False,19432.0,False,2025,20,1,january,True,CLE,PHO,True,False,26.0,-26.0,2025201CLE
+145,2025-01-20,5:00p,Boston Celtics,125.0,Golden State Warriors,85.0,False,18064.0,False,2025,20,1,january,True,GSW,BOS,False,True,-40.0,40.0,2025201GSW
+146,2025-01-20,8:00p,Utah Jazz,119.0,New Orleans Pelicans,123.0,True,14830.0,False,2025,20,1,january,True,NOP,UTA,True,False,4.0,-4.0,2025201NOP
+147,2025-01-20,10:30p,Chicago Bulls,112.0,Los Angeles Clippers,99.0,False,15293.0,False,2025,20,1,january,True,LAC,CHI,False,True,-13.0,13.0,2025201LAC
+148,2025-01-21,7:30p,New York Knicks,99.0,Brooklyn Nets,95.0,False,17926.0,False,2025,21,1,january,True,BRK,NYK,False,True,-4.0,4.0,2025211BRK
+149,2025-01-21,7:30p,Portland Trail Blazers,116.0,Miami Heat,107.0,False,19600.0,False,2025,21,1,january,True,MIA,POR,False,True,-9.0,9.0,2025211MIA
+150,2025-01-21,7:30p,Orlando Magic,93.0,Toronto Raptors,109.0,False,18284.0,False,2025,21,1,january,True,TOR,ORL,True,False,16.0,-16.0,2025211TOR
+151,2025-01-21,10:00p,Philadelphia 76ers,109.0,Denver Nuggets,144.0,False,19521.0,False,2025,21,1,january,True,DEN,PHI,True,False,35.0,-35.0,2025211DEN
+152,2025-01-21,10:30p,Washington Wizards,88.0,Los Angeles Lakers,111.0,False,18672.0,False,2025,21,1,january,True,LAL,WAS,True,False,23.0,-23.0,2025211LAL
+153,2025-01-22,7:30p,Detroit Pistons,114.0,Atlanta Hawks,104.0,False,13983.0,False,2025,22,1,january,True,ATL,DET,False,True,-10.0,10.0,2025221ATL
+154,2025-01-22,7:30p,Phoenix Suns,108.0,Brooklyn Nets,84.0,False,17077.0,False,2025,22,1,january,True,BRK,PHO,False,True,-24.0,24.0,2025221BRK
+155,2025-01-22,7:30p,Minnesota Timberwolves,115.0,Dallas Mavericks,114.0,False,20025.0,False,2025,22,1,january,True,DAL,MIN,False,True,-1.0,1.0,2025221DAL
+156,2025-01-22,8:00p,Cleveland Cavaliers,108.0,Houston Rockets,109.0,False,16719.0,False,2025,22,1,january,True,HOU,CLE,True,False,1.0,-1.0,2025221HOU
+157,2025-01-22,8:00p,Charlotte Hornets,120.0,Memphis Grizzlies,132.0,False,15971.0,False,2025,22,1,january,True,MEM,CHO,True,False,12.0,-12.0,2025221MEM
+158,2025-01-22,8:00p,Utah Jazz,114.0,Oklahoma City Thunder,123.0,False,17509.0,False,2025,22,1,january,True,OKC,UTA,True,False,9.0,-9.0,2025221OKC
+159,2025-01-22,10:00p,Golden State Warriors,117.0,Sacramento Kings,123.0,False,17832.0,False,2025,22,1,january,True,SAC,GSW,True,False,6.0,-6.0,2025221SAC
+160,2025-01-22,10:30p,Boston Celtics,117.0,Los Angeles Clippers,113.0,True,15342.0,False,2025,22,1,january,True,LAC,BOS,False,True,-4.0,4.0,2025221LAC
+161,2025-01-23,2:00p,San Antonio Spurs,140.0,Indiana Pacers,110.0,False,15935.0,False,2025,23,1,january,True,IND,SAS,False,True,-30.0,30.0,2025231IND
+162,2025-01-23,7:00p,Portland Trail Blazers,101.0,Orlando Magic,79.0,False,19422.0,False,2025,23,1,january,True,ORL,POR,False,True,-22.0,22.0,2025231ORL
+163,2025-01-23,7:30p,Toronto Raptors,122.0,Atlanta Hawks,119.0,False,14662.0,False,2025,23,1,january,True,ATL,TOR,False,True,-3.0,3.0,2025231ATL
+164,2025-01-23,8:00p,Dallas Mavericks,121.0,Oklahoma City Thunder,115.0,False,18203.0,False,2025,23,1,january,True,OKC,DAL,False,True,-6.0,6.0,2025231OKC
+165,2025-01-23,8:30p,Miami Heat,96.0,Milwaukee Bucks,125.0,False,17341.0,False,2025,23,1,january,True,MIL,MIA,True,False,29.0,-29.0,2025231MIL
+166,2025-01-23,9:00p,Sacramento Kings,123.0,Denver Nuggets,132.0,False,19676.0,False,2025,23,1,january,True,DEN,SAC,True,False,9.0,-9.0,2025231DEN
+167,2025-01-23,10:00p,Chicago Bulls,106.0,Golden State Warriors,131.0,False,18064.0,False,2025,23,1,january,True,GSW,CHI,True,False,25.0,-25.0,2025231GSW
+168,2025-01-23,10:00p,Boston Celtics,96.0,Los Angeles Lakers,117.0,False,18997.0,False,2025,23,1,january,True,LAL,BOS,True,False,21.0,-21.0,2025231LAL
+169,2025-01-23,10:30p,Washington Wizards,93.0,Los Angeles Clippers,110.0,False,13771.0,False,2025,23,1,january,True,LAC,WAS,True,False,17.0,-17.0,2025231LAC
+170,2025-01-24,7:00p,Portland Trail Blazers,102.0,Charlotte Hornets,97.0,False,16228.0,False,2025,24,1,january,True,CHO,POR,False,True,-5.0,5.0,2025241CHO
+171,2025-01-24,7:00p,Cleveland Cavaliers,129.0,Philadelphia 76ers,132.0,False,19760.0,False,2025,24,1,january,True,PHI,CLE,True,False,3.0,-3.0,2025241PHI
+172,2025-01-24,8:00p,New Orleans Pelicans,126.0,Memphis Grizzlies,139.0,False,16495.0,False,2025,24,1,january,True,MEM,NOP,True,False,13.0,-13.0,2025241MEM
+173,2025-01-25,12:00p,Indiana Pacers,136.0,San Antonio Spurs,98.0,False,15979.0,False,2025,25,1,january,True,SAS,IND,False,True,-38.0,38.0,2025251SAS
+174,2025-01-25,3:00p,Denver Nuggets,104.0,Minnesota Timberwolves,133.0,False,18978.0,False,2025,25,1,january,True,MIN,DEN,True,False,29.0,-29.0,2025251MIN
+175,2025-01-25,5:30p,Boston Celtics,122.0,Dallas Mavericks,107.0,False,20421.0,False,2025,25,1,january,True,DAL,BOS,False,True,-15.0,15.0,2025251DAL
+176,2025-01-25,6:00p,Miami Heat,106.0,Brooklyn Nets,97.0,False,17962.0,False,2025,25,1,january,True,BRK,MIA,False,True,-9.0,9.0,2025251BRK
+177,2025-01-25,7:00p,New Orleans Pelicans,92.0,Charlotte Hornets,123.0,False,18461.0,False,2025,25,1,january,True,CHO,NOP,True,False,31.0,-31.0,2025251CHO
+178,2025-01-25,7:00p,Detroit Pistons,113.0,Orlando Magic,121.0,False,19489.0,False,2025,25,1,january,True,ORL,DET,True,False,8.0,-8.0,2025251ORL
+179,2025-01-25,7:30p,Toronto Raptors,117.0,Atlanta Hawks,94.0,False,17868.0,False,2025,25,1,january,True,ATL,TOR,False,True,-23.0,23.0,2025251ATL
+180,2025-01-25,7:30p,Houston Rockets,135.0,Cleveland Cavaliers,131.0,False,19432.0,False,2025,25,1,january,True,CLE,HOU,False,True,-4.0,4.0,2025251CLE
+181,2025-01-25,7:30p,Sacramento Kings,120.0,New York Knicks,143.0,False,19812.0,False,2025,25,1,january,True,NYK,SAC,True,False,23.0,-23.0,2025251NYK
+182,2025-01-25,8:00p,Philadelphia 76ers,109.0,Chicago Bulls,97.0,False,20153.0,False,2025,25,1,january,True,CHI,PHI,False,True,-12.0,12.0,2025251CHI
+183,2025-01-25,8:00p,Utah Jazz,103.0,Memphis Grizzlies,125.0,False,17011.0,False,2025,25,1,january,True,MEM,UTA,True,False,22.0,-22.0,2025251MEM
+184,2025-01-25,8:30p,Los Angeles Lakers,118.0,Golden State Warriors,108.0,False,18064.0,False,2025,25,1,january,True,GSW,LAL,False,True,-10.0,10.0,2025251GSW
+185,2025-01-25,9:00p,Washington Wizards,109.0,Phoenix Suns,119.0,False,17071.0,False,2025,25,1,january,True,PHO,WAS,True,False,10.0,-10.0,2025251PHO
+186,2025-01-25,10:30p,Milwaukee Bucks,117.0,Los Angeles Clippers,127.0,False,17927.0,False,2025,25,1,january,True,LAC,MIL,True,False,10.0,-10.0,2025251LAC
+187,2025-01-26,6:00p,Oklahoma City Thunder,118.0,Portland Trail Blazers,108.0,False,17619.0,False,2025,26,1,january,True,POR,OKC,False,True,-10.0,10.0,2025261POR
+188,2025-01-27,7:00p,Los Angeles Lakers,112.0,Charlotte Hornets,107.0,False,19483.0,False,2025,27,1,january,True,CHO,LAL,False,True,-5.0,5.0,2025271CHO
+189,2025-01-27,7:00p,Detroit Pistons,91.0,Cleveland Cavaliers,110.0,False,19432.0,False,2025,27,1,january,True,CLE,DET,True,False,19.0,-19.0,2025271CLE
+190,2025-01-27,7:30p,Houston Rockets,114.0,Boston Celtics,112.0,False,19156.0,False,2025,27,1,january,True,BOS,HOU,False,True,-2.0,2.0,2025271BOS
+191,2025-01-27,7:30p,Sacramento Kings,110.0,Brooklyn Nets,96.0,False,16093.0,False,2025,27,1,january,True,BRK,SAC,False,True,-14.0,14.0,2025271BRK
+192,2025-01-27,7:30p,Orlando Magic,119.0,Miami Heat,125.0,False,19600.0,False,2025,27,1,january,True,MIA,ORL,True,False,6.0,-6.0,2025271MIA
+193,2025-01-27,7:30p,Memphis Grizzlies,106.0,New York Knicks,143.0,False,19812.0,False,2025,27,1,january,True,NYK,MEM,True,False,37.0,-37.0,2025271NYK
+194,2025-01-27,7:30p,New Orleans Pelicans,104.0,Toronto Raptors,113.0,False,18054.0,False,2025,27,1,january,True,TOR,NOP,True,False,9.0,-9.0,2025271TOR
+195,2025-01-27,8:00p,Denver Nuggets,121.0,Chicago Bulls,129.0,False,19661.0,False,2025,27,1,january,True,CHI,DEN,True,False,8.0,-8.0,2025271CHI
+196,2025-01-27,8:00p,Atlanta Hawks,92.0,Minnesota Timberwolves,100.0,False,18978.0,False,2025,27,1,january,True,MIN,ATL,True,False,8.0,-8.0,2025271MIN
+197,2025-01-27,8:30p,Washington Wizards,108.0,Dallas Mavericks,130.0,False,20031.0,False,2025,27,1,january,True,DAL,WAS,True,False,22.0,-22.0,2025271DAL
+198,2025-01-27,9:00p,Milwaukee Bucks,125.0,Utah Jazz,110.0,False,18175.0,False,2025,27,1,january,True,UTA,MIL,False,True,-15.0,15.0,2025271UTA
+199,2025-01-27,9:30p,Los Angeles Clippers,109.0,Phoenix Suns,111.0,False,17071.0,False,2025,27,1,january,True,PHO,LAC,True,False,2.0,-2.0,2025271PHO
+200,2025-01-28,7:30p,Houston Rockets,100.0,Atlanta Hawks,96.0,False,15553.0,False,2025,28,1,january,True,ATL,HOU,False,True,-4.0,4.0,2025281ATL
+201,2025-01-28,7:30p,Los Angeles Lakers,104.0,Philadelphia 76ers,118.0,False,19775.0,False,2025,28,1,january,True,PHI,LAL,True,False,14.0,-14.0,2025281PHI
+202,2025-01-28,10:00p,Utah Jazz,103.0,Golden State Warriors,114.0,False,18064.0,False,2025,28,1,january,True,GSW,UTA,True,False,11.0,-11.0,2025281GSW
+203,2025-01-28,10:00p,Milwaukee Bucks,112.0,Portland Trail Blazers,125.0,False,17030.0,False,2025,28,1,january,True,POR,MIL,True,False,13.0,-13.0,2025281POR
+204,2025-01-29,7:00p,Brooklyn Nets,104.0,Charlotte Hornets,83.0,False,14307.0,False,2025,29,1,january,True,CHO,BRK,False,True,-21.0,21.0,2025291CHO
+205,2025-01-29,7:00p,Detroit Pistons,119.0,Indiana Pacers,133.0,False,16275.0,False,2025,29,1,january,True,IND,DET,True,False,14.0,-14.0,2025291IND
+206,2025-01-29,7:00p,Toronto Raptors,106.0,Washington Wizards,82.0,False,13713.0,False,2025,29,1,january,True,WAS,TOR,False,True,-24.0,24.0,2025291WAS
+207,2025-01-29,7:30p,Chicago Bulls,100.0,Boston Celtics,122.0,False,19156.0,False,2025,29,1,january,True,BOS,CHI,True,False,22.0,-22.0,2025291BOS
+208,2025-01-29,7:30p,Cleveland Cavaliers,126.0,Miami Heat,106.0,False,19600.0,False,2025,29,1,january,True,MIA,CLE,False,True,-20.0,20.0,2025291MIA
+209,2025-01-29,7:30p,Denver Nuggets,112.0,New York Knicks,122.0,False,19812.0,False,2025,29,1,january,True,NYK,DEN,True,False,10.0,-10.0,2025291NYK
+210,2025-01-29,7:30p,Sacramento Kings,104.0,Philadelphia 76ers,117.0,False,19770.0,False,2025,29,1,january,True,PHI,SAC,True,False,13.0,-13.0,2025291PHI
+211,2025-01-29,8:00p,Dallas Mavericks,137.0,New Orleans Pelicans,136.0,False,15656.0,False,2025,29,1,january,True,NOP,DAL,False,True,-1.0,1.0,2025291NOP
+212,2025-01-29,8:00p,Los Angeles Clippers,128.0,San Antonio Spurs,116.0,False,18354.0,False,2025,29,1,january,True,SAS,LAC,False,True,-12.0,12.0,2025291SAS
+213,2025-01-29,9:00p,Minnesota Timberwolves,121.0,Phoenix Suns,113.0,False,17071.0,False,2025,29,1,january,True,PHO,MIN,False,True,-8.0,8.0,2025291PHO
+214,2025-01-29,10:00p,Oklahoma City Thunder,109.0,Golden State Warriors,116.0,False,18064.0,False,2025,29,1,january,True,GSW,OKC,True,False,7.0,-7.0,2025291GSW
+215,2025-01-30,7:00p,Atlanta Hawks,115.0,Cleveland Cavaliers,137.0,False,19432.0,False,2025,30,1,january,True,CLE,ATL,True,False,22.0,-22.0,2025301CLE
+216,2025-01-30,7:00p,Los Angeles Lakers,134.0,Washington Wizards,96.0,False,17491.0,False,2025,30,1,january,True,WAS,LAL,False,True,-38.0,38.0,2025301WAS
+217,2025-01-30,9:00p,Minnesota Timberwolves,138.0,Utah Jazz,113.0,False,18175.0,False,2025,30,1,january,True,UTA,MIN,False,True,-25.0,25.0,2025301UTA
+218,2025-01-30,9:30p,Houston Rockets,119.0,Memphis Grizzlies,120.0,False,16257.0,False,2025,30,1,january,True,MEM,HOU,True,False,1.0,-1.0,2025301MEM
+219,2025-01-30,10:00p,Orlando Magic,90.0,Portland Trail Blazers,119.0,False,16217.0,False,2025,30,1,january,True,POR,ORL,True,False,29.0,-29.0,2025301POR
+220,2025-01-31,7:00p,Los Angeles Clippers,112.0,Charlotte Hornets,104.0,False,15342.0,False,2025,31,1,january,True,CHO,LAC,False,True,-8.0,8.0,2025311CHO
+221,2025-01-31,7:00p,Dallas Mavericks,102.0,Detroit Pistons,117.0,False,20062.0,False,2025,31,1,january,True,DET,DAL,True,False,15.0,-15.0,2025311DET
+222,2025-01-31,7:30p,Denver Nuggets,137.0,Philadelphia 76ers,134.0,False,19764.0,False,2025,31,1,january,True,PHI,DEN,False,True,-3.0,3.0,2025311PHI
+223,2025-01-31,7:30p,Chicago Bulls,122.0,Toronto Raptors,106.0,False,19365.0,False,2025,31,1,january,True,TOR,CHI,False,True,-16.0,16.0,2025311TOR
+224,2025-01-31,8:00p,Boston Celtics,118.0,New Orleans Pelicans,116.0,False,16432.0,False,2025,31,1,january,True,NOP,BOS,False,True,-2.0,2.0,2025311NOP
+225,2025-01-31,8:00p,Milwaukee Bucks,118.0,San Antonio Spurs,144.0,False,17804.0,False,2025,31,1,january,True,SAS,MIL,True,False,26.0,-26.0,2025311SAS
+226,2025-01-31,10:00p,Phoenix Suns,130.0,Golden State Warriors,105.0,False,18064.0,False,2025,31,1,january,True,GSW,PHO,False,True,-25.0,25.0,2025311GSW
+0,2025-02-01,5:00p,Atlanta Hawks,127.0,Indiana Pacers,132.0,False,17274.0,False,2025,01,2,february,True,IND,ATL,True,False,5.0,-5.0,2025012IND
+1,2025-02-01,5:00p,Orlando Magic,99.0,Utah Jazz,113.0,False,18175.0,False,2025,01,2,february,True,UTA,ORL,True,False,14.0,-14.0,2025012UTA
+2,2025-02-01,7:00p,Denver Nuggets,107.0,Charlotte Hornets,104.0,False,19106.0,False,2025,01,2,february,True,CHO,DEN,False,True,-3.0,3.0,2025012CHO
+3,2025-02-01,8:00p,Brooklyn Nets,110.0,Houston Rockets,98.0,False,18055.0,False,2025,01,2,february,True,HOU,BRK,False,True,-12.0,12.0,2025012HOU
+4,2025-02-01,8:00p,Washington Wizards,105.0,Minnesota Timberwolves,103.0,False,18978.0,False,2025,01,2,february,True,MIN,WAS,False,True,-2.0,2.0,2025012MIN
+5,2025-02-01,8:00p,Sacramento Kings,110.0,Oklahoma City Thunder,144.0,False,18203.0,False,2025,01,2,february,True,OKC,SAC,True,False,34.0,-34.0,2025012OKC
+6,2025-02-01,8:30p,Los Angeles Lakers,128.0,New York Knicks,112.0,False,19812.0,False,2025,01,2,february,True,NYK,LAL,False,True,-16.0,16.0,2025012NYK
+7,2025-02-01,8:30p,Miami Heat,105.0,San Antonio Spurs,103.0,False,18354.0,False,2025,01,2,february,True,SAS,MIA,False,True,-2.0,2.0,2025012SAS
+8,2025-02-01,10:00p,Phoenix Suns,108.0,Portland Trail Blazers,127.0,False,17421.0,False,2025,01,2,february,True,POR,PHO,True,False,19.0,-19.0,2025012POR
+9,2025-02-02,3:00p,Chicago Bulls,119.0,Detroit Pistons,127.0,False,20062.0,False,2025,02,2,february,True,DET,CHI,True,False,8.0,-8.0,2025022DET
+10,2025-02-02,3:30p,Dallas Mavericks,101.0,Cleveland Cavaliers,144.0,False,19432.0,False,2025,02,2,february,True,CLE,DAL,True,False,43.0,-43.0,2025022CLE
+11,2025-02-02,3:30p,Los Angeles Clippers,108.0,Toronto Raptors,115.0,False,18874.0,False,2025,02,2,february,True,TOR,LAC,True,False,7.0,-7.0,2025022TOR
+12,2025-02-02,6:00p,Boston Celtics,118.0,Philadelphia 76ers,110.0,False,19766.0,False,2025,02,2,february,True,PHI,BOS,False,True,-8.0,8.0,2025022PHI
+13,2025-02-02,8:30p,Memphis Grizzlies,132.0,Milwaukee Bucks,119.0,False,17341.0,False,2025,02,2,february,True,MIL,MEM,False,True,-13.0,13.0,2025022MIL
+14,2025-02-03,7:00p,Washington Wizards,124.0,Charlotte Hornets,114.0,False,14129.0,False,2025,03,2,february,True,CHO,WAS,False,True,-10.0,10.0,2025032CHO
+15,2025-02-03,7:00p,Atlanta Hawks,132.0,Detroit Pistons,130.0,False,15988.0,False,2025,03,2,february,True,DET,ATL,False,True,-2.0,2.0,2025032DET
+16,2025-02-03,7:30p,Houston Rockets,118.0,New York Knicks,124.0,False,19812.0,False,2025,03,2,february,True,NYK,HOU,True,False,6.0,-6.0,2025032NYK
+17,2025-02-03,8:00p,San Antonio Spurs,109.0,Memphis Grizzlies,128.0,False,16575.0,False,2025,03,2,february,True,MEM,SAS,True,False,19.0,-19.0,2025032MEM
+18,2025-02-03,8:00p,Sacramento Kings,116.0,Minnesota Timberwolves,114.0,False,18978.0,False,2025,03,2,february,True,MIN,SAC,False,True,-2.0,2.0,2025032MIN
+19,2025-02-03,8:00p,Milwaukee Bucks,96.0,Oklahoma City Thunder,125.0,False,17677.0,False,2025,03,2,february,True,OKC,MIL,True,False,29.0,-29.0,2025032OKC
+20,2025-02-03,9:00p,New Orleans Pelicans,113.0,Denver Nuggets,125.0,False,19587.0,False,2025,03,2,february,True,DEN,NOP,True,False,12.0,-12.0,2025032DEN
+21,2025-02-03,9:00p,Indiana Pacers,112.0,Utah Jazz,111.0,False,18175.0,False,2025,03,2,february,True,UTA,IND,False,True,-1.0,1.0,2025032UTA
+22,2025-02-03,10:00p,Orlando Magic,99.0,Golden State Warriors,104.0,False,18064.0,False,2025,03,2,february,True,GSW,ORL,True,False,5.0,-5.0,2025032GSW
+23,2025-02-03,10:00p,Phoenix Suns,119.0,Portland Trail Blazers,121.0,True,16205.0,False,2025,03,2,february,True,POR,PHO,True,False,2.0,-2.0,2025032POR
+24,2025-02-04,7:00p,Dallas Mavericks,116.0,Philadelphia 76ers,118.0,False,19756.0,False,2025,04,2,february,True,PHI,DAL,True,False,2.0,-2.0,2025042PHI
+25,2025-02-04,7:30p,Houston Rockets,97.0,Brooklyn Nets,99.0,False,16564.0,False,2025,04,2,february,True,BRK,HOU,True,False,2.0,-2.0,2025042BRK
+26,2025-02-04,7:30p,Boston Celtics,112.0,Cleveland Cavaliers,105.0,False,19432.0,False,2025,04,2,february,True,CLE,BOS,False,True,-7.0,7.0,2025042CLE
+27,2025-02-04,7:30p,New York Knicks,121.0,Toronto Raptors,115.0,False,17398.0,False,2025,04,2,february,True,TOR,NYK,False,True,-6.0,6.0,2025042TOR
+28,2025-02-04,8:00p,Miami Heat,124.0,Chicago Bulls,133.0,False,19389.0,False,2025,04,2,february,True,CHI,MIA,True,False,9.0,-9.0,2025042CHI
+29,2025-02-04,10:00p,Los Angeles Lakers,122.0,Los Angeles Clippers,97.0,False,17927.0,False,2025,04,2,february,True,LAC,LAL,False,True,-25.0,25.0,2025042LAC
+30,2025-02-04,10:00p,Indiana Pacers,89.0,Portland Trail Blazers,112.0,False,16005.0,False,2025,04,2,february,True,POR,IND,True,False,23.0,-23.0,2025042POR
+31,2025-02-05,7:00p,San Antonio Spurs,126.0,Atlanta Hawks,125.0,False,17191.0,False,2025,05,2,february,True,ATL,SAS,False,True,-1.0,1.0,2025052ATL
+32,2025-02-05,7:00p,Milwaukee Bucks,112.0,Charlotte Hornets,102.0,False,14385.0,False,2025,05,2,february,True,CHO,MIL,False,True,-10.0,10.0,2025052CHO
+33,2025-02-05,7:00p,Cleveland Cavaliers,118.0,Detroit Pistons,115.0,False,18734.0,False,2025,05,2,february,True,DET,CLE,False,True,-3.0,3.0,2025052DET
+34,2025-02-05,7:30p,Washington Wizards,119.0,Brooklyn Nets,102.0,False,16035.0,False,2025,05,2,february,True,BRK,WAS,False,True,-17.0,17.0,2025052BRK
+35,2025-02-05,7:30p,Miami Heat,108.0,Philadelphia 76ers,101.0,False,19770.0,False,2025,05,2,february,True,PHI,MIA,False,True,-7.0,7.0,2025052PHI
+36,2025-02-05,7:30p,Memphis Grizzlies,138.0,Toronto Raptors,107.0,False,18337.0,False,2025,05,2,february,True,TOR,MEM,False,True,-31.0,31.0,2025052TOR
+37,2025-02-05,8:00p,Chicago Bulls,108.0,Minnesota Timberwolves,127.0,False,18978.0,False,2025,05,2,february,True,MIN,CHI,True,False,19.0,-19.0,2025052MIN
+38,2025-02-05,9:00p,New Orleans Pelicans,119.0,Denver Nuggets,144.0,False,19526.0,False,2025,05,2,february,True,DEN,NOP,True,False,25.0,-25.0,2025052DEN
+39,2025-02-05,9:00p,Golden State Warriors,128.0,Utah Jazz,131.0,False,18175.0,False,2025,05,2,february,True,UTA,GSW,True,False,3.0,-3.0,2025052UTA
+40,2025-02-05,9:30p,Phoenix Suns,109.0,Oklahoma City Thunder,140.0,False,17451.0,False,2025,05,2,february,True,OKC,PHO,True,False,31.0,-31.0,2025052OKC
+41,2025-02-05,10:00p,Orlando Magic,130.0,Sacramento Kings,111.0,False,18074.0,False,2025,05,2,february,True,SAC,ORL,False,True,-19.0,19.0,2025052SAC
+42,2025-02-06,7:30p,Dallas Mavericks,,Boston Celtics,,False,,False,2025,06,2,february,False,BOS,DAL,False,False,,,2025062BOS
+43,2025-02-06,8:00p,Houston Rockets,,Minnesota Timberwolves,,False,,False,2025,06,2,february,False,MIN,HOU,False,False,,,2025062MIN
+44,2025-02-06,9:00p,Orlando Magic,,Denver Nuggets,,False,,False,2025,06,2,february,False,DEN,ORL,False,False,,,2025062DEN
+45,2025-02-06,10:00p,Golden State Warriors,,Los Angeles Lakers,,False,,False,2025,06,2,february,False,LAL,GSW,False,False,,,2025062LAL
+46,2025-02-06,10:00p,Sacramento Kings,,Portland Trail Blazers,,False,,False,2025,06,2,february,False,POR,SAC,False,False,,,2025062POR
+47,2025-02-06,10:30p,Indiana Pacers,,Los Angeles Clippers,,False,,False,2025,06,2,february,False,LAC,IND,False,False,,,2025062LAC
+48,2025-02-07,7:00p,San Antonio Spurs,,Charlotte Hornets,,False,,False,2025,07,2,february,False,CHO,SAS,False,False,,,2025072CHO
+49,2025-02-07,7:00p,Cleveland Cavaliers,,Washington Wizards,,False,,False,2025,07,2,february,False,WAS,CLE,False,False,,,2025072WAS
+50,2025-02-07,7:30p,Milwaukee Bucks,,Atlanta Hawks,,False,,False,2025,07,2,february,False,ATL,MIL,False,False,,,2025072ATL
+51,2025-02-07,7:30p,Miami Heat,,Brooklyn Nets,,False,,False,2025,07,2,february,False,BRK,MIA,False,False,,,2025072BRK
+52,2025-02-07,7:30p,Philadelphia 76ers,,Detroit Pistons,,False,,False,2025,07,2,february,False,DET,PHI,False,False,,,2025072DET
+53,2025-02-07,8:00p,Toronto Raptors,,Oklahoma City Thunder,,False,,False,2025,07,2,february,False,OKC,TOR,False,False,,,2025072OKC
+54,2025-02-07,10:00p,Utah Jazz,,Phoenix Suns,,False,,False,2025,07,2,february,False,PHO,UTA,False,False,,,2025072PHO
+55,2025-02-08,3:00p,Houston Rockets,,Dallas Mavericks,,False,,False,2025,08,2,february,False,DAL,HOU,False,False,,,2025082DAL
+56,2025-02-08,4:00p,Indiana Pacers,,Los Angeles Lakers,,False,,False,2025,08,2,february,False,LAL,IND,False,False,,,2025082LAL
+57,2025-02-08,7:00p,San Antonio Spurs,,Orlando Magic,,False,,False,2025,08,2,february,False,ORL,SAS,False,False,,,2025082ORL
+58,2025-02-08,7:00p,Atlanta Hawks,,Washington Wizards,,False,,False,2025,08,2,february,False,WAS,ATL,False,False,,,2025082WAS
+59,2025-02-08,8:00p,Golden State Warriors,,Chicago Bulls,,False,,False,2025,08,2,february,False,CHI,GSW,False,False,,,2025082CHI
+60,2025-02-08,8:00p,Oklahoma City Thunder,,Memphis Grizzlies,,False,,False,2025,08,2,february,False,MEM,OKC,False,False,,,2025082MEM
+61,2025-02-08,8:00p,Portland Trail Blazers,,Minnesota Timberwolves,,False,,False,2025,08,2,february,False,MIN,POR,False,False,,,2025082MIN
+62,2025-02-08,8:30p,Boston Celtics,,New York Knicks,,False,,False,2025,08,2,february,False,NYK,BOS,False,False,,,2025082NYK
+63,2025-02-08,9:00p,Denver Nuggets,,Phoenix Suns,,False,,False,2025,08,2,february,False,PHO,DEN,False,False,,,2025082PHO
+64,2025-02-08,10:00p,New Orleans Pelicans,,Sacramento Kings,,False,,False,2025,08,2,february,False,SAC,NOP,False,False,,,2025082SAC
+65,2025-02-08,10:30p,Utah Jazz,,Los Angeles Clippers,,False,,False,2025,08,2,february,False,LAC,UTA,False,False,,,2025082LAC
+66,2025-02-09,1:00p,Charlotte Hornets,,Detroit Pistons,,False,,False,2025,09,2,february,False,DET,CHO,False,False,,,2025092DET
+67,2025-02-09,2:00p,Toronto Raptors,,Houston Rockets,,False,,False,2025,09,2,february,False,HOU,TOR,False,False,,,2025092HOU
+68,2025-02-09,2:00p,Philadelphia 76ers,,Milwaukee Bucks,,False,,False,2025,09,2,february,False,MIL,PHI,False,False,,,2025092MIL
+69,2025-02-10,7:00p,Minnesota Timberwolves,,Cleveland Cavaliers,,False,,False,2025,10,2,february,False,CLE,MIN,False,False,,,2025102CLE
+70,2025-02-10,7:00p,Atlanta Hawks,,Orlando Magic,,False,,False,2025,10,2,february,False,ORL,ATL,False,False,,,2025102ORL
+71,2025-02-10,7:00p,San Antonio Spurs,,Washington Wizards,,False,,False,2025,10,2,february,False,WAS,SAS,False,False,,,2025102WAS
+72,2025-02-10,7:30p,Charlotte Hornets,,Brooklyn Nets,,False,,False,2025,10,2,february,False,BRK,CHO,False,False,,,2025102BRK
+73,2025-02-10,7:30p,Boston Celtics,,Miami Heat,,False,,False,2025,10,2,february,False,MIA,BOS,False,False,,,2025102MIA
+74,2025-02-10,8:00p,Golden State Warriors,,Milwaukee Bucks,,False,,False,2025,10,2,february,False,MIL,GSW,False,False,,,2025102MIL
+75,2025-02-10,8:00p,New Orleans Pelicans,,Oklahoma City Thunder,,False,,False,2025,10,2,february,False,OKC,NOP,False,False,,,2025102OKC
+76,2025-02-10,8:30p,Sacramento Kings,,Dallas Mavericks,,False,,False,2025,10,2,february,False,DAL,SAC,False,False,,,2025102DAL
+77,2025-02-10,9:00p,Portland Trail Blazers,,Denver Nuggets,,False,,False,2025,10,2,february,False,DEN,POR,False,False,,,2025102DEN
+78,2025-02-10,10:30p,Utah Jazz,,Los Angeles Lakers,,False,,False,2025,10,2,february,False,LAL,UTA,False,False,,,2025102LAL
+79,2025-02-11,7:00p,Toronto Raptors,,Philadelphia 76ers,,False,,False,2025,11,2,february,False,PHI,TOR,False,False,,,2025112PHI
+80,2025-02-11,7:30p,New York Knicks,,Indiana Pacers,,False,,False,2025,11,2,february,False,IND,NYK,False,False,,,2025112IND
+81,2025-02-11,8:00p,Detroit Pistons,,Chicago Bulls,,False,,False,2025,11,2,february,False,CHI,DET,False,False,,,2025112CHI
+82,2025-02-11,10:00p,Memphis Grizzlies,,Phoenix Suns,,False,,False,2025,11,2,february,False,PHO,MEM,False,False,,,2025112PHO
+83,2025-02-12,7:00p,San Antonio Spurs,,Boston Celtics,,False,,False,2025,12,2,february,False,BOS,SAS,False,False,,,2025122BOS
+84,2025-02-12,7:00p,Charlotte Hornets,,Orlando Magic,,False,,False,2025,12,2,february,False,ORL,CHO,False,False,,,2025122ORL
+85,2025-02-12,7:00p,Indiana Pacers,,Washington Wizards,,False,,False,2025,12,2,february,False,WAS,IND,False,False,,,2025122WAS
+86,2025-02-12,7:30p,Philadelphia 76ers,,Brooklyn Nets,,False,,False,2025,12,2,february,False,BRK,PHI,False,False,,,2025122BRK
+87,2025-02-12,7:30p,Atlanta Hawks,,New York Knicks,,False,,False,2025,12,2,february,False,NYK,ATL,False,False,,,2025122NYK
+88,2025-02-12,7:30p,Cleveland Cavaliers,,Toronto Raptors,,False,,False,2025,12,2,february,False,TOR,CLE,False,False,,,2025122TOR
+89,2025-02-12,8:00p,Detroit Pistons,,Chicago Bulls,,False,,False,2025,12,2,february,False,CHI,DET,False,False,,,2025122CHI
+90,2025-02-12,8:00p,Milwaukee Bucks,,Minnesota Timberwolves,,False,,False,2025,12,2,february,False,MIN,MIL,False,False,,,2025122MIN
+91,2025-02-12,8:00p,Sacramento Kings,,New Orleans Pelicans,,False,,False,2025,12,2,february,False,NOP,SAC,False,False,,,2025122NOP
+92,2025-02-12,8:00p,Miami Heat,,Oklahoma City Thunder,,False,,False,2025,12,2,february,False,OKC,MIA,False,False,,,2025122OKC
+93,2025-02-12,8:30p,Phoenix Suns,,Houston Rockets,,False,,False,2025,12,2,february,False,HOU,PHO,False,False,,,2025122HOU
+94,2025-02-12,9:00p,Portland Trail Blazers,,Denver Nuggets,,False,,False,2025,12,2,february,False,DEN,POR,False,False,,,2025122DEN
+95,2025-02-12,9:00p,Los Angeles Lakers,,Utah Jazz,,False,,False,2025,12,2,february,False,UTA,LAL,False,False,,,2025122UTA
+96,2025-02-12,9:30p,Golden State Warriors,,Dallas Mavericks,,False,,False,2025,12,2,february,False,DAL,GSW,False,False,,,2025122DAL
+97,2025-02-12,10:30p,Memphis Grizzlies,,Los Angeles Clippers,,False,,False,2025,12,2,february,False,LAC,MEM,False,False,,,2025122LAC
+98,2025-02-13,8:00p,Golden State Warriors,,Houston Rockets,,False,,False,2025,13,2,february,False,HOU,GSW,False,False,,,2025132HOU
+99,2025-02-13,8:00p,Sacramento Kings,,New Orleans Pelicans,,False,,False,2025,13,2,february,False,NOP,SAC,False,False,,,2025132NOP
+100,2025-02-13,8:30p,Miami Heat,,Dallas Mavericks,,False,,False,2025,13,2,february,False,DAL,MIA,False,False,,,2025132DAL
+101,2025-02-13,8:30p,Oklahoma City Thunder,,Minnesota Timberwolves,,False,,False,2025,13,2,february,False,MIN,OKC,False,False,,,2025132MIN
+102,2025-02-13,9:00p,Los Angeles Clippers,,Utah Jazz,,False,,False,2025,13,2,february,False,UTA,LAC,False,False,,,2025132UTA
+103,2025-02-19,10:00p,Charlotte Hornets,,Los Angeles Lakers,,False,,False,2025,19,2,february,False,LAL,CHO,False,False,,,2025192LAL
+104,2025-02-20,7:00p,Memphis Grizzlies,,Indiana Pacers,,False,,False,2025,20,2,february,False,IND,MEM,False,False,,,2025202IND
+105,2025-02-20,7:00p,Boston Celtics,,Philadelphia 76ers,,False,,False,2025,20,2,february,False,PHI,BOS,False,False,,,2025202PHI
+106,2025-02-20,7:30p,Orlando Magic,,Atlanta Hawks,,False,,False,2025,20,2,february,False,ATL,ORL,False,False,,,2025202ATL
+107,2025-02-20,7:30p,Cleveland Cavaliers,,Brooklyn Nets,,False,,False,2025,20,2,february,False,BRK,CLE,False,False,,,2025202BRK
+108,2025-02-20,7:30p,Chicago Bulls,,New York Knicks,,False,,False,2025,20,2,february,False,NYK,CHI,False,False,,,2025202NYK
+109,2025-02-20,8:00p,Los Angeles Clippers,,Milwaukee Bucks,,False,,False,2025,20,2,february,False,MIL,LAC,False,False,,,2025202MIL
+110,2025-02-20,9:00p,Charlotte Hornets,,Denver Nuggets,,False,,False,2025,20,2,february,False,DEN,CHO,False,False,,,2025202DEN
+111,2025-02-20,9:30p,Phoenix Suns,,San Antonio Spurs,,False,,False,2025,20,2,february,False,SAS,PHO,False,False,,,2025202SAS
+112,2025-02-20,10:00p,Los Angeles Lakers,,Portland Trail Blazers,,False,,False,2025,20,2,february,False,POR,LAL,False,False,,,2025202POR
+113,2025-02-21,7:00p,New York Knicks,,Cleveland Cavaliers,,False,,False,2025,21,2,february,False,CLE,NYK,False,False,,,2025212CLE
+114,2025-02-21,7:00p,Memphis Grizzlies,,Orlando Magic,,False,,False,2025,21,2,february,False,ORL,MEM,False,False,,,2025212ORL
+115,2025-02-21,7:00p,Milwaukee Bucks,,Washington Wizards,,False,,False,2025,21,2,february,False,WAS,MIL,False,False,,,2025212WAS
+116,2025-02-21,7:30p,Miami Heat,,Toronto Raptors,,False,,False,2025,21,2,february,False,TOR,MIA,False,False,,,2025212TOR
+117,2025-02-21,8:00p,Minnesota Timberwolves,,Houston Rockets,,False,,False,2025,21,2,february,False,HOU,MIN,False,False,,,2025212HOU
+118,2025-02-21,8:30p,Detroit Pistons,,San Antonio Spurs,,False,,False,2025,21,2,february,False,SAS,DET,False,False,,,2025212SAS
+119,2025-02-21,9:30p,New Orleans Pelicans,,Dallas Mavericks,,False,,False,2025,21,2,february,False,DAL,NOP,False,False,,,2025212DAL
+120,2025-02-21,9:30p,Oklahoma City Thunder,,Utah Jazz,,False,,False,2025,21,2,february,False,UTA,OKC,False,False,,,2025212UTA
+121,2025-02-21,10:00p,Golden State Warriors,,Sacramento Kings,,False,,False,2025,21,2,february,False,SAC,GSW,False,False,,,2025212SAC
+122,2025-02-22,5:00p,Phoenix Suns,,Chicago Bulls,,False,,False,2025,22,2,february,False,CHI,PHO,False,False,,,2025222CHI
+123,2025-02-22,7:30p,Brooklyn Nets,,Philadelphia 76ers,,False,,False,2025,22,2,february,False,PHI,BRK,False,False,,,2025222PHI
+124,2025-02-22,8:30p,Los Angeles Lakers,,Denver Nuggets,,False,,False,2025,22,2,february,False,DEN,LAL,False,False,,,2025222DEN
+125,2025-02-22,9:30p,Houston Rockets,,Utah Jazz,,False,,False,2025,22,2,february,False,UTA,HOU,False,False,,,2025222UTA
+126,2025-02-22,10:00p,Charlotte Hornets,,Portland Trail Blazers,,False,,False,2025,22,2,february,False,POR,CHO,False,False,,,2025222POR
+127,2025-02-23,1:00p,New York Knicks,,Boston Celtics,,False,,False,2025,23,2,february,False,BOS,NYK,False,False,,,2025232BOS
+128,2025-02-23,3:30p,Dallas Mavericks,,Golden State Warriors,,False,,False,2025,23,2,february,False,GSW,DAL,False,False,,,2025232GSW
+129,2025-02-23,5:00p,Los Angeles Clippers,,Indiana Pacers,,False,,False,2025,23,2,february,False,IND,LAC,False,False,,,2025232IND
+130,2025-02-23,6:00p,Detroit Pistons,,Atlanta Hawks,,False,,False,2025,23,2,february,False,ATL,DET,False,False,,,2025232ATL
+131,2025-02-23,6:00p,Washington Wizards,,Orlando Magic,,False,,False,2025,23,2,february,False,ORL,WAS,False,False,,,2025232ORL
+132,2025-02-23,6:00p,Phoenix Suns,,Toronto Raptors,,False,,False,2025,23,2,february,False,TOR,PHO,False,False,,,2025232TOR
+133,2025-02-23,7:00p,Miami Heat,,Milwaukee Bucks,,False,,False,2025,23,2,february,False,MIL,MIA,False,False,,,2025232MIL
+134,2025-02-23,7:00p,San Antonio Spurs,,New Orleans Pelicans,,False,,False,2025,23,2,february,False,NOP,SAS,False,False,,,2025232NOP
+135,2025-02-23,7:30p,Memphis Grizzlies,,Cleveland Cavaliers,,False,,False,2025,23,2,february,False,CLE,MEM,False,False,,,2025232CLE
+136,2025-02-23,9:30p,Oklahoma City Thunder,,Minnesota Timberwolves,,False,,False,2025,23,2,february,False,MIN,OKC,False,False,,,2025232MIN
+137,2025-02-24,7:00p,Los Angeles Clippers,,Detroit Pistons,,False,,False,2025,24,2,february,False,DET,LAC,False,False,,,2025242DET
+138,2025-02-24,7:00p,Denver Nuggets,,Indiana Pacers,,False,,False,2025,24,2,february,False,IND,DEN,False,False,,,2025242IND
+139,2025-02-24,7:00p,Chicago Bulls,,Philadelphia 76ers,,False,,False,2025,24,2,february,False,PHI,CHI,False,False,,,2025242PHI
+140,2025-02-24,7:00p,Brooklyn Nets,,Washington Wizards,,False,,False,2025,24,2,february,False,WAS,BRK,False,False,,,2025242WAS
+141,2025-02-24,7:30p,Miami Heat,,Atlanta Hawks,,False,,False,2025,24,2,february,False,ATL,MIA,False,False,,,2025242ATL
+142,2025-02-24,8:00p,Minnesota Timberwolves,,Oklahoma City Thunder,,False,,False,2025,24,2,february,False,OKC,MIN,False,False,,,2025242OKC
+143,2025-02-24,9:00p,Portland Trail Blazers,,Utah Jazz,,False,,False,2025,24,2,february,False,UTA,POR,False,False,,,2025242UTA
+144,2025-02-24,10:00p,Charlotte Hornets,,Sacramento Kings,,False,,False,2025,24,2,february,False,SAC,CHO,False,False,,,2025242SAC
+145,2025-02-25,7:00p,Boston Celtics,,Toronto Raptors,,False,,False,2025,25,2,february,False,TOR,BOS,False,False,,,2025252TOR
+146,2025-02-25,7:30p,Cleveland Cavaliers,,Orlando Magic,,False,,False,2025,25,2,february,False,ORL,CLE,False,False,,,2025252ORL
+147,2025-02-25,8:00p,Milwaukee Bucks,,Houston Rockets,,False,,False,2025,25,2,february,False,HOU,MIL,False,False,,,2025252HOU
+148,2025-02-25,8:00p,Phoenix Suns,,Memphis Grizzlies,,False,,False,2025,25,2,february,False,MEM,PHO,False,False,,,2025252MEM
+149,2025-02-25,8:00p,San Antonio Spurs,,New Orleans Pelicans,,False,,False,2025,25,2,february,False,NOP,SAS,False,False,,,2025252NOP
+150,2025-02-25,10:00p,Charlotte Hornets,,Golden State Warriors,,False,,False,2025,25,2,february,False,GSW,CHO,False,False,,,2025252GSW
+151,2025-02-25,10:00p,Dallas Mavericks,,Los Angeles Lakers,,False,,False,2025,25,2,february,False,LAL,DAL,False,False,,,2025252LAL
+152,2025-02-26,7:00p,Boston Celtics,,Detroit Pistons,,False,,False,2025,26,2,february,False,DET,BOS,False,False,,,2025262DET
+153,2025-02-26,7:00p,Toronto Raptors,,Indiana Pacers,,False,,False,2025,26,2,february,False,IND,TOR,False,False,,,2025262IND
+154,2025-02-26,7:00p,Philadelphia 76ers,,New York Knicks,,False,,False,2025,26,2,february,False,NYK,PHI,False,False,,,2025262NYK
+155,2025-02-26,7:00p,Portland Trail Blazers,,Washington Wizards,,False,,False,2025,26,2,february,False,WAS,POR,False,False,,,2025262WAS
+156,2025-02-26,7:30p,Oklahoma City Thunder,,Brooklyn Nets,,False,,False,2025,26,2,february,False,BRK,OKC,False,False,,,2025262BRK
+157,2025-02-26,7:30p,Atlanta Hawks,,Miami Heat,,False,,False,2025,26,2,february,False,MIA,ATL,False,False,,,2025262MIA
+158,2025-02-26,8:00p,Los Angeles Clippers,,Chicago Bulls,,False,,False,2025,26,2,february,False,CHI,LAC,False,False,,,2025262CHI
+159,2025-02-26,9:00p,Sacramento Kings,,Utah Jazz,,False,,False,2025,26,2,february,False,UTA,SAC,False,False,,,2025262UTA
+160,2025-02-26,9:30p,San Antonio Spurs,,Houston Rockets,,False,,False,2025,26,2,february,False,HOU,SAS,False,False,,,2025262HOU
+161,2025-02-27,7:00p,Golden State Warriors,,Orlando Magic,,False,,False,2025,27,2,february,False,ORL,GSW,False,False,,,2025272ORL
+162,2025-02-27,7:30p,Denver Nuggets,,Milwaukee Bucks,,False,,False,2025,27,2,february,False,MIL,DEN,False,False,,,2025272MIL
+163,2025-02-27,8:30p,Charlotte Hornets,,Dallas Mavericks,,False,,False,2025,27,2,february,False,DAL,CHO,False,False,,,2025272DAL
+164,2025-02-27,10:00p,New Orleans Pelicans,,Phoenix Suns,,False,,False,2025,27,2,february,False,PHO,NOP,False,False,,,2025272PHO
+165,2025-02-27,10:30p,Minnesota Timberwolves,,Los Angeles Lakers,,False,,False,2025,27,2,february,False,LAL,MIN,False,False,,,2025272LAL
+166,2025-02-28,7:00p,Denver Nuggets,,Detroit Pistons,,False,,False,2025,28,2,february,False,DET,DEN,False,False,,,2025282DET
+167,2025-02-28,7:30p,Oklahoma City Thunder,,Atlanta Hawks,,False,,False,2025,28,2,february,False,ATL,OKC,False,False,,,2025282ATL
+168,2025-02-28,7:30p,Cleveland Cavaliers,,Boston Celtics,,False,,False,2025,28,2,february,False,BOS,CLE,False,False,,,2025282BOS
+169,2025-02-28,7:30p,Portland Trail Blazers,,Brooklyn Nets,,False,,False,2025,28,2,february,False,BRK,POR,False,False,,,2025282BRK
+170,2025-02-28,8:00p,Toronto Raptors,,Chicago Bulls,,False,,False,2025,28,2,february,False,CHI,TOR,False,False,,,2025282CHI
+171,2025-02-28,8:00p,New York Knicks,,Memphis Grizzlies,,False,,False,2025,28,2,february,False,MEM,NYK,False,False,,,2025282MEM
+172,2025-02-28,8:00p,Indiana Pacers,,Miami Heat,,False,,False,2025,28,2,february,False,MIA,IND,False,False,,,2025282MIA
+173,2025-02-28,9:00p,New Orleans Pelicans,,Phoenix Suns,,False,,False,2025,28,2,february,False,PHO,NOP,False,False,,,2025282PHO
+174,2025-02-28,9:30p,Minnesota Timberwolves,,Utah Jazz,,False,,False,2025,28,2,february,False,UTA,MIN,False,False,,,2025282UTA
+175,2025-02-28,10:00p,Los Angeles Clippers,,Los Angeles Lakers,,False,,False,2025,28,2,february,False,LAL,LAC,False,False,,,2025282LAL
+0,2025-03-01,6:00p,Washington Wizards,,Charlotte Hornets,,False,,False,2025,01,3,march,False,CHO,WAS,False,False,,,2025013CHO
+1,2025-03-01,7:00p,Brooklyn Nets,,Detroit Pistons,,False,,False,2025,01,3,march,False,DET,BRK,False,False,,,2025013DET
+2,2025-03-01,8:00p,Sacramento Kings,,Houston Rockets,,False,,False,2025,01,3,march,False,HOU,SAC,False,False,,,2025013HOU
+3,2025-03-01,8:00p,San Antonio Spurs,,Memphis Grizzlies,,False,,False,2025,01,3,march,False,MEM,SAS,False,False,,,2025013MEM
+4,2025-03-01,8:30p,Milwaukee Bucks,,Dallas Mavericks,,False,,False,2025,01,3,march,False,DAL,MIL,False,False,,,2025013DAL
+5,2025-03-01,8:30p,Golden State Warriors,,Philadelphia 76ers,,False,,False,2025,01,3,march,False,PHI,GSW,False,False,,,2025013PHI
+6,2025-03-02,1:00p,Denver Nuggets,,Boston Celtics,,False,,False,2025,02,3,march,False,BOS,DEN,False,False,,,2025023BOS
+7,2025-03-02,3:30p,Portland Trail Blazers,,Cleveland Cavaliers,,False,,False,2025,02,3,march,False,CLE,POR,False,False,,,2025023CLE
+8,2025-03-02,5:00p,Chicago Bulls,,Indiana Pacers,,False,,False,2025,02,3,march,False,IND,CHI,False,False,,,2025023IND
+9,2025-03-02,6:00p,New York Knicks,,Miami Heat,,False,,False,2025,02,3,march,False,MIA,NYK,False,False,,,2025023MIA
+10,2025-03-02,6:00p,Toronto Raptors,,Orlando Magic,,False,,False,2025,02,3,march,False,ORL,TOR,False,False,,,2025023ORL
+11,2025-03-02,7:00p,Oklahoma City Thunder,,San Antonio Spurs,,False,,False,2025,02,3,march,False,SAS,OKC,False,False,,,2025023SAS
+12,2025-03-02,8:00p,New Orleans Pelicans,,Utah Jazz,,False,,False,2025,02,3,march,False,UTA,NOP,False,False,,,2025023UTA
+13,2025-03-02,9:30p,Los Angeles Clippers,,Los Angeles Lakers,,False,,False,2025,02,3,march,False,LAL,LAC,False,False,,,2025023LAL
+14,2025-03-02,9:30p,Minnesota Timberwolves,,Phoenix Suns,,False,,False,2025,02,3,march,False,PHO,MIN,False,False,,,2025023PHO
+15,2025-03-03,7:00p,Golden State Warriors,,Charlotte Hornets,,False,,False,2025,03,3,march,False,CHO,GSW,False,False,,,2025033CHO
+16,2025-03-03,7:00p,Portland Trail Blazers,,Philadelphia 76ers,,False,,False,2025,03,3,march,False,PHI,POR,False,False,,,2025033PHI
+17,2025-03-03,7:30p,Washington Wizards,,Miami Heat,,False,,False,2025,03,3,march,False,MIA,WAS,False,False,,,2025033MIA
+18,2025-03-03,8:00p,Atlanta Hawks,,Memphis Grizzlies,,False,,False,2025,03,3,march,False,MEM,ATL,False,False,,,2025033MEM
+19,2025-03-03,8:00p,Houston Rockets,,Oklahoma City Thunder,,False,,False,2025,03,3,march,False,OKC,HOU,False,False,,,2025033OKC
+20,2025-03-03,8:30p,Sacramento Kings,,Dallas Mavericks,,False,,False,2025,03,3,march,False,DAL,SAC,False,False,,,2025033DAL
+21,2025-03-03,9:00p,Detroit Pistons,,Utah Jazz,,False,,False,2025,03,3,march,False,UTA,DET,False,False,,,2025033UTA
+22,2025-03-04,7:00p,Houston Rockets,,Indiana Pacers,,False,,False,2025,04,3,march,False,IND,HOU,False,False,,,2025043IND
+23,2025-03-04,7:00p,Toronto Raptors,,Orlando Magic,,False,,False,2025,04,3,march,False,ORL,TOR,False,False,,,2025043ORL
+24,2025-03-04,7:30p,Milwaukee Bucks,,Atlanta Hawks,,False,,False,2025,04,3,march,False,ATL,MIL,False,False,,,2025043ATL
+25,2025-03-04,7:30p,Golden State Warriors,,New York Knicks,,False,,False,2025,04,3,march,False,NYK,GSW,False,False,,,2025043NYK
+26,2025-03-04,8:00p,Cleveland Cavaliers,,Chicago Bulls,,False,,False,2025,04,3,march,False,CHI,CLE,False,False,,,2025043CHI
+27,2025-03-04,8:00p,Philadelphia 76ers,,Minnesota Timberwolves,,False,,False,2025,04,3,march,False,MIN,PHI,False,False,,,2025043MIN
+28,2025-03-04,8:30p,Brooklyn Nets,,San Antonio Spurs,,False,,False,2025,04,3,march,False,SAS,BRK,False,False,,,2025043SAS
+29,2025-03-04,10:00p,Los Angeles Clippers,,Phoenix Suns,,False,,False,2025,04,3,march,False,PHO,LAC,False,False,,,2025043PHO
+30,2025-03-04,10:30p,New Orleans Pelicans,,Los Angeles Lakers,,False,,False,2025,04,3,march,False,LAL,NOP,False,False,,,2025043LAL
+31,2025-03-05,7:00p,Portland Trail Blazers,,Boston Celtics,,False,,False,2025,05,3,march,False,BOS,POR,False,False,,,2025053BOS
+32,2025-03-05,7:00p,Minnesota Timberwolves,,Charlotte Hornets,,False,,False,2025,05,3,march,False,CHO,MIN,False,False,,,2025053CHO
+33,2025-03-05,7:00p,Miami Heat,,Cleveland Cavaliers,,False,,False,2025,05,3,march,False,CLE,MIA,False,False,,,2025053CLE
+34,2025-03-05,7:00p,Utah Jazz,,Washington Wizards,,False,,False,2025,05,3,march,False,WAS,UTA,False,False,,,2025053WAS
+35,2025-03-05,8:00p,Oklahoma City Thunder,,Memphis Grizzlies,,False,,False,2025,05,3,march,False,MEM,OKC,False,False,,,2025053MEM
+36,2025-03-05,9:00p,Sacramento Kings,,Denver Nuggets,,False,,False,2025,05,3,march,False,DEN,SAC,False,False,,,2025053DEN
+37,2025-03-05,9:30p,Dallas Mavericks,,Milwaukee Bucks,,False,,False,2025,05,3,march,False,MIL,DAL,False,False,,,2025053MIL
+38,2025-03-05,10:30p,Detroit Pistons,,Los Angeles Clippers,,False,,False,2025,05,3,march,False,LAC,DET,False,False,,,2025053LAC
+39,2025-03-06,7:00p,Chicago Bulls,,Orlando Magic,,False,,False,2025,06,3,march,False,ORL,CHI,False,False,,,2025063ORL
+40,2025-03-06,7:30p,Indiana Pacers,,Atlanta Hawks,,False,,False,2025,06,3,march,False,ATL,IND,False,False,,,2025063ATL
+41,2025-03-06,7:30p,Philadelphia 76ers,,Boston Celtics,,False,,False,2025,06,3,march,False,BOS,PHI,False,False,,,2025063BOS
+42,2025-03-06,7:30p,Golden State Warriors,,Brooklyn Nets,,False,,False,2025,06,3,march,False,BRK,GSW,False,False,,,2025063BRK
+43,2025-03-06,8:00p,Houston Rockets,,New Orleans Pelicans,,False,,False,2025,06,3,march,False,NOP,HOU,False,False,,,2025063NOP
+44,2025-03-06,10:00p,New York Knicks,,Los Angeles Lakers,,False,,False,2025,06,3,march,False,LAL,NYK,False,False,,,2025063LAL
+45,2025-03-07,7:00p,Cleveland Cavaliers,,Charlotte Hornets,,False,,False,2025,07,3,march,False,CHO,CLE,False,False,,,2025073CHO
+46,2025-03-07,7:30p,Memphis Grizzlies,,Dallas Mavericks,,False,,False,2025,07,3,march,False,DAL,MEM,False,False,,,2025073DAL
+47,2025-03-07,7:30p,Utah Jazz,,Toronto Raptors,,False,,False,2025,07,3,march,False,TOR,UTA,False,False,,,2025073TOR
+48,2025-03-07,8:00p,Minnesota Timberwolves,,Miami Heat,,False,,False,2025,07,3,march,False,MIA,MIN,False,False,,,2025073MIA
+49,2025-03-07,8:00p,Portland Trail Blazers,,Oklahoma City Thunder,,False,,False,2025,07,3,march,False,OKC,POR,False,False,,,2025073OKC
+50,2025-03-07,10:00p,Phoenix Suns,,Denver Nuggets,,False,,False,2025,07,3,march,False,DEN,PHO,False,False,,,2025073DEN
+51,2025-03-07,10:00p,San Antonio Spurs,,Sacramento Kings,,False,,False,2025,07,3,march,False,SAC,SAS,False,False,,,2025073SAC
+52,2025-03-07,10:30p,New York Knicks,,Los Angeles Clippers,,False,,False,2025,07,3,march,False,LAC,NYK,False,False,,,2025073LAC
+53,2025-03-08,6:00p,Brooklyn Nets,,Charlotte Hornets,,False,,False,2025,08,3,march,False,CHO,BRK,False,False,,,2025083CHO
+54,2025-03-08,7:00p,New Orleans Pelicans,,Houston Rockets,,False,,False,2025,08,3,march,False,HOU,NOP,False,False,,,2025083HOU
+55,2025-03-08,7:30p,Indiana Pacers,,Atlanta Hawks,,False,,False,2025,08,3,march,False,ATL,IND,False,False,,,2025083ATL
+56,2025-03-08,7:30p,Washington Wizards,,Toronto Raptors,,False,,False,2025,08,3,march,False,TOR,WAS,False,False,,,2025083TOR
+57,2025-03-08,8:00p,Chicago Bulls,,Miami Heat,,False,,False,2025,08,3,march,False,MIA,CHI,False,False,,,2025083MIA
+58,2025-03-08,8:00p,Orlando Magic,,Milwaukee Bucks,,False,,False,2025,08,3,march,False,MIL,ORL,False,False,,,2025083MIL
+59,2025-03-08,8:30p,Los Angeles Lakers,,Boston Celtics,,False,,False,2025,08,3,march,False,BOS,LAL,False,False,,,2025083BOS
+60,2025-03-08,8:30p,Detroit Pistons,,Golden State Warriors,,False,,False,2025,08,3,march,False,GSW,DET,False,False,,,2025083GSW
+61,2025-03-09,1:00p,Denver Nuggets,,Oklahoma City Thunder,,False,,False,2025,09,3,march,False,OKC,DEN,False,False,,,2025093OKC
+62,2025-03-09,3:30p,Phoenix Suns,,Dallas Mavericks,,False,,False,2025,09,3,march,False,DAL,PHO,False,False,,,2025093DAL
+63,2025-03-09,7:00p,Memphis Grizzlies,,New Orleans Pelicans,,False,,False,2025,09,3,march,False,NOP,MEM,False,False,,,2025093NOP
+64,2025-03-09,7:30p,Utah Jazz,,Philadelphia 76ers,,False,,False,2025,09,3,march,False,PHI,UTA,False,False,,,2025093PHI
+65,2025-03-09,8:00p,Cleveland Cavaliers,,Milwaukee Bucks,,False,,False,2025,09,3,march,False,MIL,CLE,False,False,,,2025093MIL
+66,2025-03-09,8:00p,San Antonio Spurs,,Minnesota Timberwolves,,False,,False,2025,09,3,march,False,MIN,SAS,False,False,,,2025093MIN
+67,2025-03-09,9:00p,Detroit Pistons,,Portland Trail Blazers,,False,,False,2025,09,3,march,False,POR,DET,False,False,,,2025093POR
+68,2025-03-09,9:30p,Sacramento Kings,,Los Angeles Clippers,,False,,False,2025,09,3,march,False,LAC,SAC,False,False,,,2025093LAC
+69,2025-03-10,7:30p,Philadelphia 76ers,,Atlanta Hawks,,False,,False,2025,10,3,march,False,ATL,PHI,False,False,,,2025103ATL
+70,2025-03-10,7:30p,Utah Jazz,,Boston Celtics,,False,,False,2025,10,3,march,False,BOS,UTA,False,False,,,2025103BOS
+71,2025-03-10,7:30p,Los Angeles Lakers,,Brooklyn Nets,,False,,False,2025,10,3,march,False,BRK,LAL,False,False,,,2025103BRK
+72,2025-03-10,7:30p,Charlotte Hornets,,Miami Heat,,False,,False,2025,10,3,march,False,MIA,CHO,False,False,,,2025103MIA
+73,2025-03-10,7:30p,Washington Wizards,,Toronto Raptors,,False,,False,2025,10,3,march,False,TOR,WAS,False,False,,,2025103TOR
+74,2025-03-10,8:00p,Indiana Pacers,,Chicago Bulls,,False,,False,2025,10,3,march,False,CHI,IND,False,False,,,2025103CHI
+75,2025-03-10,8:00p,Orlando Magic,,Houston Rockets,,False,,False,2025,10,3,march,False,HOU,ORL,False,False,,,2025103HOU
+76,2025-03-10,8:00p,Phoenix Suns,,Memphis Grizzlies,,False,,False,2025,10,3,march,False,MEM,PHO,False,False,,,2025103MEM
+77,2025-03-10,8:00p,Denver Nuggets,,Oklahoma City Thunder,,False,,False,2025,10,3,march,False,OKC,DEN,False,False,,,2025103OKC
+78,2025-03-10,8:30p,Dallas Mavericks,,San Antonio Spurs,,False,,False,2025,10,3,march,False,SAS,DAL,False,False,,,2025103SAS
+79,2025-03-10,10:00p,Portland Trail Blazers,,Golden State Warriors,,False,,False,2025,10,3,march,False,GSW,POR,False,False,,,2025103GSW
+80,2025-03-10,10:30p,New York Knicks,,Sacramento Kings,,False,,False,2025,10,3,march,False,SAC,NYK,False,False,,,2025103SAC
+81,2025-03-11,7:00p,Brooklyn Nets,,Cleveland Cavaliers,,False,,False,2025,11,3,march,False,CLE,BRK,False,False,,,2025113CLE
+82,2025-03-11,7:00p,Washington Wizards,,Detroit Pistons,,False,,False,2025,11,3,march,False,DET,WAS,False,False,,,2025113DET
+83,2025-03-11,7:00p,Milwaukee Bucks,,Indiana Pacers,,False,,False,2025,11,3,march,False,IND,MIL,False,False,,,2025113IND
+84,2025-03-11,9:30p,Los Angeles Clippers,,New Orleans Pelicans,,False,,False,2025,11,3,march,False,NOP,LAC,False,False,,,2025113NOP
+85,2025-03-12,7:30p,Charlotte Hornets,,Atlanta Hawks,,False,,False,2025,12,3,march,False,ATL,CHO,False,False,,,2025123ATL
+86,2025-03-12,7:30p,Oklahoma City Thunder,,Boston Celtics,,False,,False,2025,12,3,march,False,BOS,OKC,False,False,,,2025123BOS
+87,2025-03-12,7:30p,Philadelphia 76ers,,Toronto Raptors,,False,,False,2025,12,3,march,False,TOR,PHI,False,False,,,2025123TOR
+88,2025-03-12,8:00p,Phoenix Suns,,Houston Rockets,,False,,False,2025,12,3,march,False,HOU,PHO,False,False,,,2025123HOU
+89,2025-03-12,8:00p,Utah Jazz,,Memphis Grizzlies,,False,,False,2025,12,3,march,False,MEM,UTA,False,False,,,2025123MEM
+90,2025-03-12,8:00p,Los Angeles Clippers,,Miami Heat,,False,,False,2025,12,3,march,False,MIA,LAC,False,False,,,2025123MIA
+91,2025-03-12,8:00p,Dallas Mavericks,,San Antonio Spurs,,False,,False,2025,12,3,march,False,SAS,DAL,False,False,,,2025123SAS
+92,2025-03-12,10:00p,Minnesota Timberwolves,,Denver Nuggets,,False,,False,2025,12,3,march,False,DEN,MIN,False,False,,,2025123DEN
+93,2025-03-12,10:00p,New York Knicks,,Portland Trail Blazers,,False,,False,2025,12,3,march,False,POR,NYK,False,False,,,2025123POR
+94,2025-03-13,7:00p,Washington Wizards,,Detroit Pistons,,False,,False,2025,13,3,march,False,DET,WAS,False,False,,,2025133DET
+95,2025-03-13,7:30p,Los Angeles Lakers,,Milwaukee Bucks,,False,,False,2025,13,3,march,False,MIL,LAL,False,False,,,2025133MIL
+96,2025-03-13,8:00p,Brooklyn Nets,,Chicago Bulls,,False,,False,2025,13,3,march,False,CHI,BRK,False,False,,,2025133CHI
+97,2025-03-13,8:00p,Orlando Magic,,New Orleans Pelicans,,False,,False,2025,13,3,march,False,NOP,ORL,False,False,,,2025133NOP
+98,2025-03-13,10:00p,Sacramento Kings,,Golden State Warriors,,False,,False,2025,13,3,march,False,GSW,SAC,False,False,,,2025133GSW
+99,2025-03-14,7:00p,Boston Celtics,,Miami Heat,,False,,False,2025,14,3,march,False,MIA,BOS,False,False,,,2025143MIA
+100,2025-03-14,7:00p,Indiana Pacers,,Philadelphia 76ers,,False,,False,2025,14,3,march,False,PHI,IND,False,False,,,2025143PHI
+101,2025-03-14,7:30p,Los Angeles Clippers,,Atlanta Hawks,,False,,False,2025,14,3,march,False,ATL,LAC,False,False,,,2025143ATL
+102,2025-03-14,8:00p,Dallas Mavericks,,Houston Rockets,,False,,False,2025,14,3,march,False,HOU,DAL,False,False,,,2025143HOU
+103,2025-03-14,8:00p,Cleveland Cavaliers,,Memphis Grizzlies,,False,,False,2025,14,3,march,False,MEM,CLE,False,False,,,2025143MEM
+104,2025-03-14,8:00p,Orlando Magic,,Minnesota Timberwolves,,False,,False,2025,14,3,march,False,MIN,ORL,False,False,,,2025143MIN
+105,2025-03-14,8:00p,Charlotte Hornets,,San Antonio Spurs,,False,,False,2025,14,3,march,False,SAS,CHO,False,False,,,2025143SAS
+106,2025-03-14,9:30p,Los Angeles Lakers,,Denver Nuggets,,False,,False,2025,14,3,march,False,DEN,LAL,False,False,,,2025143DEN
+107,2025-03-14,9:30p,Toronto Raptors,,Utah Jazz,,False,,False,2025,14,3,march,False,UTA,TOR,False,False,,,2025143UTA
+108,2025-03-14,10:00p,Sacramento Kings,,Phoenix Suns,,False,,False,2025,14,3,march,False,PHO,SAC,False,False,,,2025143PHO
+109,2025-03-15,6:00p,Boston Celtics,,Brooklyn Nets,,False,,False,2025,15,3,march,False,BRK,BOS,False,False,,,2025153BRK
+110,2025-03-15,7:00p,Oklahoma City Thunder,,Detroit Pistons,,False,,False,2025,15,3,march,False,DET,OKC,False,False,,,2025153DET
+111,2025-03-15,8:00p,Chicago Bulls,,Houston Rockets,,False,,False,2025,15,3,march,False,HOU,CHI,False,False,,,2025153HOU
+112,2025-03-15,8:00p,Miami Heat,,Memphis Grizzlies,,False,,False,2025,15,3,march,False,MEM,MIA,False,False,,,2025153MEM
+113,2025-03-15,8:00p,Indiana Pacers,,Milwaukee Bucks,,False,,False,2025,15,3,march,False,MIL,IND,False,False,,,2025153MIL
+114,2025-03-15,8:30p,New York Knicks,,Golden State Warriors,,False,,False,2025,15,3,march,False,GSW,NYK,False,False,,,2025153GSW
+115,2025-03-15,8:30p,New Orleans Pelicans,,San Antonio Spurs,,False,,False,2025,15,3,march,False,SAS,NOP,False,False,,,2025153SAS
+116,2025-03-15,9:00p,Washington Wizards,,Denver Nuggets,,False,,False,2025,15,3,march,False,DEN,WAS,False,False,,,2025153DEN
+117,2025-03-16,1:00p,Philadelphia 76ers,,Dallas Mavericks,,False,,False,2025,16,3,march,False,DAL,PHI,False,False,,,2025163DAL
+118,2025-03-16,3:30p,Phoenix Suns,,Los Angeles Lakers,,False,,False,2025,16,3,march,False,LAL,PHO,False,False,,,2025163LAL
+119,2025-03-16,6:00p,Atlanta Hawks,,Brooklyn Nets,,False,,False,2025,16,3,march,False,BRK,ATL,False,False,,,2025163BRK
+120,2025-03-16,6:00p,Orlando Magic,,Cleveland Cavaliers,,False,,False,2025,16,3,march,False,CLE,ORL,False,False,,,2025163CLE
+121,2025-03-16,6:00p,Toronto Raptors,,Portland Trail Blazers,,False,,False,2025,16,3,march,False,POR,TOR,False,False,,,2025163POR
+122,2025-03-16,7:00p,Charlotte Hornets,,Los Angeles Clippers,,False,,False,2025,16,3,march,False,LAC,CHO,False,False,,,2025163LAC
+123,2025-03-16,7:00p,Utah Jazz,,Minnesota Timberwolves,,False,,False,2025,16,3,march,False,MIN,UTA,False,False,,,2025163MIN
+124,2025-03-16,9:00p,Oklahoma City Thunder,,Milwaukee Bucks,,False,,False,2025,16,3,march,False,MIL,OKC,False,False,,,2025163MIL
+125,2025-03-17,7:30p,Miami Heat,,New York Knicks,,False,,False,2025,17,3,march,False,NYK,MIA,False,False,,,2025173NYK
+126,2025-03-17,8:00p,Philadelphia 76ers,,Houston Rockets,,False,,False,2025,17,3,march,False,HOU,PHI,False,False,,,2025173HOU
+127,2025-03-17,8:00p,Indiana Pacers,,Minnesota Timberwolves,,False,,False,2025,17,3,march,False,MIN,IND,False,False,,,2025173MIN
+128,2025-03-17,8:00p,Detroit Pistons,,New Orleans Pelicans,,False,,False,2025,17,3,march,False,NOP,DET,False,False,,,2025173NOP
+129,2025-03-17,9:00p,Chicago Bulls,,Utah Jazz,,False,,False,2025,17,3,march,False,UTA,CHI,False,False,,,2025173UTA
+130,2025-03-17,10:00p,Denver Nuggets,,Golden State Warriors,,False,,False,2025,17,3,march,False,GSW,DEN,False,False,,,2025173GSW
+131,2025-03-17,10:00p,Toronto Raptors,,Phoenix Suns,,False,,False,2025,17,3,march,False,PHO,TOR,False,False,,,2025173PHO
+132,2025-03-17,10:00p,Washington Wizards,,Portland Trail Blazers,,False,,False,2025,17,3,march,False,POR,WAS,False,False,,,2025173POR
+133,2025-03-17,10:00p,Memphis Grizzlies,,Sacramento Kings,,False,,False,2025,17,3,march,False,SAC,MEM,False,False,,,2025173SAC
+134,2025-03-17,10:30p,San Antonio Spurs,,Los Angeles Lakers,,False,,False,2025,17,3,march,False,LAL,SAS,False,False,,,2025173LAL
+135,2025-03-18,7:00p,Atlanta Hawks,,Charlotte Hornets,,False,,False,2025,18,3,march,False,CHO,ATL,False,False,,,2025183CHO
+136,2025-03-18,7:30p,Brooklyn Nets,,Boston Celtics,,False,,False,2025,18,3,march,False,BOS,BRK,False,False,,,2025183BOS
+137,2025-03-18,10:00p,Milwaukee Bucks,,Golden State Warriors,,False,,False,2025,18,3,march,False,GSW,MIL,False,False,,,2025183GSW
+138,2025-03-18,10:30p,Cleveland Cavaliers,,Los Angeles Clippers,,False,,False,2025,18,3,march,False,LAC,CLE,False,False,,,2025183LAC
+139,2025-03-19,7:00p,Dallas Mavericks,,Indiana Pacers,,False,,False,2025,19,3,march,False,IND,DAL,False,False,,,2025193IND
+140,2025-03-19,7:00p,Houston Rockets,,Orlando Magic,,False,,False,2025,19,3,march,False,ORL,HOU,False,False,,,2025193ORL
+141,2025-03-19,7:30p,Detroit Pistons,,Miami Heat,,False,,False,2025,19,3,march,False,MIA,DET,False,False,,,2025193MIA
+142,2025-03-19,7:30p,New Orleans Pelicans,,Minnesota Timberwolves,,False,,False,2025,19,3,march,False,MIN,NOP,False,False,,,2025193MIN
+143,2025-03-19,8:00p,Philadelphia 76ers,,Oklahoma City Thunder,,False,,False,2025,19,3,march,False,OKC,PHI,False,False,,,2025193OKC
+144,2025-03-19,8:00p,New York Knicks,,San Antonio Spurs,,False,,False,2025,19,3,march,False,SAS,NYK,False,False,,,2025193SAS
+145,2025-03-19,9:00p,Washington Wizards,,Utah Jazz,,False,,False,2025,19,3,march,False,UTA,WAS,False,False,,,2025193UTA
+146,2025-03-19,10:00p,Denver Nuggets,,Los Angeles Lakers,,False,,False,2025,19,3,march,False,LAL,DEN,False,False,,,2025193LAL
+147,2025-03-19,10:00p,Chicago Bulls,,Phoenix Suns,,False,,False,2025,19,3,march,False,PHO,CHI,False,False,,,2025193PHO
+148,2025-03-19,10:00p,Memphis Grizzlies,,Portland Trail Blazers,,False,,False,2025,19,3,march,False,POR,MEM,False,False,,,2025193POR
+149,2025-03-19,10:00p,Cleveland Cavaliers,,Sacramento Kings,,False,,False,2025,19,3,march,False,SAC,CLE,False,False,,,2025193SAC
+150,2025-03-20,7:00p,New York Knicks,,Charlotte Hornets,,False,,False,2025,20,3,march,False,CHO,NYK,False,False,,,2025203CHO
+151,2025-03-20,7:00p,Brooklyn Nets,,Indiana Pacers,,False,,False,2025,20,3,march,False,IND,BRK,False,False,,,2025203IND
+152,2025-03-20,10:00p,Toronto Raptors,,Golden State Warriors,,False,,False,2025,20,3,march,False,GSW,TOR,False,False,,,2025203GSW
+153,2025-03-20,10:00p,Chicago Bulls,,Sacramento Kings,,False,,False,2025,20,3,march,False,SAC,CHI,False,False,,,2025203SAC
+154,2025-03-20,10:30p,Milwaukee Bucks,,Los Angeles Lakers,,False,,False,2025,20,3,march,False,LAL,MIL,False,False,,,2025203LAL
+155,2025-03-21,7:00p,Orlando Magic,,Washington Wizards,,False,,False,2025,21,3,march,False,WAS,ORL,False,False,,,2025213WAS
+156,2025-03-21,8:00p,Houston Rockets,,Miami Heat,,False,,False,2025,21,3,march,False,MIA,HOU,False,False,,,2025213MIA
+157,2025-03-21,8:00p,New Orleans Pelicans,,Minnesota Timberwolves,,False,,False,2025,21,3,march,False,MIN,NOP,False,False,,,2025213MIN
+158,2025-03-21,8:00p,Charlotte Hornets,,Oklahoma City Thunder,,False,,False,2025,21,3,march,False,OKC,CHO,False,False,,,2025213OKC
+159,2025-03-21,8:00p,Philadelphia 76ers,,San Antonio Spurs,,False,,False,2025,21,3,march,False,SAS,PHI,False,False,,,2025213SAS
+160,2025-03-21,8:30p,Detroit Pistons,,Dallas Mavericks,,False,,False,2025,21,3,march,False,DAL,DET,False,False,,,2025213DAL
+161,2025-03-21,9:30p,Boston Celtics,,Utah Jazz,,False,,False,2025,21,3,march,False,UTA,BOS,False,False,,,2025213UTA
+162,2025-03-21,10:00p,Cleveland Cavaliers,,Phoenix Suns,,False,,False,2025,21,3,march,False,PHO,CLE,False,False,,,2025213PHO
+163,2025-03-21,10:00p,Denver Nuggets,,Portland Trail Blazers,,False,,False,2025,21,3,march,False,POR,DEN,False,False,,,2025213POR
+164,2025-03-21,10:30p,Memphis Grizzlies,,Los Angeles Clippers,,False,,False,2025,21,3,march,False,LAC,MEM,False,False,,,2025213LAC
+165,2025-03-22,5:00p,Brooklyn Nets,,Indiana Pacers,,False,,False,2025,22,3,march,False,IND,BRK,False,False,,,2025223IND
+166,2025-03-22,7:00p,Golden State Warriors,,Atlanta Hawks,,False,,False,2025,22,3,march,False,ATL,GSW,False,False,,,2025223ATL
+167,2025-03-22,8:00p,Washington Wizards,,New York Knicks,,False,,False,2025,22,3,march,False,NYK,WAS,False,False,,,2025223NYK
+168,2025-03-22,10:00p,Milwaukee Bucks,,Sacramento Kings,,False,,False,2025,22,3,march,False,SAC,MIL,False,False,,,2025223SAC
+169,2025-03-22,10:30p,Chicago Bulls,,Los Angeles Lakers,,False,,False,2025,22,3,march,False,LAL,CHI,False,False,,,2025223LAL
+170,2025-03-23,3:00p,New Orleans Pelicans,,Detroit Pistons,,False,,False,2025,23,3,march,False,DET,NOP,False,False,,,2025233DET
+171,2025-03-23,3:30p,Cleveland Cavaliers,,Utah Jazz,,False,,False,2025,23,3,march,False,UTA,CLE,False,False,,,2025233UTA
+172,2025-03-23,6:00p,Philadelphia 76ers,,Atlanta Hawks,,False,,False,2025,23,3,march,False,ATL,PHI,False,False,,,2025233ATL
+173,2025-03-23,6:00p,Charlotte Hornets,,Miami Heat,,False,,False,2025,23,3,march,False,MIA,CHO,False,False,,,2025233MIA
+174,2025-03-23,6:00p,Boston Celtics,,Portland Trail Blazers,,False,,False,2025,23,3,march,False,POR,BOS,False,False,,,2025233POR
+175,2025-03-23,6:00p,San Antonio Spurs,,Toronto Raptors,,False,,False,2025,23,3,march,False,TOR,SAS,False,False,,,2025233TOR
+176,2025-03-23,7:00p,Denver Nuggets,,Houston Rockets,,False,,False,2025,23,3,march,False,HOU,DEN,False,False,,,2025233HOU
+177,2025-03-23,9:00p,Oklahoma City Thunder,,Los Angeles Clippers,,False,,False,2025,23,3,march,False,LAC,OKC,False,False,,,2025233LAC
+178,2025-03-24,7:00p,Minnesota Timberwolves,,Indiana Pacers,,False,,False,2025,24,3,march,False,IND,MIN,False,False,,,2025243IND
+179,2025-03-24,7:00p,Los Angeles Lakers,,Orlando Magic,,False,,False,2025,24,3,march,False,ORL,LAL,False,False,,,2025243ORL
+180,2025-03-24,7:00p,Toronto Raptors,,Washington Wizards,,False,,False,2025,24,3,march,False,WAS,TOR,False,False,,,2025243WAS
+181,2025-03-24,7:30p,Dallas Mavericks,,Brooklyn Nets,,False,,False,2025,24,3,march,False,BRK,DAL,False,False,,,2025243BRK
+182,2025-03-24,8:00p,Philadelphia 76ers,,New Orleans Pelicans,,False,,False,2025,24,3,march,False,NOP,PHI,False,False,,,2025243NOP
+183,2025-03-24,9:00p,Chicago Bulls,,Denver Nuggets,,False,,False,2025,24,3,march,False,DEN,CHI,False,False,,,2025243DEN
+184,2025-03-24,10:00p,Milwaukee Bucks,,Phoenix Suns,,False,,False,2025,24,3,march,False,PHO,MIL,False,False,,,2025243PHO
+185,2025-03-24,10:00p,Boston Celtics,,Sacramento Kings,,False,,False,2025,24,3,march,False,SAC,BOS,False,False,,,2025243SAC
+186,2025-03-25,7:00p,Orlando Magic,,Charlotte Hornets,,False,,False,2025,25,3,march,False,CHO,ORL,False,False,,,2025253CHO
+187,2025-03-25,7:00p,San Antonio Spurs,,Detroit Pistons,,False,,False,2025,25,3,march,False,DET,SAS,False,False,,,2025253DET
+188,2025-03-25,7:30p,Golden State Warriors,,Miami Heat,,False,,False,2025,25,3,march,False,MIA,GSW,False,False,,,2025253MIA
+189,2025-03-25,7:30p,Dallas Mavericks,,New York Knicks,,False,,False,2025,25,3,march,False,NYK,DAL,False,False,,,2025253NYK
+190,2025-03-25,8:00p,Atlanta Hawks,,Houston Rockets,,False,,False,2025,25,3,march,False,HOU,ATL,False,False,,,2025253HOU
+191,2025-03-25,9:00p,Memphis Grizzlies,,Utah Jazz,,False,,False,2025,25,3,march,False,UTA,MEM,False,False,,,2025253UTA
+192,2025-03-25,10:00p,Cleveland Cavaliers,,Portland Trail Blazers,,False,,False,2025,25,3,march,False,POR,CLE,False,False,,,2025253POR
+193,2025-03-25,10:00p,Oklahoma City Thunder,,Sacramento Kings,,False,,False,2025,25,3,march,False,SAC,OKC,False,False,,,2025253SAC
+194,2025-03-26,7:00p,Washington Wizards,,Philadelphia 76ers,,False,,False,2025,26,3,march,False,PHI,WAS,False,False,,,2025263PHI
+195,2025-03-26,7:30p,Toronto Raptors,,Brooklyn Nets,,False,,False,2025,26,3,march,False,BRK,TOR,False,False,,,2025263BRK
+196,2025-03-26,7:30p,Los Angeles Lakers,,Indiana Pacers,,False,,False,2025,26,3,march,False,IND,LAL,False,False,,,2025263IND
+197,2025-03-26,7:30p,Los Angeles Clippers,,New York Knicks,,False,,False,2025,26,3,march,False,NYK,LAC,False,False,,,2025263NYK
+198,2025-03-26,9:00p,Milwaukee Bucks,,Denver Nuggets,,False,,False,2025,26,3,march,False,DEN,MIL,False,False,,,2025263DEN
+199,2025-03-26,10:00p,Boston Celtics,,Phoenix Suns,,False,,False,2025,26,3,march,False,PHO,BOS,False,False,,,2025263PHO
+200,2025-03-27,7:00p,San Antonio Spurs,,Cleveland Cavaliers,,False,,False,2025,27,3,march,False,CLE,SAS,False,False,,,2025273CLE
+201,2025-03-27,7:00p,Dallas Mavericks,,Orlando Magic,,False,,False,2025,27,3,march,False,ORL,DAL,False,False,,,2025273ORL
+202,2025-03-27,7:00p,Indiana Pacers,,Washington Wizards,,False,,False,2025,27,3,march,False,WAS,IND,False,False,,,2025273WAS
+203,2025-03-27,7:30p,Atlanta Hawks,,Miami Heat,,False,,False,2025,27,3,march,False,MIA,ATL,False,False,,,2025273MIA
+204,2025-03-27,8:00p,Los Angeles Lakers,,Chicago Bulls,,False,,False,2025,27,3,march,False,CHI,LAL,False,False,,,2025273CHI
+205,2025-03-27,8:00p,Memphis Grizzlies,,Oklahoma City Thunder,,False,,False,2025,27,3,march,False,OKC,MEM,False,False,,,2025273OKC
+206,2025-03-27,9:00p,Houston Rockets,,Utah Jazz,,False,,False,2025,27,3,march,False,UTA,HOU,False,False,,,2025273UTA
+207,2025-03-27,10:00p,Portland Trail Blazers,,Sacramento Kings,,False,,False,2025,27,3,march,False,SAC,POR,False,False,,,2025273SAC
+208,2025-03-28,7:00p,Cleveland Cavaliers,,Detroit Pistons,,False,,False,2025,28,3,march,False,DET,CLE,False,False,,,2025283DET
+209,2025-03-28,7:30p,Los Angeles Clippers,,Brooklyn Nets,,False,,False,2025,28,3,march,False,BRK,LAC,False,False,,,2025283BRK
+210,2025-03-28,7:30p,Charlotte Hornets,,Toronto Raptors,,False,,False,2025,28,3,march,False,TOR,CHO,False,False,,,2025283TOR
+211,2025-03-28,8:00p,New York Knicks,,Milwaukee Bucks,,False,,False,2025,28,3,march,False,MIL,NYK,False,False,,,2025283MIL
+212,2025-03-28,8:00p,Phoenix Suns,,Minnesota Timberwolves,,False,,False,2025,28,3,march,False,MIN,PHO,False,False,,,2025283MIN
+213,2025-03-28,8:00p,Golden State Warriors,,New Orleans Pelicans,,False,,False,2025,28,3,march,False,NOP,GSW,False,False,,,2025283NOP
+214,2025-03-28,9:00p,Utah Jazz,,Denver Nuggets,,False,,False,2025,28,3,march,False,DEN,UTA,False,False,,,2025283DEN
+215,2025-03-29,5:00p,Sacramento Kings,,Orlando Magic,,False,,False,2025,29,3,march,False,ORL,SAC,False,False,,,2025293ORL
+216,2025-03-29,7:00p,Brooklyn Nets,,Washington Wizards,,False,,False,2025,29,3,march,False,WAS,BRK,False,False,,,2025293WAS
+217,2025-03-29,7:30p,Miami Heat,,Philadelphia 76ers,,False,,False,2025,29,3,march,False,PHI,MIA,False,False,,,2025293PHI
+218,2025-03-29,8:00p,Dallas Mavericks,,Chicago Bulls,,False,,False,2025,29,3,march,False,CHI,DAL,False,False,,,2025293CHI
+219,2025-03-29,8:00p,Los Angeles Lakers,,Memphis Grizzlies,,False,,False,2025,29,3,march,False,MEM,LAL,False,False,,,2025293MEM
+220,2025-03-29,8:00p,Indiana Pacers,,Oklahoma City Thunder,,False,,False,2025,29,3,march,False,OKC,IND,False,False,,,2025293OKC
+221,2025-03-29,8:00p,Boston Celtics,,San Antonio Spurs,,False,,False,2025,29,3,march,False,SAS,BOS,False,False,,,2025293SAS
+222,2025-03-30,3:30p,Los Angeles Clippers,,Cleveland Cavaliers,,False,,False,2025,30,3,march,False,CLE,LAC,False,False,,,2025303CLE
+223,2025-03-30,6:00p,Portland Trail Blazers,,New York Knicks,,False,,False,2025,30,3,march,False,NYK,POR,False,False,,,2025303NYK
+224,2025-03-30,7:00p,Atlanta Hawks,,Milwaukee Bucks,,False,,False,2025,30,3,march,False,MIL,ATL,False,False,,,2025303MIL
+225,2025-03-30,7:00p,Detroit Pistons,,Minnesota Timberwolves,,False,,False,2025,30,3,march,False,MIN,DET,False,False,,,2025303MIN
+226,2025-03-30,7:00p,Charlotte Hornets,,New Orleans Pelicans,,False,,False,2025,30,3,march,False,NOP,CHO,False,False,,,2025303NOP
+227,2025-03-30,7:00p,Golden State Warriors,,San Antonio Spurs,,False,,False,2025,30,3,march,False,SAS,GSW,False,False,,,2025303SAS
+228,2025-03-30,7:30p,Toronto Raptors,,Philadelphia 76ers,,False,,False,2025,30,3,march,False,PHI,TOR,False,False,,,2025303PHI
+229,2025-03-30,9:00p,Houston Rockets,,Phoenix Suns,,False,,False,2025,30,3,march,False,PHO,HOU,False,False,,,2025303PHO
+230,2025-03-31,7:00p,Utah Jazz,,Charlotte Hornets,,False,,False,2025,31,3,march,False,CHO,UTA,False,False,,,2025313CHO
+231,2025-03-31,7:00p,Sacramento Kings,,Indiana Pacers,,False,,False,2025,31,3,march,False,IND,SAC,False,False,,,2025313IND
+232,2025-03-31,7:00p,Los Angeles Clippers,,Orlando Magic,,False,,False,2025,31,3,march,False,ORL,LAC,False,False,,,2025313ORL
+233,2025-03-31,7:00p,Miami Heat,,Washington Wizards,,False,,False,2025,31,3,march,False,WAS,MIA,False,False,,,2025313WAS
+234,2025-03-31,8:00p,Boston Celtics,,Memphis Grizzlies,,False,,False,2025,31,3,march,False,MEM,BOS,False,False,,,2025313MEM
+235,2025-03-31,8:00p,Chicago Bulls,,Oklahoma City Thunder,,False,,False,2025,31,3,march,False,OKC,CHI,False,False,,,2025313OKC
+236,2025-03-31,8:30p,Brooklyn Nets,,Dallas Mavericks,,False,,False,2025,31,3,march,False,DAL,BRK,False,False,,,2025313DAL
+237,2025-03-31,10:30p,Houston Rockets,,Los Angeles Lakers,,False,,False,2025,31,3,march,False,LAL,HOU,False,False,,,2025313LAL
+0,2025-04-01,7:30p,Portland Trail Blazers,,Atlanta Hawks,,False,,False,2025,01,4,april,False,ATL,POR,False,False,,,2025014ATL
+1,2025-04-01,7:30p,Philadelphia 76ers,,New York Knicks,,False,,False,2025,01,4,april,False,NYK,PHI,False,False,,,2025014NYK
+2,2025-04-01,8:00p,Toronto Raptors,,Chicago Bulls,,False,,False,2025,01,4,april,False,CHI,TOR,False,False,,,2025014CHI
+3,2025-04-01,8:00p,Golden State Warriors,,Memphis Grizzlies,,False,,False,2025,01,4,april,False,MEM,GSW,False,False,,,2025014MEM
+4,2025-04-01,8:00p,Phoenix Suns,,Milwaukee Bucks,,False,,False,2025,01,4,april,False,MIL,PHO,False,False,,,2025014MIL
+5,2025-04-01,8:00p,Orlando Magic,,San Antonio Spurs,,False,,False,2025,01,4,april,False,SAS,ORL,False,False,,,2025014SAS
+6,2025-04-01,10:00p,Minnesota Timberwolves,,Denver Nuggets,,False,,False,2025,01,4,april,False,DEN,MIN,False,False,,,2025014DEN
+7,2025-04-02,7:00p,New York Knicks,,Cleveland Cavaliers,,False,,False,2025,02,4,april,False,CLE,NYK,False,False,,,2025024CLE
+8,2025-04-02,7:00p,Charlotte Hornets,,Indiana Pacers,,False,,False,2025,02,4,april,False,IND,CHO,False,False,,,2025024IND
+9,2025-04-02,7:00p,Sacramento Kings,,Washington Wizards,,False,,False,2025,02,4,april,False,WAS,SAC,False,False,,,2025024WAS
+10,2025-04-02,7:30p,Miami Heat,,Boston Celtics,,False,,False,2025,02,4,april,False,BOS,MIA,False,False,,,2025024BOS
+11,2025-04-02,8:00p,Utah Jazz,,Houston Rockets,,False,,False,2025,02,4,april,False,HOU,UTA,False,False,,,2025024HOU
+12,2025-04-02,8:00p,Detroit Pistons,,Oklahoma City Thunder,,False,,False,2025,02,4,april,False,OKC,DET,False,False,,,2025024OKC
+13,2025-04-02,8:30p,Atlanta Hawks,,Dallas Mavericks,,False,,False,2025,02,4,april,False,DAL,ATL,False,False,,,2025024DAL
+14,2025-04-02,9:00p,San Antonio Spurs,,Denver Nuggets,,False,,False,2025,02,4,april,False,DEN,SAS,False,False,,,2025024DEN
+15,2025-04-02,10:00p,New Orleans Pelicans,,Los Angeles Clippers,,False,,False,2025,02,4,april,False,LAC,NOP,False,False,,,2025024LAC
+16,2025-04-03,7:00p,Orlando Magic,,Washington Wizards,,False,,False,2025,03,4,april,False,WAS,ORL,False,False,,,2025034WAS
+17,2025-04-03,7:30p,Minnesota Timberwolves,,Brooklyn Nets,,False,,False,2025,03,4,april,False,BRK,MIN,False,False,,,2025034BRK
+18,2025-04-03,7:30p,Memphis Grizzlies,,Miami Heat,,False,,False,2025,03,4,april,False,MIA,MEM,False,False,,,2025034MIA
+19,2025-04-03,7:30p,Milwaukee Bucks,,Philadelphia 76ers,,False,,False,2025,03,4,april,False,PHI,MIL,False,False,,,2025034PHI
+20,2025-04-03,7:30p,Portland Trail Blazers,,Toronto Raptors,,False,,False,2025,03,4,april,False,TOR,POR,False,False,,,2025034TOR
+21,2025-04-03,10:00p,Golden State Warriors,,Los Angeles Lakers,,False,,False,2025,03,4,april,False,LAL,GSW,False,False,,,2025034LAL
+22,2025-04-04,7:00p,Sacramento Kings,,Charlotte Hornets,,False,,False,2025,04,4,april,False,CHO,SAC,False,False,,,2025044CHO
+23,2025-04-04,7:00p,Utah Jazz,,Indiana Pacers,,False,,False,2025,04,4,april,False,IND,UTA,False,False,,,2025044IND
+24,2025-04-04,7:30p,Phoenix Suns,,Boston Celtics,,False,,False,2025,04,4,april,False,BOS,PHO,False,False,,,2025044BOS
+25,2025-04-04,7:30p,Detroit Pistons,,Toronto Raptors,,False,,False,2025,04,4,april,False,TOR,DET,False,False,,,2025044TOR
+26,2025-04-04,8:00p,Portland Trail Blazers,,Chicago Bulls,,False,,False,2025,04,4,april,False,CHI,POR,False,False,,,2025044CHI
+27,2025-04-04,8:00p,Oklahoma City Thunder,,Houston Rockets,,False,,False,2025,04,4,april,False,HOU,OKC,False,False,,,2025044HOU
+28,2025-04-04,8:00p,Cleveland Cavaliers,,San Antonio Spurs,,False,,False,2025,04,4,april,False,SAS,CLE,False,False,,,2025044SAS
+29,2025-04-04,10:00p,Denver Nuggets,,Golden State Warriors,,False,,False,2025,04,4,april,False,GSW,DEN,False,False,,,2025044GSW
+30,2025-04-04,10:30p,Dallas Mavericks,,Los Angeles Clippers,,False,,False,2025,04,4,april,False,LAC,DAL,False,False,,,2025044LAC
+31,2025-04-04,10:30p,New Orleans Pelicans,,Los Angeles Lakers,,False,,False,2025,04,4,april,False,LAL,NOP,False,False,,,2025044LAL
+32,2025-04-05,3:00p,New York Knicks,,Atlanta Hawks,,False,,False,2025,05,4,april,False,ATL,NYK,False,False,,,2025054ATL
+33,2025-04-05,7:00p,Memphis Grizzlies,,Detroit Pistons,,False,,False,2025,05,4,april,False,DET,MEM,False,False,,,2025054DET
+34,2025-04-05,7:00p,Minnesota Timberwolves,,Philadelphia 76ers,,False,,False,2025,05,4,april,False,PHI,MIN,False,False,,,2025054PHI
+35,2025-04-05,8:00p,Milwaukee Bucks,,Miami Heat,,False,,False,2025,05,4,april,False,MIA,MIL,False,False,,,2025054MIA
+36,2025-04-05,10:30p,Dallas Mavericks,,Los Angeles Clippers,,False,,False,2025,05,4,april,False,LAC,DAL,False,False,,,2025054LAC
+37,2025-04-06,1:00p,Chicago Bulls,,Charlotte Hornets,,False,,False,2025,06,4,april,False,CHO,CHI,False,False,,,2025064CHO
+38,2025-04-06,3:30p,Toronto Raptors,,Brooklyn Nets,,False,,False,2025,06,4,april,False,BRK,TOR,False,False,,,2025064BRK
+39,2025-04-06,3:30p,Los Angeles Lakers,,Oklahoma City Thunder,,False,,False,2025,06,4,april,False,OKC,LAL,False,False,,,2025064OKC
+40,2025-04-06,6:00p,Utah Jazz,,Atlanta Hawks,,False,,False,2025,06,4,april,False,ATL,UTA,False,False,,,2025064ATL
+41,2025-04-06,6:00p,Washington Wizards,,Boston Celtics,,False,,False,2025,06,4,april,False,BOS,WAS,False,False,,,2025064BOS
+42,2025-04-06,6:00p,Sacramento Kings,,Cleveland Cavaliers,,False,,False,2025,06,4,april,False,CLE,SAC,False,False,,,2025064CLE
+43,2025-04-06,6:00p,San Antonio Spurs,,Portland Trail Blazers,,False,,False,2025,06,4,april,False,POR,SAS,False,False,,,2025064POR
+44,2025-04-06,7:00p,Phoenix Suns,,New York Knicks,,False,,False,2025,06,4,april,False,NYK,PHO,False,False,,,2025064NYK
+45,2025-04-06,8:00p,Indiana Pacers,,Denver Nuggets,,False,,False,2025,06,4,april,False,DEN,IND,False,False,,,2025064DEN
+46,2025-04-06,8:30p,Houston Rockets,,Golden State Warriors,,False,,False,2025,06,4,april,False,GSW,HOU,False,False,,,2025064GSW
+47,2025-04-06,8:30p,Milwaukee Bucks,,New Orleans Pelicans,,False,,False,2025,06,4,april,False,NOP,MIL,False,False,,,2025064NOP
+48,2025-04-07,7:00p,Sacramento Kings,,Detroit Pistons,,False,,False,2025,07,4,april,False,DET,SAC,False,False,,,2025074DET
+49,2025-04-07,7:30p,Philadelphia 76ers,,Miami Heat,,False,,False,2025,07,4,april,False,MIA,PHI,False,False,,,2025074MIA
+50,2025-04-08,7:00p,Memphis Grizzlies,,Charlotte Hornets,,False,,False,2025,08,4,april,False,CHO,MEM,False,False,,,2025084CHO
+51,2025-04-08,7:00p,Chicago Bulls,,Cleveland Cavaliers,,False,,False,2025,08,4,april,False,CLE,CHI,False,False,,,2025084CLE
+52,2025-04-08,7:00p,Washington Wizards,,Indiana Pacers,,False,,False,2025,08,4,april,False,IND,WAS,False,False,,,2025084IND
+53,2025-04-08,7:00p,Atlanta Hawks,,Orlando Magic,,False,,False,2025,08,4,april,False,ORL,ATL,False,False,,,2025084ORL
+54,2025-04-08,7:30p,New Orleans Pelicans,,Brooklyn Nets,,False,,False,2025,08,4,april,False,BRK,NOP,False,False,,,2025084BRK
+55,2025-04-08,7:30p,Boston Celtics,,New York Knicks,,False,,False,2025,08,4,april,False,NYK,BOS,False,False,,,2025084NYK
+56,2025-04-08,8:00p,Minnesota Timberwolves,,Milwaukee Bucks,,False,,False,2025,08,4,april,False,MIL,MIN,False,False,,,2025084MIL
+57,2025-04-08,8:00p,Los Angeles Lakers,,Oklahoma City Thunder,,False,,False,2025,08,4,april,False,OKC,LAL,False,False,,,2025084OKC
+58,2025-04-08,10:00p,Golden State Warriors,,Phoenix Suns,,False,,False,2025,08,4,april,False,PHO,GSW,False,False,,,2025084PHO
+59,2025-04-08,10:30p,San Antonio Spurs,,Los Angeles Clippers,,False,,False,2025,08,4,april,False,LAC,SAS,False,False,,,2025084LAC
+60,2025-04-09,7:00p,Boston Celtics,,Orlando Magic,,False,,False,2025,09,4,april,False,ORL,BOS,False,False,,,2025094ORL
+61,2025-04-09,7:00p,Philadelphia 76ers,,Washington Wizards,,False,,False,2025,09,4,april,False,WAS,PHI,False,False,,,2025094WAS
+62,2025-04-09,7:30p,Los Angeles Lakers,,Dallas Mavericks,,False,,False,2025,09,4,april,False,DAL,LAL,False,False,,,2025094DAL
+63,2025-04-09,7:30p,Charlotte Hornets,,Toronto Raptors,,False,,False,2025,09,4,april,False,TOR,CHO,False,False,,,2025094TOR
+64,2025-04-09,8:00p,Miami Heat,,Chicago Bulls,,False,,False,2025,09,4,april,False,CHI,MIA,False,False,,,2025094CHI
+65,2025-04-09,9:00p,Portland Trail Blazers,,Utah Jazz,,False,,False,2025,09,4,april,False,UTA,POR,False,False,,,2025094UTA
+66,2025-04-09,10:00p,San Antonio Spurs,,Golden State Warriors,,False,,False,2025,09,4,april,False,GSW,SAS,False,False,,,2025094GSW
+67,2025-04-09,10:00p,Oklahoma City Thunder,,Phoenix Suns,,False,,False,2025,09,4,april,False,PHO,OKC,False,False,,,2025094PHO
+68,2025-04-09,10:00p,Denver Nuggets,,Sacramento Kings,,False,,False,2025,09,4,april,False,SAC,DEN,False,False,,,2025094SAC
+69,2025-04-09,10:30p,Houston Rockets,,Los Angeles Clippers,,False,,False,2025,09,4,april,False,LAC,HOU,False,False,,,2025094LAC
+70,2025-04-10,7:00p,New York Knicks,,Detroit Pistons,,False,,False,2025,10,4,april,False,DET,NYK,False,False,,,2025104DET
+71,2025-04-10,7:00p,Cleveland Cavaliers,,Indiana Pacers,,False,,False,2025,10,4,april,False,IND,CLE,False,False,,,2025104IND
+72,2025-04-10,7:30p,Atlanta Hawks,,Brooklyn Nets,,False,,False,2025,10,4,april,False,BRK,ATL,False,False,,,2025104BRK
+73,2025-04-10,8:00p,New Orleans Pelicans,,Milwaukee Bucks,,False,,False,2025,10,4,april,False,MIL,NOP,False,False,,,2025104MIL
+74,2025-04-10,9:30p,Minnesota Timberwolves,,Memphis Grizzlies,,False,,False,2025,10,4,april,False,MEM,MIN,False,False,,,2025104MEM
+75,2025-04-11,7:00p,Milwaukee Bucks,,Detroit Pistons,,False,,False,2025,11,4,april,False,DET,MIL,False,False,,,2025114DET
+76,2025-04-11,7:00p,Orlando Magic,,Indiana Pacers,,False,,False,2025,11,4,april,False,IND,ORL,False,False,,,2025114IND
+77,2025-04-11,7:00p,Atlanta Hawks,,Philadelphia 76ers,,False,,False,2025,11,4,april,False,PHI,ATL,False,False,,,2025114PHI
+78,2025-04-11,7:30p,Charlotte Hornets,,Boston Celtics,,False,,False,2025,11,4,april,False,BOS,CHO,False,False,,,2025114BOS
+79,2025-04-11,7:30p,Cleveland Cavaliers,,New York Knicks,,False,,False,2025,11,4,april,False,NYK,CLE,False,False,,,2025114NYK
+80,2025-04-11,8:00p,Washington Wizards,,Chicago Bulls,,False,,False,2025,11,4,april,False,CHI,WAS,False,False,,,2025114CHI
+81,2025-04-11,8:00p,Miami Heat,,New Orleans Pelicans,,False,,False,2025,11,4,april,False,NOP,MIA,False,False,,,2025114NOP
+82,2025-04-11,8:30p,Toronto Raptors,,Dallas Mavericks,,False,,False,2025,11,4,april,False,DAL,TOR,False,False,,,2025114DAL
+83,2025-04-11,9:00p,Memphis Grizzlies,,Denver Nuggets,,False,,False,2025,11,4,april,False,DEN,MEM,False,False,,,2025114DEN
+84,2025-04-11,9:00p,Brooklyn Nets,,Minnesota Timberwolves,,False,,False,2025,11,4,april,False,MIN,BRK,False,False,,,2025114MIN
+85,2025-04-11,9:30p,Oklahoma City Thunder,,Utah Jazz,,False,,False,2025,11,4,april,False,UTA,OKC,False,False,,,2025114UTA
+86,2025-04-11,10:00p,San Antonio Spurs,,Phoenix Suns,,False,,False,2025,11,4,april,False,PHO,SAS,False,False,,,2025114PHO
+87,2025-04-11,10:00p,Golden State Warriors,,Portland Trail Blazers,,False,,False,2025,11,4,april,False,POR,GSW,False,False,,,2025114POR
+88,2025-04-11,10:00p,Los Angeles Clippers,,Sacramento Kings,,False,,False,2025,11,4,april,False,SAC,LAC,False,False,,,2025114SAC
+89,2025-04-11,10:30p,Houston Rockets,,Los Angeles Lakers,,False,,False,2025,11,4,april,False,LAL,HOU,False,False,,,2025114LAL
+90,2025-04-13,1:00p,Orlando Magic,,Atlanta Hawks,,False,,False,2025,13,4,april,False,ATL,ORL,False,False,,,2025134ATL
+91,2025-04-13,1:00p,Charlotte Hornets,,Boston Celtics,,False,,False,2025,13,4,april,False,BOS,CHO,False,False,,,2025134BOS
+92,2025-04-13,1:00p,New York Knicks,,Brooklyn Nets,,False,,False,2025,13,4,april,False,BRK,NYK,False,False,,,2025134BRK
+93,2025-04-13,1:00p,Indiana Pacers,,Cleveland Cavaliers,,False,,False,2025,13,4,april,False,CLE,IND,False,False,,,2025134CLE
+94,2025-04-13,1:00p,Washington Wizards,,Miami Heat,,False,,False,2025,13,4,april,False,MIA,WAS,False,False,,,2025134MIA
+95,2025-04-13,1:00p,Detroit Pistons,,Milwaukee Bucks,,False,,False,2025,13,4,april,False,MIL,DET,False,False,,,2025134MIL
+96,2025-04-13,1:00p,Chicago Bulls,,Philadelphia 76ers,,False,,False,2025,13,4,april,False,PHI,CHI,False,False,,,2025134PHI
+97,2025-04-13,3:30p,Los Angeles Clippers,,Golden State Warriors,,False,,False,2025,13,4,april,False,GSW,LAC,False,False,,,2025134GSW
+98,2025-04-13,3:30p,Denver Nuggets,,Houston Rockets,,False,,False,2025,13,4,april,False,HOU,DEN,False,False,,,2025134HOU
+99,2025-04-13,3:30p,Dallas Mavericks,,Memphis Grizzlies,,False,,False,2025,13,4,april,False,MEM,DAL,False,False,,,2025134MEM
+100,2025-04-13,3:30p,Utah Jazz,,Minnesota Timberwolves,,False,,False,2025,13,4,april,False,MIN,UTA,False,False,,,2025134MIN
+101,2025-04-13,3:30p,Oklahoma City Thunder,,New Orleans Pelicans,,False,,False,2025,13,4,april,False,NOP,OKC,False,False,,,2025134NOP
+102,2025-04-13,3:30p,Los Angeles Lakers,,Portland Trail Blazers,,False,,False,2025,13,4,april,False,POR,LAL,False,False,,,2025134POR
+103,2025-04-13,3:30p,Phoenix Suns,,Sacramento Kings,,False,,False,2025,13,4,april,False,SAC,PHO,False,False,,,2025134SAC
+104,2025-04-13,3:30p,Toronto Raptors,,San Antonio Spurs,,False,,False,2025,13,4,april,False,SAS,TOR,False,False,,,2025134SAS

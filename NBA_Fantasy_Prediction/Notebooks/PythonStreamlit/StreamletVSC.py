@@ -1410,8 +1410,12 @@ with tab3:
 
 
         col_player_ranking, col_player_model = st.columns([4,2.5])
-
+        
         with col_player_ranking:
+            st.markdown(
+                "<p style='font-size:18px; font-weight:bold;'>Player | Fantasy Positions | Team | Fantasy Points Last Year</p>",
+                unsafe_allow_html=True
+            )
             custom_style = """
             .sortable-component {
                 border: 3px solid #6495ED;
