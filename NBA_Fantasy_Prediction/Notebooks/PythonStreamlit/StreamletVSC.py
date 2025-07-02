@@ -24,6 +24,7 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.preprocessing import StandardScaler
@@ -418,12 +419,13 @@ def launch_driver():
     return driver
 
 # === TABS ===
-tab1, tab2, tab3, tab4 = st.tabs(["Real Draftboard", "Mock Draftboard", "PlayerRankings", "ModelChanging"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Real Draftboard", "Mock Draftboard", "PlayerRankings", "ModelChanging", "Github/Linkedin"])
 
 
 
 with tab1:
-    st.title("🏀 Live Draft Board (Sleeper)")
+    st.title("Live Draft Board (Sleeper)")
+
 
     # Create two columns: a thin "sidebar" and a wide main section
     col_sidebar, col_main = st.columns([1, 4], border = True)
@@ -1648,133 +1650,213 @@ with tab4:
         st.write("### Current Settings")
         st.dataframe(weights_df)
 
+        colbutton, colslider = st.columns([1.5,3])
+        with colslider:
+            difficultModel = st.toggle("Optimized Model (Takes ~30 seconds)", value = False)
+
+        with colbutton:
+            if st.button("Create New Model from weights:"):
+                weights = {
+                    "Points": points_val,
+                    "Assists": assists_val,
+                    "Rebounds": rebounds_val,
+                    "Steals": steals_val,
+                    "Blocks": blocks_val,
+                    "Turnovers": turnovers_val,
+                    "ThreePointers": three_point_val,
+                    "GamesMadeWeight": weight
+                }
+
+                weights_df = pd.DataFrame([weights])
+                weights_list = list(weights.values())
+
+                weights_list_official = weights_list[:-1]
+                games_weight_value = weights_list[-1]
 
 
-        if st.button("Create New Model from weights:"):
-            weights = {
-                "Points": points_val,
-                "Assists": assists_val,
-                "Rebounds": rebounds_val,
-                "Steals": steals_val,
-                "Blocks": blocks_val,
-                "Turnovers": turnovers_val,
-                "ThreePointers": three_point_val,
-                "GamesMadeWeight": weight
-            }
+                weights_df.to_csv('../../data/currentweight/currentpointvalues.csv')
 
-            weights_df = pd.DataFrame([weights])
-            weights_list = list(weights.values())
+                train_base_data = pd.read_csv(f"../../data/seasonfullstatsreal/playerbasedatatotaltrain.csv")
+                test_base_data = pd.read_csv(f"../../data/seasonfullstatsreal/playerbasedatatotaltest.csv")
 
-            weights_list_official = weights_list[:-1]
-            games_weight_value = weights_list[-1]
+                train_base_data = train_base_data.dropna(subset=["S_GamesPlayed_futureyear"])
+                train_base_data = train_base_data.dropna(subset=['YearsExperience'])
+                train_base_data = train_base_data.dropna(subset=['FirstSeasonYear'])
+                train_base_data = train_base_data.dropna(subset=['Team'])
+                train_base_data = train_base_data.dropna(subset=['PrimaryPosition'])
+                train_base_data = train_base_data.dropna(subset=['Age'])
 
+                test_base_data = test_base_data.dropna(subset=['YearsExperience'])
+                test_base_data = test_base_data.dropna(subset=['FirstSeasonYear'])
+                test_base_data = test_base_data.dropna(subset=['Team'])
+                test_base_data = test_base_data.dropna(subset=['PrimaryPosition'])
+                test_base_data = test_base_data.dropna(subset=['Age'])
 
-            weights_df.to_csv('../../data/currentweight/currentpointvalues.csv')
+                #st.write(f"Games Weight: {games_weight_value}. weight list: {weights_list_official}")
+                test = add_prediction_value(train_base_data, games_weight_value, weights_list_official)
+                if not difficultModel:
 
-            train_base_data = pd.read_csv(f"../../data/seasonfullstatsreal/playerbasedatatotaltrain.csv")
-            test_base_data = pd.read_csv(f"../../data/seasonfullstatsreal/playerbasedatatotaltest.csv")
-
-            train_base_data = train_base_data.dropna(subset=["S_GamesPlayed_futureyear"])
-            train_base_data = train_base_data.dropna(subset=['YearsExperience'])
-            train_base_data = train_base_data.dropna(subset=['FirstSeasonYear'])
-            train_base_data = train_base_data.dropna(subset=['Team'])
-            train_base_data = train_base_data.dropna(subset=['PrimaryPosition'])
-            train_base_data = train_base_data.dropna(subset=['Age'])
-
-            test_base_data = test_base_data.dropna(subset=['YearsExperience'])
-            test_base_data = test_base_data.dropna(subset=['FirstSeasonYear'])
-            test_base_data = test_base_data.dropna(subset=['Team'])
-            test_base_data = test_base_data.dropna(subset=['PrimaryPosition'])
-            test_base_data = test_base_data.dropna(subset=['Age'])
-
-            st.write(f"Games Weight: {games_weight_value}. weight list: {weights_list_official}")
-            test = add_prediction_value(train_base_data, games_weight_value, weights_list_official)
-
-            X = test[['Ht', 'Wt','S_TotalWins', 'S_GamesPlayed', 'S_AvgPoints',
-                'S_AvgAssists', 'S_AvgRebounds', 'S_AvgSteals', 'S_AvgBlocks', 'S_AvgTurnovers', 'S_AvgFG', 'S_AvgFGA',
-                'S_Avg3P', 'S_Avg3PA', 'S_AvgFT', 'S_AvgFTA', 'S_FantasyPoints', 'S_MinutesPlayed', 'S_GamePointDiff',
-                'S_StartingCount', 'S_Top7Team', 'HS_TotalWins', 'HS_GamesPlayed',
-                'HS_AvgPoints', 'HS_AvgAssists', 'HS_AvgRebounds', 'HS_AvgSteals', 'HS_AvgBlocks', 'HS_AvgTurnovers',
-                'HS_AvgFG', 'HS_AvgFGA', 'HS_Avg3P', 'HS_Avg3PA', 'HS_AvgFT', 'HS_AvgFTA', 'HS_FantasyPoints',
-                'HS_MinutesPlayed', 'HS_GamePointDiff', 'HS_StartingCount', 'HS_Top7Team', 'Age', 'NewPos1', 'NewPos2', 'NewPos3',
-                'YearsExperience', 'S_TotalWins_prevyear', 'S_GamesPlayed_prevyear', 'S_AvgPoints_prevyear',
-                'S_AvgAssists_prevyear', 'S_AvgRebounds_prevyear', 'S_AvgSteals_prevyear', 'S_AvgBlocks_prevyear',
-                'S_AvgTurnovers_prevyear', 'S_AvgFG_prevyear', 'S_AvgFGA_prevyear', 'S_Avg3P_prevyear', 'S_Avg3PA_prevyear',
-                'S_AvgFT_prevyear', 'S_AvgFTA_prevyear', 'S_FantasyPoints_prevyear', 'S_MinutesPlayed_prevyear',
-                'S_GamePointDiff_prevyear', 'S_StartingCount_prevyear', 'S_Top7Team_prevyear', 'S_TotalWins_prev5years', 'S_GamesPlayed_prev5years', 'S_AvgPoints_prev5years', 'S_AvgAssists_prev5years',
-                'S_AvgRebounds_prev5years', 'S_AvgSteals_prev5years', 'S_AvgBlocks_prev5years', 'S_AvgTurnovers_prev5years',
-                'S_AvgFG_prev5years', 'S_AvgFGA_prev5years', 'S_Avg3P_prev5years', 'S_Avg3PA_prev5years', 'S_AvgFT_prev5years',
-                'S_AvgFTA_prev5years', 'S_FantasyPoints_prev5years', 'S_MinutesPlayed_prev5years',
-                'S_GamePointDiff_prev5years', 'S_StartingCount_prev5years', 'S_Top7Team_prev5years']]
+                    X = test[['Ht', 'Wt','S_TotalWins', 'S_GamesPlayed', 'S_AvgPoints',
+                        'S_AvgAssists', 'S_AvgRebounds', 'S_AvgSteals', 'S_AvgBlocks', 'S_AvgTurnovers', 'S_AvgFG', 'S_AvgFGA',
+                        'S_Avg3P', 'S_Avg3PA', 'S_AvgFT', 'S_AvgFTA', 'S_FantasyPoints', 'S_MinutesPlayed', 'S_GamePointDiff',
+                        'S_StartingCount', 'S_Top7Team', 'HS_TotalWins', 'HS_GamesPlayed',
+                        'HS_AvgPoints', 'HS_AvgAssists', 'HS_AvgRebounds', 'HS_AvgSteals', 'HS_AvgBlocks', 'HS_AvgTurnovers',
+                        'HS_AvgFG', 'HS_AvgFGA', 'HS_Avg3P', 'HS_Avg3PA', 'HS_AvgFT', 'HS_AvgFTA', 'HS_FantasyPoints',
+                        'HS_MinutesPlayed', 'HS_GamePointDiff', 'HS_StartingCount', 'HS_Top7Team', 'Age', 'NewPos1', 'NewPos2', 'NewPos3',
+                        'YearsExperience', 'S_TotalWins_prevyear', 'S_GamesPlayed_prevyear', 'S_AvgPoints_prevyear',
+                        'S_AvgAssists_prevyear', 'S_AvgRebounds_prevyear', 'S_AvgSteals_prevyear', 'S_AvgBlocks_prevyear',
+                        'S_AvgTurnovers_prevyear', 'S_AvgFG_prevyear', 'S_AvgFGA_prevyear', 'S_Avg3P_prevyear', 'S_Avg3PA_prevyear',
+                        'S_AvgFT_prevyear', 'S_AvgFTA_prevyear', 'S_FantasyPoints_prevyear', 'S_MinutesPlayed_prevyear',
+                        'S_GamePointDiff_prevyear', 'S_StartingCount_prevyear', 'S_Top7Team_prevyear', 'S_TotalWins_prev5years', 'S_GamesPlayed_prev5years', 'S_AvgPoints_prev5years', 'S_AvgAssists_prev5years',
+                        'S_AvgRebounds_prev5years', 'S_AvgSteals_prev5years', 'S_AvgBlocks_prev5years', 'S_AvgTurnovers_prev5years',
+                        'S_AvgFG_prev5years', 'S_AvgFGA_prev5years', 'S_Avg3P_prev5years', 'S_Avg3PA_prev5years', 'S_AvgFT_prev5years',
+                        'S_AvgFTA_prev5years', 'S_FantasyPoints_prev5years', 'S_MinutesPlayed_prev5years',
+                        'S_GamePointDiff_prev5years', 'S_StartingCount_prev5years', 'S_Top7Team_prev5years']]
 
 
-            y = test['TargetVariable'].values
-
-
-
-            all_features = X.columns
-
-            cat_cols = ['NewPos1', 'NewPos2', 'NewPos3']
-
-
-            num_cols = [col for col in all_features if col not in cat_cols]
-
-            num_transformer = Pipeline(steps=[
-                ('imputer', SimpleImputer(strategy='mean'))#,
-                #('scaler', StandardScaler())
-            ])
-
-
-            cat_transformer = Pipeline(steps=[
-                ('imputer', SimpleImputer(strategy='constant', fill_value='missing')),
-                ('onehot', OneHotEncoder(handle_unknown='ignore'))
-            ])
-
-            preprocessor = ColumnTransformer(
-                transformers=[
-                    ('num', num_transformer, num_cols),
-                    ('cat', cat_transformer, cat_cols)
-                ])
-
-            model = Pipeline(steps=[
-                ('preprocessor', preprocessor),
-                ('regressor', LinearRegression())
-            ])
-
-            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-
-            model.fit(X_train, y_train)
-            y_pred = model.predict(X_test)
-
-            st.write(f"r^2 value: {r2_score(y_test, y_pred)}")
-
-            test_base_data_copy = test_base_data.copy()
-            test_base_data_predict = test_base_data[X.columns]
-            new_predictions = model.predict(test_base_data_predict)
-
-
-            results_df = test_base_data_copy[['Player']].copy()
-            results_df['Predicted'] = new_predictions
-
-
-            results_df1 = results_df.sort_values(by=['Predicted'], ascending = False)
+                    y = test['TargetVariable'].values
 
 
 
+                    all_features = X.columns
+
+                    cat_cols = ['NewPos1', 'NewPos2', 'NewPos3']
+
+
+                    num_cols = [col for col in all_features if col not in cat_cols]
+
+                    num_transformer = Pipeline(steps=[
+                        ('imputer', SimpleImputer(strategy='mean'))#,
+                        #('scaler', StandardScaler())
+                    ])
+
+
+                    cat_transformer = Pipeline(steps=[
+                        ('imputer', SimpleImputer(strategy='constant', fill_value='missing')),
+                        ('onehot', OneHotEncoder(handle_unknown='ignore'))
+                    ])
+
+                    preprocessor = ColumnTransformer(
+                        transformers=[
+                            ('num', num_transformer, num_cols),
+                            ('cat', cat_transformer, cat_cols)
+                        ])
+
+                    model = Pipeline(steps=[
+                        ('preprocessor', preprocessor),
+                        ('regressor', LinearRegression())
+                    ])
+
+                    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+                    model.fit(X_train, y_train)
+                    y_pred = model.predict(X_test)
+
+                    st.write(f"r^2 value: {r2_score(y_test, y_pred)}")
+
+                    test_base_data_copy = test_base_data.copy()
+                    test_base_data_predict = test_base_data[X.columns]
+                    new_predictions = model.predict(test_base_data_predict)
+
+
+                    results_df = test_base_data_copy[['Player']].copy()
+                    results_df['Predicted'] = new_predictions
+
+
+                    results_df1 = results_df.sort_values(by=['Predicted'], ascending = False)
+                else:
+                    X = test[['Ht', 'Wt','S_TotalWins', 'S_GamesPlayed', #'S_AvgPoints',
+                            #'S_AvgAssists', 'S_AvgRebounds', 'S_AvgSteals', 'S_AvgBlocks', 'S_AvgTurnovers', 'S_AvgFG', 'S_AvgFGA',
+                            #'S_Avg3P', 'S_Avg3PA', 'S_AvgFT', 'S_AvgFTA', 
+                            'S_FantasyPoints',
+                            'S_MinutesPlayed', 'S_GamePointDiff',
+                            'S_StartingCount', 'S_Top7Team', 'HS_TotalWins', 'HS_GamesPlayed',
+                            #'HS_AvgPoints', 'HS_AvgAssists', 'HS_AvgRebounds', 'HS_AvgSteals', 'HS_AvgBlocks', 'HS_AvgTurnovers',
+                            #'HS_AvgFG', 'HS_AvgFGA', 'HS_Avg3P', 'HS_Avg3PA', 'HS_AvgFT', 'HS_AvgFTA', 
+                            'HS_FantasyPoints',
+                            'HS_MinutesPlayed', 'HS_GamePointDiff', 'HS_StartingCount', 'HS_Top7Team',
+                            'Age', 'NewPos1', 'NewPos2', 'NewPos3',
+                            'YearsExperience', 'S_TotalWins_prevyear', 'S_GamesPlayed_prevyear', #'S_AvgPoints_prevyear',
+                            #'S_AvgAssists_prevyear', 'S_AvgRebounds_prevyear', 'S_AvgSteals_prevyear', 'S_AvgBlocks_prevyear',
+                            #'S_AvgTurnovers_prevyear', 'S_AvgFG_prevyear', 'S_AvgFGA_prevyear', 'S_Avg3P_prevyear', 'S_Avg3PA_prevyear',
+                            #'S_AvgFT_prevyear', 'S_AvgFTA_prevyear', 
+                            'S_FantasyPoints_prevyear', 'S_MinutesPlayed_prevyear',
+                            'S_GamePointDiff_prevyear', 'S_StartingCount_prevyear', 'S_Top7Team_prevyear', 'S_TotalWins_prev5years', 'S_GamesPlayed_prev5years', #'S_AvgPoints_prev5years', 'S_AvgAssists_prev5years',
+                            #'S_AvgRebounds_prev5years', 'S_AvgSteals_prev5years', 'S_AvgBlocks_prev5years', 'S_AvgTurnovers_prev5years',
+                            #'S_AvgFG_prev5years', 'S_AvgFGA_prev5years', 'S_Avg3P_prev5years', 'S_Avg3PA_prev5years', 'S_AvgFT_prev5years',
+                            #'S_AvgFTA_prev5years', 
+                            'S_FantasyPoints_prev5years', 'S_MinutesPlayed_prev5years',
+                            'S_GamePointDiff_prev5years', 'S_StartingCount_prev5years', 'S_Top7Team_prev5years']]
+
+
+                    y = test['TargetVariable'].values
 
 
 
-            subset_test_base = test_base_data[['Player','PlayerID','S_GamesPlayed','TotalGamesSeason','S_FantasyPoints','S_AvgPoints','S_AvgAssists','S_AvgRebounds','S_AvgSteals','S_AvgBlocks','S_AvgTurnovers','S_Avg3P']]
+                    all_features = X.columns
 
-            # Then, perform the merge
-            results_df1 = results_df1.merge(
-                subset_test_base,
-                how='left',
-                left_on='Player',
-                right_on='Player'
-            )
+                    cat_cols = ['NewPos1', 'NewPos2', 'NewPos3']
 
-            st.session_state.current_model = results_df1
+
+                    num_cols = [col for col in all_features if col not in cat_cols]
+
+                    num_transformer = Pipeline(steps=[
+                        ('imputer', SimpleImputer(strategy='mean')),
+                        ('scaler', StandardScaler())
+                    ])
+
+
+                    cat_transformer = Pipeline(steps=[
+                        ('imputer', SimpleImputer(strategy='constant', fill_value='missing')),
+                        ('onehot', OneHotEncoder(handle_unknown='ignore'))
+                    ])
+
+                    preprocessor = ColumnTransformer(
+                        transformers=[
+                            ('num', num_transformer, num_cols),
+                            ('cat', cat_transformer, cat_cols)
+                        ])
+                    
+                    model = Pipeline(steps=[
+                        ('preprocessor', preprocessor),
+                        ('regressor', GradientBoostingRegressor(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42))
+                    ])
+
+                    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+                    model.fit(X_train, y_train)
+                    y_pred = model.predict(X_test)
+
+                    st.write(f"r^2 value: {r2_score(y_test, y_pred)}")
+
+                    test_base_data_copy = test_base_data.copy()
+                    test_base_data_predict = test_base_data[X.columns]
+                    new_predictions = model.predict(test_base_data_predict)
+
+
+                    results_df = test_base_data_copy[['Player']].copy()
+                    results_df['Predicted'] = new_predictions
+
+
+                    results_df1 = results_df.sort_values(by=['Predicted'], ascending = False)
+
+
+
+
+
+
+
+                subset_test_base = test_base_data[['Player','PlayerID','S_GamesPlayed','TotalGamesSeason','S_FantasyPoints','S_AvgPoints','S_AvgAssists','S_AvgRebounds','S_AvgSteals','S_AvgBlocks','S_AvgTurnovers','S_Avg3P']]
+
+                # Then, perform the merge
+                results_df1 = results_df1.merge(
+                    subset_test_base,
+                    how='left',
+                    left_on='Player',
+                    right_on='Player'
+                )
+
+                st.session_state.current_model = results_df1
 
 
         if len(st.session_state.current_model) != 0:
@@ -1817,6 +1899,10 @@ with tab4:
             save_path = os.path.join(weights_folder, f"weight_{weight_name}.csv")
             weights_df.to_csv(save_path, index=False)
             st.success(f"Weights saved to `{save_path}`")
+
+with tab5:
+    st.subheader("Github: https://github.com/ThomasDavis4757")
+    st.subheader("LinkedIn: https://www.linkedin.com/in/thomasdavis47/")
 
     
     
