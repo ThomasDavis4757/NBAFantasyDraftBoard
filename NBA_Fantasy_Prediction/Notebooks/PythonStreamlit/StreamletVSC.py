@@ -628,13 +628,13 @@ with tab1:
             else:
                 st.warning("Browser not running.")
 
-        st.session_state.auto_scrape = st.checkbox("Auto-scrape every 10s", value=st.session_state.auto_scrape)
+        st.session_state.auto_scrape = st.checkbox("Auto-scrape every 30s", value=st.session_state.auto_scrape)
 
         # st.write(num_drafting_participants)
         # st.write(num_drafting_rounds)
 
         if st.session_state.auto_scrape:
-            st_autorefresh(interval=REFRESH_INTERVAL_SEC * 1000, key="auto-refresh")
+            st_autorefresh(interval=REFRESH_INTERVAL_SEC * 3000, key="auto-refresh")
             if st.session_state.driver_active and st.session_state.driver:
                 try:
                     st.session_state.driver.refresh()
@@ -752,7 +752,7 @@ with tab1:
             st.subheader("Full Player List")
             displayed_df.index = displayed_df.index + 1
             
-            styled_df = displayed_df.style.apply(highlight_row, axis=1)
+            styled_df = displayed_df.rename(columns={'Predicted': 'FuturePredictedFantasyPoints'}).style.apply(highlight_row, axis=1)
 
             st.dataframe(styled_df, use_container_width=True)
 
@@ -782,7 +782,7 @@ with tab1:
             specific_display = specific_display.drop('MeetPositionalRequirement', axis=1)
 
 
-            styled_df_pos = specific_display.style.apply(highlight_row, axis=1)
+            styled_df_pos = specific_display.rename(columns={'Predicted': 'FuturePredictedFantasyPoints'}).style.apply(highlight_row, axis=1)
 
             st.dataframe(styled_df_pos, use_container_width=True)
         if test_front_page:
@@ -1464,7 +1464,7 @@ with tab3:
                 st.session_state.current_model.index = st.session_state.current_model.index + 1
                 st.success(f"Model is loaded.") 
                 st.rerun()
-            st.dataframe(st.session_state.current_model)
+            st.dataframe(st.session_state.current_model.rename(columns={'Predicted': 'PredictedFantPoints'}))
             
 
             
