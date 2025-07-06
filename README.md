@@ -1,7 +1,7 @@
 # NBAFantasyDraftBoard
 
 <<<<<<< HEAD
-Hello Testing
+NBA Fantasy DraftBoard
 =======
 This application is a hub where you can create player rankings, and practice drafting with many tools to assist you!
 It is ran in a virtual enviroment, and there is a requirements file that should have all of the libraries needed to run. 
