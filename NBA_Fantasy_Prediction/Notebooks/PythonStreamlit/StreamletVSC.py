@@ -29,6 +29,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.tree import DecisionTreeRegressor
+import plotly.express as px
+import plotly.graph_objects as go
+#from streamlit_file_browser import st_file_browser
 
 #print(streamlit_sortables.__version__)
 
@@ -300,6 +303,17 @@ def add_prediction_value(df, games_made_weight = 0.0, stat_weights = [0.5,1,1,-1
     
     return df
    
+######################################################################################################
+
+def get_player_information_fuzz(name, uploaded_data_df, threshold=25):
+    reference_list = uploaded_data_df['full_name']
+    match = process.extractOne(name, reference_list, scorer=fuzz.token_sort_ratio)
+    if match and match[1] >= threshold:
+        pot_player_data = uploaded_data_df[uploaded_data_df['full_name'] == match[0]]
+        return pot_player_data
+    else:
+        print("didn't find match")
+        return None
 
 # Setup layout
 st.set_page_config(layout="wide")
@@ -419,12 +433,39 @@ def launch_driver():
     return driver
 
 # === TABS ===
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Real Draftboard", "Mock Draftboard", "PlayerRankings", "ModelChanging", "Github/Linkedin"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Real Draftboard", "Mock Draftboard", "PlayerRankings", "ModelChanging", "Directory Mangament"])
 
+
+
+with tab5:
+    st.subheader("Github: https://github.com/ThomasDavis4757")
+    st.subheader("LinkedIn: https://www.linkedin.com/in/thomasdavis47/")
+    github = st.toggle('Github Version',value = True, help = 'If this is downloaded from github with all of the datafiles, you want github version. If you are just using the published app, you can put in the file directories you want to use.')
+    if github:
+        st.write("You are all set!")
+    else:
+        st.write('You need to set up 6 folders.')
+        st.write("They can be empty, just make sure they are all seperate.")
+        ranking_path = st.text_input("Put rankings folder path here")
+        current_ranking_path = st.text_input("Put current_ranking folder path here")
+        weights_path = st.text_input("Put weights folder path here")
+        current_weights_path = st.text_input("Put current_weights folder path here")
+        draft_settings_path = st.text_input("Put draft_settings folder path here")
+        sleeper_api_data_path = st.text_input("Put sleeper_api_data folder path here")
 
 
 with tab1:
-    st.title("Live Draft Board (Sleeper)")
+    col_title, col_linkedin, col_github = st.columns([3.5,2,2])
+    with col_title:
+        st.title("Live Draft Board (Sleeper)")
+    with col_linkedin:
+            st.page_link(page = "https://www.linkedin.com/in/thomasdavis47/", label = "Linkedin", help = "https://www.linkedin.com/in/thomasdavis47/", icon = '💼')
+            st.write("https://www.linkedin.com/in/thomasdavis47/")
+    with col_github:
+            st.page_link(page = "https://github.com/ThomasDavis4757", label = "GitHub", help = "https://github.com/ThomasDavis4757", icon = '🐙')
+
+    
+    #st.text("LinkedIn: https://www.linkedin.com/in/thomasdavis47/")
 
 
     # Create two columns: a thin "sidebar" and a wide main section
@@ -676,13 +717,20 @@ with tab1:
 
     with col_main:
 
+        def extract_team(position):
+            parts = position.split(" - ")
+            if len(parts) > 1 and parts[1].strip() != "":
+                return parts[1]
+            else:
+                return "N/A"
+
         team_highlighted_names = [
-             f"{name} - {position.split(' - ')[1]}"
-             for name, position in zip(st.session_state.last_scraped_data, st.session_state.last_scraped_positions)
+            f"{name} - {extract_team(position)}"
+            for name, position in zip(st.session_state.last_scraped_data, st.session_state.last_scraped_positions)
         ]
 
         not_team_highlighted_names = [
-            f"{name} - {position.split(' - ')[1]}"
+            f"{name} - {extract_team(position)}"
             for name, position in zip(st.session_state.last_scraped_data, st.session_state.last_scraped_positions)
         ]
 
@@ -1381,6 +1429,10 @@ with tab3:
                     # st.markdown(stats_df1.to_html(index=False), unsafe_allow_html=True)
                     player1_ranks = get_player_ranks_for_index(0, stat_ranks)
                     st.markdown(style_stats_df(stats_df1, player1_ranks), unsafe_allow_html=True)
+                    if st.checkbox(f"Graph {player1}", value = True):
+                        graph_player1 = player1
+                    else:
+                        graph_player1 = ""
                 with col2:
                     stats_df2 = pd.DataFrame({
                         "Stat": ["Age", "Team", "Years of Experience","PercGamesMade", "Fantasy Points", "Points", "Assists", "Rebounds", "Steals", "Blocks", "Turnovers", "3PM"],
@@ -1389,6 +1441,10 @@ with tab3:
                     # st.markdown(stats_df2.to_html(index=False), unsafe_allow_html=True)
                     player2_ranks = get_player_ranks_for_index(1, stat_ranks)
                     st.markdown(style_stats_df(stats_df2, player2_ranks), unsafe_allow_html=True)
+                    if st.checkbox(f"Graph {player2}", value = True):
+                        graph_player2 = player2
+                    else:
+                        graph_player2 = ""
                 with col3:
                     stats_df3 = pd.DataFrame({
                         "Stat": ["Age", "Team", "Years of Experience","PercGamesMade", "Fantasy Points", "Points", "Assists", "Rebounds", "Steals", "Blocks", "Turnovers", "3PM"],
@@ -1397,6 +1453,10 @@ with tab3:
                     # st.markdown(stats_df3.to_html(index=False), unsafe_allow_html=True)  
                     player3_ranks = get_player_ranks_for_index(2, stat_ranks)
                     st.markdown(style_stats_df(stats_df3, player3_ranks), unsafe_allow_html=True)
+                    if st.checkbox(f"Graph {player3}", value = True):
+                        graph_player3 = player3
+                    else:
+                        graph_player3 = ""
                 with col4:
                     stats_df4 = pd.DataFrame({
                         "Stat": ["Age", "Team", "Years of Experience","PercGamesMade", "Fantasy Points", "Points", "Assists", "Rebounds", "Steals", "Blocks", "Turnovers", "3PM"],
@@ -1405,6 +1465,67 @@ with tab3:
                     # st.markdown(stats_df4.to_html(index=False), unsafe_allow_html=True)
                     player4_ranks = get_player_ranks_for_index(3, stat_ranks)
                     st.markdown(style_stats_df(stats_df4, player4_ranks), unsafe_allow_html=True)
+                    if st.checkbox(f"Graph {player4}", value = True):
+                        graph_player4 = player4
+                    else:
+                        graph_player4 = ""
+
+
+
+                indv_game_data = pd.read_csv(f"../../data/full_nba_data{selected_year}.csv")
+                player_names_graph = indv_game_data['Starters'].unique().tolist()
+
+
+                input_names_first = [graph_player1, graph_player2, graph_player3, graph_player4]
+                input_names = []
+                for name in input_names_first:
+                    if name != "":
+                        input_names.append(name)
+
+                matched_names = []    
+                for name in input_names:
+                    match, score, _ = process.extractOne(
+                        query=name,
+                        choices=player_names_graph,
+                        scorer=fuzz.WRatio  # Good overall fuzzy matching metric
+                    )
+                    matched_names.append(match)
+
+                df = pd.DataFrame()
+
+                for i in range(len(input_names)):
+
+                    statdata = indv_game_data[indv_game_data['Starters'] == matched_names[i]]
+                    statdata = statdata[statdata['DidNotPlay'] == False]
+                    df = pd.concat([statdata, df], axis=0, ignore_index=True)
+
+
+                try:
+                    df['Date'] = pd.to_datetime(df['Date'])
+
+                    
+                    df = df.sort_values(by=['Starters', 'Date'])
+
+
+                    fig = px.histogram(
+                        df,
+                        x='FantasyPoints',
+                        color='Starters',
+                        nbins=20,  # adjust for bin size (~5-point bins)
+                        opacity=0.6,  # makes overlaps easier to see
+                        barmode='overlay',  # overlay instead of stacking
+                        title="Distribution of Fantasy Points by Player"
+                    )
+
+                    fig.update_layout(
+                        xaxis_title='Fantasy Points',
+                        yaxis_title='Number of Games',
+                        template='plotly_white'
+                    )
+
+                    st.plotly_chart(fig)
+                except:
+                    pass
             else:
                 st.warning("Not All players played in this year.")
 
@@ -1550,7 +1671,7 @@ with tab3:
 
         st.markdown("---")
 
-        if st.button("Get Updated Player Teams and Positions"):
+        if st.button("Get Updated Sleeper Player Teams and Positions"):
 
             current_time = pd.Timestamp.now()
 
@@ -1581,6 +1702,48 @@ with tab3:
             else:
                 wait_time = pd.Timedelta(days=1) - duration
                 st.warning(f"Can't send Sleeper API request: please wait {wait_time} more.")
+        
+        if st.toggle("Add player not in ranking", value = False):
+            player_name = st.text_input("New Players Name", help = 'Try to make this name as close to their real name (name listed on sleeper) as possible.')
+            if st.toggle("Try to find sleeper player information", value = False):
+                if len(player_name) == 0:
+                    st.warning("Please enter a name to search in.")
+                else:
+                    found_dataframe = get_player_information_fuzz(player_name, uploaded_data)
+                    st.dataframe(found_dataframe)
+                    st.write("This is the found player")
+                    ranking_addition = st.number_input("Ranking position entered into.", min_value = 1, max_value = 200, value = 10, step = 1)
+                    if st.button("Add player to ranking"):
+
+                        if found_dataframe['full_name'].iloc[0] in rankingmodel['Player'].values:
+                            st.error("Player is already in ranking")
+                        else:
+
+                            sorted_names = [entry.split(" | ")[0] for entry in sorted_items]
+                            sorted_df = pd.DataFrame(sorted_names, columns=['Player'])
+
+                            saveable_data = sorted_df.merge(
+                                rankingmodel,
+                                how='left',
+                                left_on='Player',
+                                right_on='Player'
+                            )
+
+                            saveable_data = saveable_data[['Player','PlayerID','Predicted','S_GamesPlayed','TotalGamesSeason','S_FantasyPoints','S_AvgPoints','S_AvgAssists','S_AvgRebounds','S_AvgSteals','S_AvgBlocks','S_AvgTurnovers','S_Avg3P']]
+
+                            saveable_data.loc[ranking_addition + .5] = found_dataframe['full_name'].iloc[0], 'nan',0,0,0,0,0,0,0,0,0,0,0
+                            saveable_data = saveable_data.sort_index().reset_index(drop=True)
+
+                            saveable_data.to_csv(f'../../data/rankings/{current_ranking_name}.csv')
+                            for filename in os.listdir(folder_path):
+                                file_path = os.path.join(folder_path, filename)
+                                if os.path.isfile(file_path):
+                                    os.remove(file_path)
+                            saveable_data.to_csv(f'../../data/current_ranking/{current_ranking_name}.csv')  
+                            st.success(f"Successfully saved ranking to ../../data/rankings/{current_ranking_name}.csv ")
+
+
+
 
 
 with tab4:
@@ -1627,7 +1790,8 @@ with tab4:
         turnovers_val = st.number_input("Turnover Value",  min_value=-10.0, max_value=10.0, step=0.25, key = 'Turnovers')
         three_point_val = st.number_input("3 Point Value",  min_value=-10.0, max_value=10.0, step=0.25, key = 'ThreePointers')
 
-        weight = st.slider("Games Made Weight", min_value=0, max_value=100,  format="%d%%", key = 'GamesMadeWeight')
+        gmw_desc = "Games Made Weight is a way to account for how many games the player played in the season. It is a weighted average of the normal fantasy point average, and the fantasy point average over 82 games. [(GMW) * (Total Fantasy Points / 82)] + [(1-GMW) * (Total Fantasy Points / Games Made)]"
+        weight = st.slider("Games Made Weight", min_value=0, max_value=100,  format="%d%%", key = 'GamesMadeWeight', help = gmw_desc , label_visibility = 'visible')
         st.caption(f"Weight: {'No Game Weight' if weight == 0 else 'All Games Weight' if weight == 100 else str(weight) + '%'}")
 
     with colb:
@@ -1900,9 +2064,6 @@ with tab4:
             weights_df.to_csv(save_path, index=False)
             st.success(f"Weights saved to `{save_path}`")
 
-with tab5:
-    st.subheader("Github: https://github.com/ThomasDavis4757")
-    st.subheader("LinkedIn: https://www.linkedin.com/in/thomasdavis47/")
 
     
     
